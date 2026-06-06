@@ -1,0 +1,1997 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solo Leveling Arise — Guide du Chasseur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════
+   RESET & BASE
+═══════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:       #0A0E1A;
+  --bg2:      #111827;
+  --bg3:      #1C2433;
+  --bg4:      #1E2A3A;
+  --accent:   #7B61FF;
+  --accent2:  #4F9CFF;
+  --gold:     #F5C842;
+  --red:      #E84545;
+  --teal:     #00C2CB;
+  --green:    #2DD4BF;
+  --wind:     #2DD4BF;
+  --water:    #00C2CB;
+  --dark-el:  #7B61FF;
+  --light-el: #F5C842;
+  --fire:     #E84545;
+  --purple:   #9B59B6;
+  --white:    #FFFFFF;
+  --gray:     #94A3B8;
+  --text:     #E2E8F0;
+  --radius:   10px;
+  --shadow:   0 4px 20px rgba(0,0,0,0.5);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ═══════════════════════════════════════════════
+   NAV
+═══════════════════════════════════════════════ */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10,14,26,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(123,97,255,0.2);
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  overflow-x: auto;
+  white-space: nowrap;
+  height: 52px;
+}
+nav a {
+  color: var(--gray);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.2s;
+  text-transform: uppercase;
+}
+nav a:hover { color: var(--white); background: rgba(123,97,255,0.15); }
+nav .nav-logo {
+  color: var(--white);
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 2px;
+  margin-right: 12px;
+  padding: 0;
+  background: none;
+}
+nav .nav-logo:hover { background: none; color: var(--gold); }
+nav .sep { color: rgba(255,255,255,0.1); margin: 0 4px; }
+nav .nav-stuff { color: var(--gold); }
+nav .nav-stuff:hover { color: var(--white); background: rgba(245,200,66,0.15); }
+
+/* ═══════════════════════════════════════════════
+   COVER
+═══════════════════════════════════════════════ */
+#cover {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding: 80px 60px;
+  overflow: hidden;
+}
+#cover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(123,97,255,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 20% 20%, rgba(245,200,66,0.05) 0%, transparent 60%);
+  pointer-events: none;
+}
+.cover-label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: var(--gray);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.cover-title {
+  font-size: clamp(52px, 8vw, 88px);
+  font-weight: 900;
+  color: var(--white);
+  letter-spacing: -1px;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.cover-game {
+  font-size: clamp(18px, 3vw, 28px);
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+.cover-divider {
+  width: 80px;
+  height: 3px;
+  background: var(--gold);
+  margin-bottom: 20px;
+}
+.cover-credits {
+  font-size: 13px;
+  color: var(--gray);
+  font-style: italic;
+}
+.cover-accent-bar {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 5px;
+  background: var(--accent);
+}
+.cover-top-bar {
+  position: absolute;
+  top: 0; left: 5px; right: 0;
+  height: 4px;
+  background: var(--gold);
+}
+.cover-badge {
+  position: absolute;
+  bottom: 40px;
+  right: 60px;
+  font-size: 11px;
+  color: var(--gray);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════════════════
+   LAYOUT HELPERS
+═══════════════════════════════════════════════ */
+.section {
+  padding: 60px 40px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.section-full {
+  padding: 60px 40px;
+  margin: 0 auto;
+  max-width: 1280px;
+}
+
+.page-section { border-top: 1px solid rgba(255,255,255,0.05); }
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--accent);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.section-header.gold  { border-bottom-color: var(--gold); }
+.section-header.teal  { border-bottom-color: var(--teal); }
+.section-header.red   { border-bottom-color: var(--red); }
+.section-header.green { border-bottom-color: var(--green); }
+
+.section-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-title::before {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 24px;
+  background: currentColor;
+  border-radius: 2px;
+}
+.section-title.gold::before  { background: var(--gold); }
+.section-title.accent::before { background: var(--accent); }
+.section-title.teal::before  { background: var(--teal); }
+.section-title.red::before   { background: var(--red); }
+.section-title.green::before { background: var(--green); }
+.section-title.blue::before  { background: var(--accent2); }
+
+.badge {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+.badge-accent  { background: rgba(123,97,255,0.2); color: var(--accent); border: 1px solid rgba(123,97,255,0.4); }
+.badge-gold    { background: rgba(245,200,66,0.15); color: var(--gold); border: 1px solid rgba(245,200,66,0.3); }
+.badge-red     { background: rgba(232,69,69,0.15); color: var(--red); border: 1px solid rgba(232,69,69,0.3); }
+.badge-teal    { background: rgba(0,194,203,0.15); color: var(--teal); border: 1px solid rgba(0,194,203,0.3); }
+.badge-blue    { background: rgba(79,156,255,0.15); color: var(--accent2); border: 1px solid rgba(79,156,255,0.3); }
+
+.card {
+  background: var(--bg2);
+  border: 1px solid rgba(123,97,255,0.2);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.card-alt { background: var(--bg3); border-color: rgba(255,255,255,0.06); }
+.img-placeholder {
+  background: var(--bg4);
+  border: 2px dashed rgba(79,156,255,0.4);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(79,156,255,0.6);
+  font-size: 12px;
+  font-style: italic;
+  text-align: center;
+  line-height: 1.5;
+  padding: 16px;
+}
+
+/* ═══════════════════════════════════════════════
+   SOMMAIRE
+═══════════════════════════════════════════════ */
+#sommaire { background: var(--bg2); }
+.sommaire-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 8px;
+}
+.sommaire-card {
+  background: var(--bg);
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.07);
+  overflow: hidden;
+}
+.sommaire-card-header {
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.sommaire-num {
+  font-size: 28px;
+  font-weight: 900;
+  opacity: 0.9;
+  line-height: 1;
+}
+.sommaire-card-title { font-size: 13px; font-weight: 700; color: var(--white); }
+.sommaire-card-body { padding: 12px 16px 16px; }
+.sommaire-card-body li {
+  font-size: 12px;
+  color: var(--gray);
+  list-style: none;
+  padding: 4px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+.sommaire-card-body li::before { content: "›"; opacity: 0.4; }
+
+.s1 .sommaire-card-header { background: rgba(123,97,255,0.15); }
+.s1 .sommaire-num { color: var(--accent); }
+.s2 .sommaire-card-header { background: rgba(79,156,255,0.12); }
+.s2 .sommaire-num { color: var(--accent2); }
+.s3 .sommaire-card-header { background: rgba(245,200,66,0.12); }
+.s3 .sommaire-num { color: var(--gold); }
+
+/* ═══════════════════════════════════════════════
+   ARTEFACTS
+═══════════════════════════════════════════════ */
+.artefacts-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+.artefact-card {
+  background: var(--bg2);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.07);
+  display: flex;
+  flex-direction: column;
+}
+.artefact-card-top {
+  height: 5px;
+}
+.artefact-label {
+  padding: 10px 12px 8px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.artefact-img { flex: 1; margin: 8px 10px; min-height: 140px; }
+.artefact-note {
+  padding: 8px 10px 12px;
+  font-size: 10px;
+  color: var(--gray);
+  text-align: center;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.a-acc   .artefact-card-top { background: var(--teal); }
+.a-acc   .artefact-label { color: var(--teal); }
+.a-brk   .artefact-card-top { background: var(--red); }
+.a-brk   .artefact-label { color: var(--red); }
+.a-dps   .artefact-card-top { background: var(--accent); }
+.a-dps   .artefact-label { color: var(--accent); }
+.a-sup   .artefact-card-top { background: var(--green); }
+.a-sup   .artefact-label { color: var(--green); }
+.a-bus   .artefact-card-top { background: var(--gold); }
+.a-bus   .artefact-label { color: var(--gold); }
+
+/* ═══════════════════════════════════════════════
+   NOYAUX
+═══════════════════════════════════════════════ */
+.noyaux-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+.noyaux-list { display: flex; flex-direction: column; gap: 12px; }
+.noyau-card {
+  background: var(--bg2);
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.07);
+  overflow: hidden;
+  display: flex;
+}
+.noyau-bar {
+  width: 5px;
+  flex-shrink: 0;
+}
+.noyau-content { padding: 12px 14px; flex: 1; }
+.noyau-title {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.noyau-stats { list-style: none; }
+.noyau-stats li {
+  font-size: 12px;
+  color: var(--gray);
+  padding: 2px 0;
+  display: flex;
+  gap: 6px;
+}
+.noyau-stats li::before { content: "›"; color: rgba(255,255,255,0.2); }
+
+.n-atk .noyau-bar { background: var(--accent); }
+.n-atk .noyau-title { color: var(--accent); }
+.n-def .noyau-bar { background: var(--teal); }
+.n-def .noyau-title { color: var(--teal); }
+.n-pv  .noyau-bar { background: var(--green); }
+.n-pv  .noyau-title { color: var(--green); }
+
+.noyaux-right { display: flex; flex-direction: column; gap: 14px; }
+.noyaux-img { height: 260px; }
+.reco-card {
+  background: var(--bg3);
+  border-radius: var(--radius);
+  border: 1px solid rgba(245,200,66,0.15);
+  padding: 16px 18px;
+}
+.reco-card h4 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.reco-body {
+  min-height: 80px;
+  font-size: 12px;
+  color: var(--gray);
+  font-style: italic;
+}
+
+/* ═══════════════════════════════════════════════
+   TEAM BUILDING
+═══════════════════════════════════════════════ */
+.element-section { padding: 50px 40px; max-width: 1280px; margin: 0 auto; }
+.element-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+  padding: 14px 20px;
+  border-radius: 10px;
+  background: var(--bg2);
+  border-left: 5px solid;
+}
+.element-emoji { font-size: 28px; }
+.element-name {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.element-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 16px;
+  align-items: start;
+}
+.element-main-img { height: 360px; }
+.element-side { display: flex; flex-direction: column; gap: 12px; }
+.side-block {
+  background: var(--bg2);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.07);
+}
+.side-block-header {
+  padding: 9px 14px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #fff;
+}
+.side-block-img { margin: 10px 12px; height: 140px; }
+.side-block-notes { padding: 12px 14px; }
+.side-block-notes p { font-size: 12px; color: var(--gray); margin-bottom: 6px; }
+.notes-line {
+  height: 1px;
+  background: rgba(255,255,255,0.07);
+  margin: 10px 0;
+}
+
+.el-wind  .element-header  { border-color: var(--wind); }
+.el-wind  .element-name    { color: var(--wind); }
+.el-wind  .side-block-header { background: var(--wind); color: #0a1a14; }
+.el-water .element-header  { border-color: var(--water); }
+.el-water .element-name    { color: var(--water); }
+.el-water .side-block-header { background: var(--water); color: #0a1a1f; }
+.el-dark  .element-header  { border-color: #6b3fb5; }
+.el-dark  .element-name    { color: #a070e8; }
+.el-dark  .side-block-header { background: #4B2D8F; }
+.el-light .element-header  { border-color: var(--gold); }
+.el-light .element-name    { color: var(--gold); }
+.el-light .side-block-header { background: #8a6e0a; }
+.el-fire  .element-header  { border-color: var(--red); }
+.el-fire  .element-name    { color: var(--red); }
+
+.fire-incoming {
+  text-align: center;
+  padding: 60px 20px;
+  background: var(--bg2);
+  border-radius: var(--radius);
+  border: 1px solid rgba(232,69,69,0.3);
+}
+.fire-incoming .big-emoji { font-size: 60px; margin-bottom: 16px; display: block; }
+.fire-incoming h3 {
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  color: var(--red);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.fire-incoming p { font-size: 14px; color: var(--gray); font-style: italic; }
+
+/* ═══════════════════════════════════════════════
+   GEMMES
+═══════════════════════════════════════════════ */
+.gemmes-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+.gemmes-rules { display: flex; flex-direction: column; gap: 10px; }
+.gemme-rule {
+  display: flex;
+  background: var(--bg2);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.gemme-icon {
+  width: 54px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 900;
+  color: #000;
+}
+.gemme-text { padding: 11px 14px; }
+.gemme-text strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+.gemme-text span { font-size: 11px; color: var(--gray); }
+
+.g1 .gemme-icon { background: var(--gold); }
+.g1 .gemme-text strong { color: var(--gold); }
+.g2 .gemme-icon { background: var(--accent); color: #fff; }
+.g2 .gemme-text strong { color: var(--accent); }
+.g3 .gemme-icon { background: var(--teal); }
+.g3 .gemme-text strong { color: var(--teal); }
+.g4 .gemme-icon { background: var(--green); }
+.g4 .gemme-text strong { color: var(--green); }
+.g5 .gemme-icon { background: var(--accent2); color: #fff; }
+.g5 .gemme-text strong { color: var(--accent2); }
+
+.gemmes-right { display: flex; flex-direction: column; gap: 14px; }
+.gemmes-img { height: 280px; }
+.sung-note {
+  background: var(--bg3);
+  border-radius: var(--radius);
+  border: 1px solid rgba(245,200,66,0.15);
+  padding: 14px 16px;
+}
+.sung-note h4 { font-size: 13px; color: var(--gold); font-weight: 700; margin-bottom: 6px; }
+.sung-note p { font-size: 12px; color: var(--gray); }
+
+/* ═══════════════════════════════════════════════
+   OMBRES
+═══════════════════════════════════════════════ */
+.ombres-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.ombre-card {
+  background: var(--bg2);
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  overflow: hidden;
+}
+.ombre-name-block {
+  width: 90px;
+  flex-shrink: 0;
+  background: var(--bg4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 6px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--gold);
+  text-align: center;
+  text-transform: uppercase;
+  border-right: 1px solid rgba(255,255,255,0.06);
+}
+.ombre-stats { padding: 10px 14px; flex: 1; }
+.ombre-stat-row { margin-bottom: 6px; }
+.ombre-stat-row:last-child { margin-bottom: 0; }
+.ombre-stat-label {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 2px;
+}
+.ombre-stat-val { font-size: 11px; color: var(--text); }
+.ombre-stat-val.arme { color: var(--teal); }
+
+.ombres-note {
+  margin-top: 16px;
+  font-size: 12px;
+  color: var(--gray);
+  font-style: italic;
+  text-align: center;
+  padding: 10px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+/* ═══════════════════════════════════════════════
+   COOP TRAINING
+═══════════════════════════════════════════════ */
+.coop-alert {
+  background: var(--bg3);
+  border-left: 4px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--white);
+}
+.coop-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.coop-img { height: 340px; }
+.coop-priority h4 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+}
+.priority-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+.p-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg2);
+  border-radius: 6px;
+  padding: 5px 10px;
+}
+.p-num {
+  width: 26px;
+  height: 26px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+.p-num.high   { background: var(--gold); color: #000; }
+.p-num.mid    { background: var(--accent); color: #fff; }
+.p-num.normal { background: var(--bg4); color: var(--gray); }
+.p-label { font-size: 11px; color: var(--text); }
+
+.priority-legend {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--gray);
+}
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+/* ═══════════════════════════════════════════════
+   ROCKPASSA
+═══════════════════════════════════════════════ */
+.rock-warning {
+  background: var(--bg3);
+  border: 1px solid rgba(245,200,66,0.2);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gold);
+}
+.rock-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.rock-table {
+  background: var(--bg2);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(123,97,255,0.2);
+}
+.rock-table h4 {
+  padding: 12px 16px 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.rock-table h4::before {
+  content: '';
+  width: 4px;
+  height: 18px;
+  background: var(--accent);
+  border-radius: 2px;
+  display: block;
+}
+.rock-row {
+  display: flex;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  font-size: 12px;
+}
+.rock-row:last-child { border-bottom: none; }
+.rock-row:nth-child(odd) { background: rgba(255,255,255,0.02); }
+.rock-key {
+  width: 130px;
+  flex-shrink: 0;
+  padding: 9px 14px;
+  color: var(--gray);
+  font-weight: 600;
+  border-right: 1px solid rgba(255,255,255,0.05);
+}
+.rock-val { padding: 9px 14px; color: var(--text); }
+.rock-img { height: 340px; }
+
+.variantes-grid {
+  display: grid;
+  gap: 14px;
+  margin-top: 4px;
+}
+.variantes-grid.cols3 { grid-template-columns: repeat(3, 1fr); }
+.variantes-grid.cols2 { grid-template-columns: repeat(2, 1fr); }
+.variante-card {
+  background: var(--bg2);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.07);
+}
+.variante-header {
+  padding: 10px 14px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #000;
+  text-align: center;
+}
+.variante-img { margin: 10px 12px; height: 200px; }
+.variante-footer {
+  padding: 8px 12px 12px;
+  font-size: 11px;
+  color: var(--gray);
+  text-align: center;
+  font-style: italic;
+}
+
+/* ═══════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════ */
+footer {
+  background: var(--bg2);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 24px 40px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--gray);
+}
+footer span { color: var(--accent); }
+
+/* ═══════════════════════════════════════════════
+   STUFF PARFAIT
+═══════════════════════════════════════════════ */
+#stuff .stuff-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+#stuff .col { border-radius: 12px; overflow: hidden; background: var(--bg2); }
+#stuff .col-header {
+  padding: 11px 14px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+#stuff .col-header .ico { font-size: 16px; }
+#stuff .col.atk .col-header { background: #c93a3a; }
+#stuff .col.def .col-header { background: #2a9d5c; }
+#stuff .col.pv  .col-header { background: #2472b0; }
+#stuff .col.sung .col-header { background: #7c3aed; }
+#stuff .col.atk  { border: 1px solid #c93a3a44; }
+#stuff .col.def  { border: 1px solid #2a9d5c44; }
+#stuff .col.pv   { border: 1px solid #2472b044; }
+#stuff .col.sung { border: 1px solid #7c3aed44; }
+#stuff .col-body {
+  padding: 10px 10px 14px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+}
+#stuff .slot {
+  background: var(--bg3);
+  border-radius: 8px;
+  padding: 8px 9px 9px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+#stuff .slot-name {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+#stuff .sn-red    { background: #3a1414; color: #f08080; }
+#stuff .sn-green  { background: #0d2a18; color: #5eda9a; }
+#stuff .sn-orange { background: #2a1a0a; color: #e8a06a; }
+#stuff .sn-yellow { background: #2a2010; color: #e8c84a; }
+#stuff .sn-teal   { background: #0a2523; color: #2dd4bf; }
+#stuff .sn-purple { background: #20103a; color: #c47bff; }
+#stuff .sn-blue   { background: #0d1f38; color: #6ab8f0; }
+#stuff .stat {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+#stuff .s-red    { background: #b83232; color: #fff; }
+#stuff .s-green  { background: #1f8a4f; color: #fff; }
+#stuff .s-blue   { background: #1a6faa; color: #fff; }
+#stuff .s-yellow { background: #a07a10; color: #fff; }
+#stuff .s-teal   { background: #0f7a7a; color: #fff; }
+#stuff .s-orange { background: #a05020; color: #fff; }
+#stuff .s-purple { background: #6020b0; color: #fff; }
+#stuff ul { list-style: none; padding: 0; }
+#stuff ul li {
+  font-size: 11px;
+  color: var(--gray);
+  line-height: 1.55;
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+}
+#stuff ul li::before { content: "›"; color: #444466; flex-shrink: 0; }
+#stuff ul li .i { margin-right: 1px; font-size: 11px; }
+#stuff .i-atk  { color: #f08080; }
+#stuff .i-tc   { color: #e8c84a; }
+#stuff .i-def  { color: #5eda9a; }
+#stuff .i-pv   { color: #f0a0a0; }
+#stuff .i-neut { color: #6060a0; }
+#stuff .stuff-note {
+  margin-top: 16px;
+  background: var(--bg3);
+  border-left: 3px solid var(--gold);
+  border-radius: 8px;
+  padding: 12px 18px;
+  font-size: 12px;
+  color: var(--gray);
+  line-height: 1.7;
+  text-align: center;
+}
+#stuff .stuff-note strong { color: var(--text); }
+#stuff .stuff-note em { color: #c47bff; font-style: normal; }
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════ */
+@media (max-width: 1100px) {
+  .artefacts-grid { grid-template-columns: repeat(3, 1fr); }
+  .variantes-grid.cols3 { grid-template-columns: repeat(2, 1fr); }
+  #stuff .stuff-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 800px) {
+  .section, .section-full, .element-section { padding: 40px 20px; }
+  .sommaire-grid { grid-template-columns: 1fr; }
+  .noyaux-layout, .gemmes-layout, .coop-layout, .rock-layout { grid-template-columns: 1fr; }
+  .element-layout { grid-template-columns: 1fr; }
+  .ombres-grid { grid-template-columns: 1fr; }
+  .artefacts-grid { grid-template-columns: repeat(2, 1fr); }
+  #cover { padding: 60px 30px; }
+  .cover-title { font-size: 44px; }
+  #stuff .stuff-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#cover" class="nav-logo">SLA</a>
+  <span class="sep">|</span>
+  <a href="#sommaire">Sommaire</a>
+  <a href="#artefacts">Artefacts</a>
+  <a href="#noyaux">Noyaux</a>
+  <a href="#team">Team</a>
+  <a href="#gemmes">Gemmes</a>
+  <a href="#ombres">Ombres</a>
+  <a href="#coop">Coop</a>
+  <a href="#rockpassa">Rockpassa</a>
+  <span class="sep">|</span>
+  <a href="#stuff" class="nav-stuff">Stuff Parfait</a>
+</nav>
+
+<!-- ══════════════════════════════════════════════
+     COVER
+══════════════════════════════════════════════ -->
+<section id="cover">
+  <div class="cover-accent-bar"></div>
+  <div class="cover-top-bar"></div>
+  <div class="cover-label">Guide du</div>
+  <div class="cover-title">CHASSEUR</div>
+  <div class="cover-game">Solo Leveling Arise</div>
+  <div class="cover-divider"></div>
+  <div class="cover-credits">Made by : Natsuki, Usagi, Mitsunari, Miergoat</div>
+  <div class="cover-badge">Guide Communautaire • Édition complète</div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SOMMAIRE
+══════════════════════════════════════════════ -->
+<section id="sommaire" class="page-section" style="background: var(--bg2);">
+  <div class="section">
+    <div class="section-header">
+      <h2 class="section-title accent">Sommaire</h2>
+    </div>
+    <div class="sommaire-grid">
+      <div class="sommaire-card s1">
+        <div class="sommaire-card-header">
+          <div class="sommaire-num">01</div>
+          <div class="sommaire-card-title">L'essentiel de Solo Leveling Arise</div>
+        </div>
+        <div class="sommaire-card-body">
+          <ul>
+            <li>Système Artefacts &amp; Team Building</li>
+            <li>Tout savoir sur les Noyaux</li>
+          </ul>
+        </div>
+      </div>
+      <div class="sommaire-card s2">
+        <div class="sommaire-card-header">
+          <div class="sommaire-num">02</div>
+          <div class="sommaire-card-title">Maximiser son Battle Power (BP)</div>
+        </div>
+        <div class="sommaire-card-body">
+          <ul>
+            <li>Tout savoir sur les Ombres</li>
+            <li>Tout savoir sur les Gemmes</li>
+            <li>L'entraînement en coopération</li>
+          </ul>
+        </div>
+      </div>
+      <div class="sommaire-card s3">
+        <div class="sommaire-card-header">
+          <div class="sommaire-num">03</div>
+          <div class="sommaire-card-title">Contenus Avancés</div>
+        </div>
+        <div class="sommaire-card-body">
+          <ul>
+            <li>Comment foudroyer Rockpassa (KF)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     ARTEFACTS
+══════════════════════════════════════════════ -->
+<section id="artefacts" class="page-section">
+  <div class="section">
+    <div class="section-header">
+      <h2 class="section-title accent">Partie 1 — Artefacts</h2>
+      <span class="badge badge-accent">Essentiel</span>
+    </div>
+    <p style="font-size:13px; color:var(--gray); margin-bottom:20px;">Il existe 5 types de builds selon le rôle de votre hunter :</p>
+    <div class="artefacts-grid">
+      <div class="artefact-card a-acc">
+        <div class="artefact-card-top"></div>
+        <div class="artefact-label">Accumulateur</div>
+        <div class="artefact-img img-placeholder">[ Image artefact ]</div>
+        <div class="artefact-note">Nom des artefacts à compléter</div>
+      </div>
+      <div class="artefact-card a-brk">
+        <div class="artefact-card-top"></div>
+        <div class="artefact-label">Breaker</div>
+        <div class="artefact-img img-placeholder">[ Image artefact ]</div>
+        <div class="artefact-note">Nom des artefacts à compléter</div>
+      </div>
+      <div class="artefact-card a-dps">
+        <div class="artefact-card-top"></div>
+        <div class="artefact-label">DPS</div>
+        <div class="artefact-img img-placeholder">[ Image artefact ]</div>
+        <div class="artefact-note">Nom des artefacts à compléter</div>
+      </div>
+      <div class="artefact-card a-sup">
+        <div class="artefact-card-top"></div>
+        <div class="artefact-label">Support</div>
+        <div class="artefact-img img-placeholder">[ Image artefact ]</div>
+        <div class="artefact-note">Nom des artefacts à compléter</div>
+      </div>
+      <div class="artefact-card a-bus">
+        <div class="artefact-card-top"></div>
+        <div class="artefact-label">Buster</div>
+        <div class="artefact-img img-placeholder">[ Image artefact ]</div>
+        <div class="artefact-note">Nom des artefacts à compléter</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     STUFF PARFAIT
+══════════════════════════════════════════════ -->
+<section id="stuff" class="page-section">
+  <div class="section">
+    <div class="section-header teal">
+      <h2 class="section-title teal">Partie 1 — Stuff Parfait</h2>
+      <span class="badge badge-teal">Équipement</span>
+    </div>
+    <div class="stuff-grid">
+
+      <!-- ── ATK ── -->
+      <div class="col atk">
+        <div class="col-header"><span class="ico">⚔</span> Hunter ATK</div>
+        <div class="col-body">
+          <div class="slot">
+            <div><span class="slot-name sn-red">Casque</span></div>
+            <div><span class="stat s-red">ATK %</span></div>
+            <ul>
+              <li><span class="i i-atk">⬆</span>ATK supp +4</li>
+              <li><span class="i i-tc">⚡</span>TC</li>
+              <li><span class="i i-neut">⬆</span>Def pen</li>
+              <li><span class="i i-neut">⬆</span>HDD</li>
+            </ul>
+          </div>
+          <div class="slot">
+            <div><span class="slot-name sn-green">Collier</span></div>
+            <div><span class="stat s-blue">PV %</span></div>
+            <ul>
+              <li><span class="i i-atk">⬆</span>ATK supp +4</li>
+              <li><span class="i i-neut">⬆</span>ATK %</li>
+              <li><span class="i i-neut">⬆</span>DCC</li>
+              <li><span class="i i-neut">⬆</span>DP / HDD</li>
+            </ul>
+          </div>
+          <div class="slot">
+            <div><span class="slot-name sn-orange">Armure</span></div>
+            <div><span class="stat s-green">DEF %</span></div>
+            <ul>
+              <li><span class="i i-atk">⬆</span>ATK supp +4</li>
+              <li><span class="i i-tc">⚡</span>TC</li>
+              <li><span class="i i-neut">⬆</span>HDD</li>
+              <li><span class="i i-neut">⬆</span>Def pen</li>
+            </ul>
+          </div>
+          <div class="slot">
+            <div><span class="slot-name sn-yellow">Bracelet</span></div>
+            <div><span class="stat s-yellow">ELEMENT %</span></div>
+            <ul>
+              <li><span class="i i-atk">⬆</span>ATK supp +4</li>
+              <li><span class="i i-neut">⬆</span>ATK %</li>
+              <li><span class="i i-neut">⬆</span>DCC</li>
+              <li><span class="i i-neut">⬆</span>DP / HDD</li>
+            </ul>
+          </div>
+          <div class="slot">
+            <div><span class="slot-name sn-teal">Gants</span></div>
+            <div><span class="stat s-red">ATK %</span></div>
+            <ul>
+              <li><span class="i i-atk">⬆</span>ATK supp +4</li>
+              <li><span class="i i-tc">⚡</span>TC</li>
+              <li><span class="i i-neut">⬆</span>Def pen</li>
+              <li><span class="i i-neut">⬆</span>HDD</li>
+            </ul>
+          </div>
+          <div class="slot">
+            <div><span class="slot-name sn-purple">Bague</span></div>
+            <div><span class="stat s-red">ATK %</span></div>
+            <ul>
+              <li><span class="i i-atk">⬆</span>ATK supp +4</li>
+              <li><span class="i i-neut">⬆</span>Def pen</li>
+              <li><span class="i i-neut">⬆</span>HDD</li>
+            </ul>
+          </div>
+          <div class="slot">
+            <div><span class="slot-name sn-red">Bottes</span></div>
+            <div><span class="stat s-orange">DCC / DP</span></div>
+            <ul>
+              <li><span class="i i-atk">⬆</span>ATK supp +4</li>
+              <li><span class="i i-neut">⬆</span>ATK %</li>
+              <li><span class="i i-tc">⚡</span>TC</li>
+              <li><span class="i i-neut">⬆</span>DP / HDD</li>
+            </ul>
+          </div>
+          <div class="slot">
+            <div><span class="slot-name sn-blue">Boucle</span></div>
+            <div><span class="stat s-teal">MP SUPP</span></div>
+            <ul>
+              <li><span class="i i-atk">⬆</span>ATK supp +4</li>
+              <li><span class="i i-neut">⬆</span>ATK %</li>
+              <li><span class="i i-tc">⚡</span>TC</li>
+              <li><span class="i i-neut">⬆</span>DP / HDD</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── DEF ── -->
+      <div class="col def">
+        <div class="col-header"><span class="ico">🛡</span> Hunter DEF</div>
+        <div class="col-body">
+          <div class="slot">
+            <div><span class="slot-name sn-red">Casque</span></div>
+            <div><span class="stat s-green">DEF %</span></div>
+            <ul>
+              <li><span class="i i-def">●</span>DEF supp +4</li>
+              <li><span class="i i-tc">⚡</span>TC</li>
+              <li><span class="i i-neut">⬆</span>Def pen</li>
+              <li><span class="i i-neut">⬆</span>HDD</li>
+            </ul>
+          </div>
+          <div class="slot">
+            <div><span class="slot-name sn-green">Collier</span></div>
+            <div><span class="stat s-blue">PV %</span></div>
+            <ul>
+              <li><span class="i i-def">●</span>DEF supp +4</li>
+              <li><span class="i i-neut">⬆</span>DEF %</li>
+              <li><span class="i i-neut">⬆</span>DCC</li>
+              <li><span class="i i-neut">⬆</span>DP / HDD</li>
+            </ul>
+          </div>
+          <div class="slot">
+            <div><span class="slot-name sn-orange">Armure</span></div>
+            <div><span class="stat s-green">DEF %</span></div>
+            <ul>
+              <li><span class="i i-def">●</span>DEF supp +4</li>
+              <li><span class="i i-tc">⚡</span>TC</li>
+              <li><span class="i i-neut">⬆</span>HDD</li>
+              <li><span class="i i-neut">⬆</span>Def pen</li>
+            </ul>
+          </div>
+          <div class="slot">
+            <div><span class="slot-name sn-yellow">Bracelet</span></div>
+            <div><span class="stat s-yellow">ELEMENT %</span></div>
+            <ul>
+              <li><span class="i i-def">●</span>DEF supp +4</li>
+              <li><span class="i i-neut">⬆</span>DEF %</li>
+              <li><span class="i i-neut">⬆</span>DCC</li>
+              <li><span class="i i-neut">⬆</span>DP / HDD</li>
+            </ul>
+          </div>
+          <div class="slot">
+            <div><span class="slot-name sn-teal">Gants</span></div>
+            <div><span class="stat s-red">ATK %</span></div>
+            <ul>
+              <li><span class="i i-def">●</span>DEF supp +4</li>
+              <li><span class="i i-neut">⬆</span>DEF %</li>
+              <li><span class="i i-tc">⚡</span>TC</li>
+              <li><span class="i i-neut">⬆</span>DP / HDD</li>
+            </ul>
+          </div>
+          <div class="slot">
+            <div><span class="slot-name sn-purple">Bague</span></div>
+            <div><span class="stat s-green">DEF %</span></div>
+            <ul>
+              <li><span class="i i-def">●</span>DEF supp +4</li>
+              <li><span class="i i-neut">⬆</span>DCC</li>
+              <li><span class="i i-neut">⬆</span>Def pen</li>
+              <li><span class="i i-neut">⬆</span>HDD</li>
+            </ul>
+          </div>
+          <div class="slot">
+            <div><span class="slot-name sn-red">Bottes</span></div>
+            <div><span class="stat s-green">DEF %</span></div>
+            <ul>
+              <li><span class="i i-def">●</span>DEF supp +4</li>
+              <li><span class="i i-neut">⬆</span>DEF %</li>
+              <li><span class="i i-tc">⚡</span>TC</li>
+              <li><span class="i i-neut">⬆</span>DP</li>
+              <li><span class="i i-neut">⬆</span>HDD</li>
+            </ul>
+          </div>
+          <div class="slot">
+            <div><span class="slot-name sn-blue">Boucle</span></div>
+            <div><span class="stat s-teal">MP SUPP</span></div>
+            <ul>
+              <li><span class="i i-def">●</span>DEF supp +4</li>
+              <li><span class="i i-neut">⬆</span>DEF %</li>
+              <li><span class="i i-neut">⬆</span>DCC</li>
+              <li><span class="i i-neut">⬆</span>HDD</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── PV ── -->
+      <div class="col pv">
+        <div class="col-header"><span class="ico">💙</span> Hunter PV</div>
+        <div class="col-body">
+          <div class="slot">
+            <div><span class="slot-name sn-red">Casque</span></div>
+            <div><span class="stat s-blue">PV %</span></div>
+            <ul>
+              <li><span class="i i-pv">♥</span>PV supp +4</li>
+              <li><span class="i i-tc">⚡</span>TC</li>
+              <li><span class="i i-neut">⬆</span>Def pen</li>
+              <li><span class="i i-neut">⬆</span>HDD</li>
+            </ul>
+          </div>
+          <div class="slot">
+            <div><span class="slot-name sn-green">Collier</span></div>
+            <div><span class="stat s-blue">PV %</span></div>
+            <ul>
+              <li><span class="i i-pv">♥</span>PV supp +4</li>
+              <li><span class="i i-neut">⬆</span>DCC</li>
+              <li><span class="i i-neut">⬆</span>Def pen</li>
+              <li><span class="i i-neut">⬆</span>HDD</li>
+            </ul>
+          </div>
+          <div class="slot">
+            <div><span class="slot-name sn-orange">Armure</span></div>
+            <div><span class="stat s-green">DEF %</span></div>
+            <ul>
+              <li><span class="i i-pv">♥</span>PV supp +4</li>
+              <li><span class="i i-neut">⬆</span>PV %</li>
+              <li><span class="i i-tc">⚡</span>TC</li>
+              <li><span class="i i-neut">⬆</span>DP / HDD</li>
+            </ul>
+          </div>
+          <div class="slot">
+            <div><span class="slot-name sn-yellow">Bracelet</span></div>
+            <div><span class="stat s-yellow">ELEMENT %</span></div>
+            <ul>
+              <li><span class="i i-pv">♥</span>PV supp +4</li>
+              <li><span class="i i-neut">⬆</span>PV %</li>
+              <li><span class="i i-neut">⬆</span>DCC</li>
+              <li><span class="i i-neut">⬆</span>DP / HDD</li>
+            </ul>
+          </div>
+          <div class="slot">
+            <div><span class="slot-name sn-teal">Gants</span></div>
+            <div><span class="stat s-red">ATK %</span></div>
+            <ul>
+              <li><span class="i i-pv">♥</span>PV supp +4</li>
+              <li><span class="i i-neut">⬆</span>PV %</li>
+              <li><span class="i i-tc">⚡</span>TC</li>
+              <li><span class="i i-neut">⬆</span>DP / HDD</li>
+            </ul>
+          </div>
+          <div class="slot">
+            <div><span class="slot-name sn-purple">Bague</span></div>
+            <div><span class="stat s-blue">PV %</span></div>
+            <ul>
+              <li><span class="i i-pv">♥</span>PV supp +4</li>
+              <li><span class="i i-neut">⬆</span>DCC</li>
+              <li><span class="i i-neut">⬆</span>Def pen</li>
+              <li><span class="i i-neut">⬆</span>HDD</li>
+            </ul>
+          </div>
+          <div class="slot">
+            <div><span class="slot-name sn-red">Bottes</span></div>
+            <div><span class="stat s-blue">PV %</span></div>
+            <ul>
+              <li><span class="i i-pv">♥</span>PV supp +4</li>
+              <li><span class="i i-neut">⬆</span>PV %</li>
+              <li><span class="i i-tc">⚡</span>TC</li>
+              <li><span class="i i-neut">⬆</span>HDD</li>
+            </ul>
+          </div>
+          <div class="slot">
+            <div><span class="slot-name sn-blue">Boucle</span></div>
+            <div><span class="stat s-teal">MP SUPP</span></div>
+            <ul>
+              <li><span class="i i-pv">♥</span>PV supp +4</li>
+              <li><span class="i i-neut">⬆</span>PV %</li>
+              <li><span class="i i-neut">⬆</span>DCC</li>
+              <li><span class="i i-neut">⬆</span>HDD</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── SUNG ── -->
+      <div class="col sung">
+        <div class="col-header"><span class="ico">★</span> Sung Jin-Woo</div>
+        <div class="col-body">
+          <div class="slot">
+            <div><span class="slot-name sn-purple">Casque</span></div>
+            <div><span class="stat s-red">ATK %</span></div>
+            <ul>
+              <li><span class="i i-atk">⬆</span>ATK supp +4</li>
+              <li><span class="i i-tc">⚡</span>TC</li>
+              <li><span class="i i-neut">⬆</span>Def pen</li>
+              <li><span class="i i-neut">⬆</span>HDD</li>
+            </ul>
+          </div>
+          <div class="slot">
+            <div><span class="slot-name sn-purple">Collier</span></div>
+            <div><span class="stat s-blue">PV %</span></div>
+            <ul>
+              <li><span class="i i-atk">⬆</span>ATK supp +4</li>
+              <li><span class="i i-neut">⬆</span>ATK %</li>
+              <li><span class="i i-neut">⬆</span>DCC</li>
+              <li><span class="i i-neut">⬆</span>DP / HDD</li>
+            </ul>
+          </div>
+          <div class="slot">
+            <div><span class="slot-name sn-purple">Armure</span></div>
+            <div><span class="stat s-green">DEF %</span></div>
+            <ul>
+              <li><span class="i i-atk">⬆</span>ATK supp +4</li>
+              <li><span class="i i-tc">⚡</span>TC</li>
+              <li><span class="i i-neut">⬆</span>HDD</li>
+              <li><span class="i i-neut">⬆</span>Def pen</li>
+            </ul>
+          </div>
+          <div class="slot">
+            <div><span class="slot-name sn-purple">Bracelet</span></div>
+            <div><span class="stat s-yellow">ELEMENT %</span></div>
+            <ul>
+              <li><span class="i i-atk">⬆</span>ATK supp +4</li>
+              <li><span class="i i-neut">⬆</span>ATK %</li>
+              <li><span class="i i-neut">⬆</span>DCC</li>
+              <li><span class="i i-neut">⬆</span>DP / HDD</li>
+            </ul>
+          </div>
+          <div class="slot">
+            <div><span class="slot-name sn-purple">Gants</span></div>
+            <div><span class="stat s-red">ATK %</span></div>
+            <ul>
+              <li><span class="i i-atk">⬆</span>ATK supp +4</li>
+              <li><span class="i i-tc">⚡</span>TC</li>
+              <li><span class="i i-neut">⬆</span>Def pen</li>
+              <li><span class="i i-neut">⬆</span>HDD</li>
+            </ul>
+          </div>
+          <div class="slot">
+            <div><span class="slot-name sn-purple">Bague</span></div>
+            <div><span class="stat s-red">ATK %</span></div>
+            <ul>
+              <li><span class="i i-atk">⬆</span>ATK supp +4</li>
+              <li><span class="i i-neut">⬆</span>Def pen</li>
+              <li><span class="i i-neut">⬆</span>HDD</li>
+            </ul>
+          </div>
+          <div class="slot">
+            <div><span class="slot-name sn-purple">Bottes</span></div>
+            <div><span class="stat s-orange">DCC / DP</span></div>
+            <ul>
+              <li><span class="i i-atk">⬆</span>ATK supp +4</li>
+              <li><span class="i i-neut">⬆</span>ATK %</li>
+              <li><span class="i i-tc">⚡</span>TC</li>
+              <li><span class="i i-neut">⬆</span>DP / HDD</li>
+            </ul>
+          </div>
+          <div class="slot">
+            <div><span class="slot-name sn-purple">Boucle</span></div>
+            <div><span class="stat s-teal">MP SUPP</span></div>
+            <ul>
+              <li><span class="i i-atk">⬆</span>ATK supp +4</li>
+              <li><span class="i i-neut">⬆</span>ATK %</li>
+              <li><span class="i i-tc">⚡</span>TC</li>
+              <li><span class="i i-neut">⬆</span>DP / HDD</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="stuff-note">
+      Vous devez chercher à minima <strong>2 procs dans la stat</strong> sur laquelle votre hunter scale (ATK, DEF, PV).
+      Exemple <em>Lennart</em> (hunter défense) : DEF supp +2 / DEF % +2 — au plus vous tendez vers un +4,
+      au plus vous gagnerez de stats sur votre hunter.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     NOYAUX
+══════════════════════════════════════════════ -->
+<section id="noyaux" class="page-section" style="background: var(--bg2);">
+  <div class="section">
+    <div class="section-header gold">
+      <h2 class="section-title gold">Tout savoir sur les Noyaux</h2>
+    </div>
+    <div class="noyaux-layout">
+      <div class="noyaux-list">
+        <div class="noyau-card n-atk">
+          <div class="noyau-bar"></div>
+          <div class="noyau-content">
+            <div class="noyau-title">Noyau Attaque (DCC)</div>
+            <ul class="noyau-stats">
+              <li>DCC sur Core ATK +20%</li>
+              <li>MP consumption +12%</li>
+              <li>MP recovery +10%</li>
+              <li>3 basic ATK → +3% jauge ult (cd 10s)</li>
+              <li>Ult → +5% PM</li>
+            </ul>
+          </div>
+        </div>
+        <div class="noyau-card n-def">
+          <div class="noyau-bar"></div>
+          <div class="noyau-content">
+            <div class="noyau-title">Noyau Défense</div>
+            <ul class="noyau-stats">
+              <li>Break +10%</li>
+              <li>Heal reçu +8%</li>
+              <li>Si HP &lt; 70% → DEF +6% (cd 25s)</li>
+              <li>Dégâts reçus -10%</li>
+              <li>Ult → shield 10% HP</li>
+            </ul>
+          </div>
+        </div>
+        <div class="noyau-card n-pv">
+          <div class="noyau-bar"></div>
+          <div class="noyau-content">
+            <div class="noyau-title">Noyau PV</div>
+            <ul class="noyau-stats">
+              <li>Si PM &lt; 20% → PM +30% (1×/game)</li>
+              <li>Basic skill → shield 10% ATK</li>
+              <li>Si PM &lt; 50% → DEF +6%</li>
+              <li>Si HP &lt; 30% → soin 20%</li>
+              <li>Ult → shield 10% HP</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="noyaux-right">
+        <div class="noyaux-img img-placeholder">[ Screenshot noyaux ]</div>
+        <div class="reco-card">
+          <h4>💡 Recommandation par rôle</h4>
+          <div class="reco-body">À compléter selon vos hunters.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     TEAM BUILDING
+══════════════════════════════════════════════ -->
+<section id="team" class="page-section">
+  <div class="section">
+    <div class="section-header teal">
+      <h2 class="section-title teal">Team Building par Éléments</h2>
+    </div>
+  </div>
+
+  <!-- WIND -->
+  <div class="element-section el-wind" style="padding-top:0;">
+    <div class="element-header">
+      <span class="element-emoji">🌀</span>
+      <span class="element-name">Wind</span>
+    </div>
+    <div class="element-layout">
+      <div class="element-main-img img-placeholder">[ Composition WIND — Hunters recommandés ]</div>
+      <div class="element-side">
+        <div class="side-block">
+          <div class="side-block-header">Ombres recommandées</div>
+          <div class="side-block-img img-placeholder">[ Screenshot ombres ]</div>
+        </div>
+        <div class="side-block">
+          <div class="side-block-header" style="background: var(--bg3); color:var(--gray);">Notes &amp; Synergies</div>
+          <div class="side-block-notes">
+            <p>À compléter :</p>
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WATER -->
+  <div class="element-section el-water" style="padding-top:20px;">
+    <div class="element-header">
+      <span class="element-emoji">💧</span>
+      <span class="element-name">Water</span>
+    </div>
+    <div class="element-layout">
+      <div class="element-main-img img-placeholder">[ Composition WATER — Hunters recommandés ]</div>
+      <div class="element-side">
+        <div class="side-block">
+          <div class="side-block-header">Ombres recommandées</div>
+          <div class="side-block-img img-placeholder">[ Screenshot ombres ]</div>
+        </div>
+        <div class="side-block">
+          <div class="side-block-header" style="background: var(--bg3); color:var(--gray);">Notes &amp; Synergies</div>
+          <div class="side-block-notes">
+            <p>À compléter :</p>
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DARK -->
+  <div class="element-section el-dark" style="padding-top:20px;">
+    <div class="element-header">
+      <span class="element-emoji">🌑</span>
+      <span class="element-name">Dark</span>
+    </div>
+    <div class="element-layout">
+      <div class="element-main-img img-placeholder">[ Composition DARK — Hunters recommandés ]</div>
+      <div class="element-side">
+        <div class="side-block">
+          <div class="side-block-header">Ombres recommandées</div>
+          <div class="side-block-img img-placeholder">[ Screenshot ombres ]</div>
+        </div>
+        <div class="side-block">
+          <div class="side-block-header" style="background: var(--bg3); color:var(--gray);">Notes &amp; Synergies</div>
+          <div class="side-block-notes">
+            <p>À compléter :</p>
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIGHT -->
+  <div class="element-section el-light" style="padding-top:20px;">
+    <div class="element-header">
+      <span class="element-emoji">✨</span>
+      <span class="element-name">Light</span>
+    </div>
+    <div class="element-layout">
+      <div class="element-main-img img-placeholder">[ Composition LIGHT — Hunters recommandés ]</div>
+      <div class="element-side">
+        <div class="side-block">
+          <div class="side-block-header">Ombres recommandées</div>
+          <div class="side-block-img img-placeholder">[ Screenshot ombres ]</div>
+        </div>
+        <div class="side-block">
+          <div class="side-block-header" style="background: var(--bg3); color:var(--gray);">Notes &amp; Synergies</div>
+          <div class="side-block-notes">
+            <p>À compléter :</p>
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FIRE -->
+  <div class="element-section el-fire" style="padding-top:20px;">
+    <div class="element-header">
+      <span class="element-emoji">🔥</span>
+      <span class="element-name">Fire</span>
+    </div>
+    <div class="fire-incoming">
+      <span class="big-emoji">🔥</span>
+      <h3>Fire — Incoming</h3>
+      <p>Contenu à venir — cette section sera complétée lors de la sortie de l'élément Feu.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     GEMMES
+══════════════════════════════════════════════ -->
+<section id="gemmes" class="page-section" style="background: var(--bg2);">
+  <div class="section">
+    <div class="section-header" style="border-bottom-color: var(--accent2);">
+      <h2 class="section-title blue">Partie 2 — Tout savoir sur les Gemmes</h2>
+      <span class="badge badge-blue">Battle Power</span>
+    </div>
+    <div class="gemmes-layout">
+      <div class="gemmes-rules">
+        <div class="gemme-rule g1">
+          <div class="gemme-icon">★</div>
+          <div class="gemme-text">
+            <strong>Tier minimum</strong>
+            <span>Tier 6 – Rang A obligatoire pour toutes vos gemmes</span>
+          </div>
+        </div>
+        <div class="gemme-rule g2">
+          <div class="gemme-icon">↑</div>
+          <div class="gemme-text">
+            <strong>Stats prioritaires</strong>
+            <span>ATK% / DEF% / HP% — Aucune stat plate (flat) tolérée</span>
+          </div>
+        </div>
+        <div class="gemme-rule g3">
+          <div class="gemme-icon">◈</div>
+          <div class="gemme-text">
+            <strong>Gemmes PM</strong>
+            <span>8× Baisse coût PM + 8× PM supplémentaire</span>
+          </div>
+        </div>
+        <div class="gemme-rule g4">
+          <div class="gemme-icon">⊕</div>
+          <div class="gemme-text">
+            <strong>Exception BOT</strong>
+            <span>Si contenu de prédilection = BOT → All-in Vitesse</span>
+          </div>
+        </div>
+        <div class="gemme-rule g5">
+          <div class="gemme-icon">◎</div>
+          <div class="gemme-text">
+            <strong>Précision (hors BOT)</strong>
+            <span>10× Pénétration de défense + 6× Dégâts critiques</span>
+          </div>
+        </div>
+      </div>
+      <div class="gemmes-right">
+        <div class="gemmes-img img-placeholder">[ Screenshot gemmes ou diagramme Sung ]</div>
+        <div class="sung-note">
+          <h4>Diagramme de Sung</h4>
+          <p>Une fois les gemmes placées, construire Sung tel qu'indiqué dans le diagramme ci-contre.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     OMBRES
+══════════════════════════════════════════════ -->
+<section id="ombres" class="page-section">
+  <div class="section">
+    <div class="section-header red">
+      <h2 class="section-title red">Partie 2 — Tout savoir sur les Ombres</h2>
+      <span class="badge badge-red">Ombres</span>
+    </div>
+
+    <p style="font-size:12px; font-weight:700; color:var(--gray); letter-spacing:1px; text-transform:uppercase; margin-bottom:12px;">1 / 2</p>
+    <div class="ombres-grid">
+      <div class="ombre-card">
+        <div class="ombre-name-block">Beste</div>
+        <div class="ombre-stats">
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Passif</div>
+            <div class="ombre-stat-val">Pen DEF +8%</div>
+          </div>
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Arme</div>
+            <div class="ombre-stat-val arme">ATK ombres +24%, Basic skills +15%</div>
+          </div>
+        </div>
+      </div>
+      <div class="ombre-card">
+        <div class="ombre-name-block">Uros</div>
+        <div class="ombre-stats">
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Passif</div>
+            <div class="ombre-stat-val">TC équipe +8%</div>
+          </div>
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Arme</div>
+            <div class="ombre-stat-val arme">TC et DCC ombres +15%</div>
+          </div>
+        </div>
+      </div>
+      <div class="ombre-card">
+        <div class="ombre-name-block">Brute</div>
+        <div class="ombre-stats">
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Passif</div>
+            <div class="ombre-stat-val">ATK équipe +7%</div>
+          </div>
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Arme</div>
+            <div class="ombre-stat-val arme">Pen DEF +15%, ATK ombres</div>
+          </div>
+        </div>
+      </div>
+      <div class="ombre-card">
+        <div class="ombre-name-block">Igris</div>
+        <div class="ombre-stats">
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Passif</div>
+            <div class="ombre-stat-val">Dég. ult équipe +9%</div>
+          </div>
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Arme</div>
+            <div class="ombre-stat-val arme">DCC +24%, dég. boss ombres +30%</div>
+          </div>
+        </div>
+      </div>
+      <div class="ombre-card">
+        <div class="ombre-name-block">Cerbie</div>
+        <div class="ombre-stats">
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Passif</div>
+            <div class="ombre-stat-val">Dég. ténèbre +9%, DEF -20%</div>
+          </div>
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Arme</div>
+            <div class="ombre-stat-val arme">Pen DEF +24% pour tout le monde</div>
+          </div>
+        </div>
+      </div>
+      <div class="ombre-card">
+        <div class="ombre-name-block">Tank</div>
+        <div class="ombre-stats">
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Passif</div>
+            <div class="ombre-stat-val">DCC +8%</div>
+          </div>
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Arme</div>
+            <div class="ombre-stat-val arme">Débuff combustion → skill dmg +50% (10s)</div>
+          </div>
+        </div>
+      </div>
+      <div class="ombre-card">
+        <div class="ombre-name-block">Baruka</div>
+        <div class="ombre-stats">
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Passif</div>
+            <div class="ombre-stat-val">HP +12%</div>
+          </div>
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Arme</div>
+            <div class="ombre-stat-val arme">HP ombres +24%, chance shield +36%</div>
+          </div>
+        </div>
+      </div>
+      <div class="ombre-card">
+        <div class="ombre-name-block">Iron</div>
+        <div class="ombre-stats">
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Passif</div>
+            <div class="ombre-stat-val">ATK et DCC +5%</div>
+          </div>
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Arme</div>
+            <div class="ombre-stat-val arme">Pen DEF +15%, heals ombres +90%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size:12px; font-weight:700; color:var(--gray); letter-spacing:1px; text-transform:uppercase; margin: 28px 0 12px;">2 / 2</p>
+    <div class="ombres-grid">
+      <div class="ombre-card">
+        <div class="ombre-name-block">Bigrock</div>
+        <div class="ombre-stats">
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Passif</div>
+            <div class="ombre-stat-val">Dég. water +9%</div>
+          </div>
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Arme</div>
+            <div class="ombre-stat-val arme">TC et DCC +18%, ATK +20% (10s)</div>
+          </div>
+        </div>
+      </div>
+      <div class="ombre-card">
+        <div class="ombre-name-block">Kaisel</div>
+        <div class="ombre-stats">
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Passif</div>
+            <div class="ombre-stat-val">DEF équipe +12%</div>
+          </div>
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Arme</div>
+            <div class="ombre-stat-val arme">Pen DEF +15%, dmg ombres normaux +50%</div>
+          </div>
+        </div>
+      </div>
+      <div class="ombre-card">
+        <div class="ombre-name-block">Beru</div>
+        <div class="ombre-stats">
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Passif</div>
+            <div class="ombre-stat-val">Basic skill dmg +12%</div>
+          </div>
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Arme</div>
+            <div class="ombre-stat-val arme">ATK boss -15%, DEF -5% quand touché</div>
+          </div>
+        </div>
+      </div>
+      <div class="ombre-card">
+        <div class="ombre-name-block">Jigma</div>
+        <div class="ombre-stats">
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Passif</div>
+            <div class="ombre-stat-val">ATK équipe +5%</div>
+          </div>
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Arme</div>
+            <div class="ombre-stat-val arme">13% chance shield → ATK +24% (10s)</div>
+          </div>
+        </div>
+      </div>
+      <div class="ombre-card">
+        <div class="ombre-name-block">Crane</div>
+        <div class="ombre-stats">
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Passif</div>
+            <div class="ombre-stat-val">MP +12%, MP conso +5%</div>
+          </div>
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Arme</div>
+            <div class="ombre-stat-val arme">DMG +24% (10s) quand malus actif</div>
+          </div>
+        </div>
+      </div>
+      <div class="ombre-card">
+        <div class="ombre-name-block">Croc</div>
+        <div class="ombre-stats">
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Passif</div>
+            <div class="ombre-stat-val">Core ATK dmg +40%</div>
+          </div>
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Arme</div>
+            <div class="ombre-stat-val arme">Ennemis &lt;50% HP → +50% dmg ombres</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ombres-note">Ces ombres complètent votre équipe — à adapter selon votre contenu principal.</div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     COOP TRAINING
+══════════════════════════════════════════════ -->
+<section id="coop" class="page-section" style="background: var(--bg2);">
+  <div class="section">
+    <div class="section-header green">
+      <h2 class="section-title green">Partie 2 — Entraînement en Coopération</h2>
+    </div>
+    <div class="coop-alert">
+      ⭐ Ultra important pour booster les stats de vos hunters. Montez jusqu'au niveau 12 puis changez d'élément !
+    </div>
+    <div class="coop-layout">
+      <div class="coop-img img-placeholder">[ Screenshot arbre Coop-Training ]</div>
+      <div class="coop-priority">
+        <h4>Ordre de priorité</h4>
+        <div class="priority-grid">
+          <div class="p-row"><div class="p-num high">1</div><span class="p-label">Nœud 1</span></div>
+          <div class="p-row"><div class="p-num high">2</div><span class="p-label">Nœud 2</span></div>
+          <div class="p-row"><div class="p-num high">3</div><span class="p-label">Nœud 3</span></div>
+          <div class="p-row"><div class="p-num high">4</div><span class="p-label">Nœud 4</span></div>
+          <div class="p-row"><div class="p-num high">5</div><span class="p-label">Nœud 5</span></div>
+          <div class="p-row"><div class="p-num high">6</div><span class="p-label">Nœud 6</span></div>
+          <div class="p-row"><div class="p-num mid">7</div><span class="p-label">Nœud 7</span></div>
+          <div class="p-row"><div class="p-num mid">8</div><span class="p-label">Nœud 8</span></div>
+          <div class="p-row"><div class="p-num mid">9</div><span class="p-label">Nœud 9</span></div>
+          <div class="p-row"><div class="p-num mid">10</div><span class="p-label">Nœud 10</span></div>
+          <div class="p-row"><div class="p-num mid">11</div><span class="p-label">Nœud 11</span></div>
+          <div class="p-row"><div class="p-num mid">12</div><span class="p-label">Nœud 12</span></div>
+          <div class="p-row"><div class="p-num normal">13</div><span class="p-label">Nœud 13</span></div>
+          <div class="p-row"><div class="p-num normal">14</div><span class="p-label">Nœud 14</span></div>
+          <div class="p-row"><div class="p-num normal">15</div><span class="p-label">Nœud 15</span></div>
+          <div class="p-row"><div class="p-num normal">16</div><span class="p-label">Nœud 16</span></div>
+          <div class="p-row"><div class="p-num normal">17</div><span class="p-label">Nœud 17</span></div>
+          <div class="p-row"><div class="p-num normal">18</div><span class="p-label">Nœud 18</span></div>
+          <div class="p-row"><div class="p-num normal">19</div><span class="p-label">Nœud 19</span></div>
+          <div class="p-row"><div class="p-num normal">20</div><span class="p-label">Nœud 20</span></div>
+        </div>
+        <div class="priority-legend">
+          <div class="legend-item">
+            <div class="legend-dot" style="background: var(--gold);"></div>
+            Priorité haute (1–6)
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background: var(--accent);"></div>
+            Priorité moyenne (7–12)
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     ROCKPASSA
+══════════════════════════════════════════════ -->
+<section id="rockpassa" class="page-section">
+  <div class="section">
+    <div class="section-header red">
+      <h2 class="section-title red">Partie 3 — Build Rockpassa</h2>
+      <span class="badge badge-red">KF / Avancé</span>
+    </div>
+
+    <!-- Boss 1 & 3 -->
+    <h3 style="font-size:15px; color:var(--white); margin-bottom:14px; font-weight:700;">Boss 1 &amp; 3</h3>
+    <div class="rock-warning">⚠️ Épreuve d'honneur &amp; Zénith de guerrier DARK (avec Sung) — Pas besoin d'Intelligence pour Rockpassa</div>
+    <div class="rock-layout">
+      <div class="rock-table">
+        <h4>Build recommandé</h4>
+        <div class="rock-row"><div class="rock-key">Contenu</div><div class="rock-val">Épreuve d'honneur &amp; Zénith guerrier DARK</div></div>
+        <div class="rock-row"><div class="rock-key">Avec</div><div class="rock-val">Sung Jin-Woo obligatoire</div></div>
+        <div class="rock-row"><div class="rock-key">Ombres</div><div class="rock-val">Voir section ombres — composition standard</div></div>
+        <div class="rock-row"><div class="rock-key">Stat clé</div><div class="rock-val">Pas besoin d'Intelligence</div></div>
+        <div class="rock-row"><div class="rock-key">Noyau</div><div class="rock-val">Blanc (si ATK based)</div></div>
+        <div class="rock-row"><div class="rock-key">Boss concernés</div><div class="rock-val">Premier boss + Dernier boss</div></div>
+      </div>
+      <div class="rock-img img-placeholder">[ Screenshot build Boss 1 &amp; 3 ]</div>
+    </div>
+
+    <!-- Boss 2 -->
+    <h3 style="font-size:15px; color:var(--white); margin: 36px 0 14px; font-weight:700;">Boss 2 — Observateur en Acier Water (Lézard)</h3>
+    <div class="variantes-grid cols3">
+      <div class="variante-card">
+        <div class="variante-header" style="background: var(--teal);">Variante 1</div>
+        <div class="variante-img img-placeholder">[ Screenshot Variante 1 ]</div>
+        <div class="variante-footer">Ombres : variable — À adapter selon vos hunters disponibles</div>
+      </div>
+      <div class="variante-card">
+        <div class="variante-header" style="background: var(--accent2);">Variante 2</div>
+        <div class="variante-img img-placeholder">[ Screenshot Variante 2 ]</div>
+        <div class="variante-footer">Ombres : variable — À adapter selon vos hunters disponibles</div>
+      </div>
+      <div class="variante-card">
+        <div class="variante-header" style="background: var(--accent);">Variante 3</div>
+        <div class="variante-img img-placeholder">[ Screenshot Variante 3 ]</div>
+        <div class="variante-footer">Ombres : variable — À adapter selon vos hunters disponibles</div>
+      </div>
+    </div>
+
+    <!-- Dernier boss Wind -->
+    <h3 style="font-size:15px; color:var(--white); margin: 36px 0 14px; font-weight:700;">Zénith de Guerrier Hunter Wind — Dernier Boss</h3>
+    <div class="variantes-grid cols2">
+      <div class="variante-card">
+        <div class="variante-header" style="background: var(--green); color:#0a1a14;">Variante 1</div>
+        <div class="variante-img img-placeholder">[ Screenshot Variante 1 ]</div>
+        <div class="variante-footer">Ombres : variable</div>
+      </div>
+      <div class="variante-card">
+        <div class="variante-header" style="background: var(--green); color:#0a1a14;">Variante 2</div>
+        <div class="variante-img img-placeholder">[ Screenshot Variante 2 ]</div>
+        <div class="variante-footer">Ombres : variable</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Solo Leveling Arise — Guide du Chasseur &nbsp;•&nbsp; Made by : <span>Natsuki, Usagi, Mitsunari, Miergoat</span></p>
+</footer>
+
+</body>
+</html>
