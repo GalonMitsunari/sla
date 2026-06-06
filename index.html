@@ -394,7 +394,14 @@ nav .nav-stuff:hover { color: var(--white); background: rgba(245,200,66,0.15); }
   display: flex;
   gap: 6px;
 }
-.noyau-stats li::before { content: "›"; color: rgba(255,255,255,0.2); }
+.noyau-stat-img {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  border: 1px dashed rgba(79,156,255,0.35);
+  background: var(--bg4);
+}
 
 .n-atk .noyau-bar { background: var(--accent); }
 .n-atk .noyau-title { color: var(--accent); }
@@ -1436,13 +1443,13 @@ footer span { color: var(--accent); }
         <div class="noyau-card n-atk">
           <div class="noyau-bar"></div>
           <div class="noyau-content">
-            <div class="noyau-title">Noyau Attaque (DCC)</div>
+            <div class="noyau-title">Noyau Attaque</div>
             <ul class="noyau-stats">
-              <li>DCC sur Core ATK +20%</li>
-              <li>MP consumption +12%</li>
-              <li>MP recovery +10%</li>
-              <li>3 basic ATK → +3% jauge ult (cd 10s)</li>
-              <li>Ult → +5% PM</li>
+              <li><span class="noyau-stat-img"></span>DCC sur Core ATK +20%</li>
+              <li><span class="noyau-stat-img"></span>MP consumption +12%</li>
+              <li><span class="noyau-stat-img"></span>MP recovery +10%</li>
+              <li><span class="noyau-stat-img"></span>3 basic ATK → +3% jauge ult (cd 10s)</li>
+              <li><span class="noyau-stat-img"></span>Ult → +5% PM</li>
             </ul>
           </div>
         </div>
@@ -1451,11 +1458,11 @@ footer span { color: var(--accent); }
           <div class="noyau-content">
             <div class="noyau-title">Noyau Défense</div>
             <ul class="noyau-stats">
-              <li>Break +10%</li>
-              <li>Heal reçu +8%</li>
-              <li>Si HP &lt; 70% → DEF +6% (cd 25s)</li>
-              <li>Dégâts reçus -10%</li>
-              <li>Ult → shield 10% HP</li>
+              <li><span class="noyau-stat-img"></span>Break +10%</li>
+              <li><span class="noyau-stat-img"></span>Heal reçu +8%</li>
+              <li><span class="noyau-stat-img"></span>Si HP &lt; 70% → DEF +6% (cd 25s)</li>
+              <li><span class="noyau-stat-img"></span>Dégâts reçus -10%</li>
+              <li><span class="noyau-stat-img"></span>Ult → shield 10% HP</li>
             </ul>
           </div>
         </div>
@@ -1464,11 +1471,11 @@ footer span { color: var(--accent); }
           <div class="noyau-content">
             <div class="noyau-title">Noyau PV</div>
             <ul class="noyau-stats">
-              <li>Si PM &lt; 20% → PM +30% (1×/game)</li>
-              <li>Basic skill → shield 10% ATK</li>
-              <li>Si PM &lt; 50% → DEF +6%</li>
-              <li>Si HP &lt; 30% → soin 20%</li>
-              <li>Ult → shield 10% HP</li>
+              <li><span class="noyau-stat-img"></span>Si PM &lt; 20% → PM +30% (1×/game)</li>
+              <li><span class="noyau-stat-img"></span>Basic skill → shield 10% ATK</li>
+              <li><span class="noyau-stat-img"></span>Si PM &lt; 50% → DEF +6%</li>
+              <li><span class="noyau-stat-img"></span>Si HP &lt; 30% → soin 20%</li>
+              <li><span class="noyau-stat-img"></span>Ult → shield 10% HP</li>
             </ul>
           </div>
         </div>
