@@ -563,7 +563,8 @@ nav .nav-stuff:hover { color: var(--white); background: rgba(245,200,66,0.15); }
 .g4 .gemme-text strong { color: var(--accent2); }
 
 .gemmes-right { display: flex; flex-direction: column; gap: 14px; }
-.gemmes-img { height: 280px; }
+.gemmes-imgs { display: flex; gap: 14px; }
+.gemmes-img { height: 280px; flex: 1; }
 .sung-note {
   background: var(--bg3);
   border-radius: var(--radius);
@@ -1673,7 +1674,10 @@ footer span { color: var(--accent); }
         </div>
       </div>
       <div class="gemmes-right">
-        <div class="gemmes-img img-placeholder">[ Screenshot gemmes ou diagramme Sung ]</div>
+        <div class="gemmes-imgs">
+          <div class="gemmes-img img-placeholder">[ Screenshot gemmes ]</div>
+          <div class="gemmes-img img-placeholder">[ Diagramme de Sung ]</div>
+        </div>
         <div class="sung-note">
           <h4>Diagramme de Sung</h4>
           <p>Une fois les gemmes placées, construire Sung tel qu'indiqué dans le diagramme ci-contre.</p>
