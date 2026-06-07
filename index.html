@@ -999,7 +999,8 @@ body {
   color: #000;
   text-align: center;
 }
-.variante-img { margin: 10px 12px; height: 200px; }
+.variante-img { margin: 10px 12px; height: auto; }
+.variante-img img { width: 100%; height: auto; display: block; border-radius: 4px; }
 .variante-footer {
   padding: 8px 12px 12px;
   font-size: 11px;
@@ -1305,7 +1306,7 @@ footer span { color: var(--accent); }
   .rock-layout { grid-template-columns: 1fr; }
   .rock-img { height: 190px; }
   .variantes-grid.cols3, .variantes-grid.cols2 { grid-template-columns: 1fr; }
-  .variante-img { height: 150px; }
+  .variante-img { height: auto; }
   .rock-key { width: 90px; font-size: 11px; padding: 8px 10px; }
   .rock-val { font-size: 11px; padding: 8px 10px; }
 }
@@ -2930,17 +2931,17 @@ footer span { color: var(--accent); }
     <div class="variantes-grid cols3">
       <div class="variante-card">
         <div class="variante-header" style="background: var(--teal);">Variante 1</div>
-        <div class="variante-img"><img src="images/Rockpassa/water.png" alt="Water Variante 1" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="variante-img"><img src="images/Rockpassa/water.png" alt="Water Variante 1" style="width:100%;height:auto;display:block;"></div>
         <div class="variante-footer">Ombres : variable — À adapter selon vos hunters disponibles</div>
       </div>
       <div class="variante-card">
         <div class="variante-header" style="background: var(--accent2);">Variante 2</div>
-        <div class="variante-img"><img src="images/Rockpassa/water 2.png" alt="Water Variante 2" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="variante-img"><img src="images/Rockpassa/water 2.png" alt="Water Variante 2" style="width:100%;height:auto;display:block;"></div>
         <div class="variante-footer">Ombres : variable — À adapter selon vos hunters disponibles</div>
       </div>
       <div class="variante-card">
         <div class="variante-header" style="background: var(--accent);">Variante 3</div>
-        <div class="variante-img"><img src="images/Rockpassa/water 3.png" alt="Water Variante 3" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="variante-img"><img src="images/Rockpassa/water 3.png" alt="Water Variante 3" style="width:100%;height:auto;display:block;"></div>
         <div class="variante-footer">Ombres : variable — À adapter selon vos hunters disponibles</div>
       </div>
     </div>
@@ -2950,12 +2951,12 @@ footer span { color: var(--accent); }
     <div class="variantes-grid cols2">
       <div class="variante-card">
         <div class="variante-header" style="background: var(--green); color:#0a1a14;">Variante 1</div>
-        <div class="variante-img"><img src="images/Rockpassa/wind 1.png" alt="Wind Variante 1" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="variante-img"><img src="images/Rockpassa/wind 1.png" alt="Wind Variante 1" style="width:100%;height:auto;display:block;"></div>
         <div class="variante-footer">Ombres : variable</div>
       </div>
       <div class="variante-card">
         <div class="variante-header" style="background: var(--green); color:#0a1a14;">Variante 2</div>
-        <div class="variante-img"><img src="images/Rockpassa/wind 2.png" alt="Wind Variante 2" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="variante-img"><img src="images/Rockpassa/wind 2.png" alt="Wind Variante 2" style="width:100%;height:auto;display:block;"></div>
         <div class="variante-footer">Ombres : variable</div>
       </div>
     </div>
