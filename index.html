@@ -710,10 +710,9 @@ body {
 .gemmes-img-square {
   aspect-ratio: 1 / 1;
   flex-shrink: 0;
-  height: 100%;
-  width: auto;
+  width: 52%;
 }
-.sung-note { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.sung-note { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center; }
 .gemmes-img-full {
   width: 100%;
   height: 340px;
@@ -1126,12 +1125,28 @@ footer span { color: var(--accent); }
 .sidebar-overlay.active { display: block; }
 
 /* ═══════════════════════════════════════════════
-   RESPONSIVE — TABLET (≤ 1100px)
+   RESPONSIVE — TABLET LARGE (≤ 1100px)
 ═══════════════════════════════════════════════ */
 @media (max-width: 1100px) {
   .artefacts-grid { grid-template-columns: repeat(3, 1fr); }
   .variantes-grid.cols3 { grid-template-columns: repeat(2, 1fr); }
   #artefacts .stuff-grid { grid-template-columns: repeat(2, 1fr); }
+  .element-layout { grid-template-columns: 1fr; }
+  .coop-layout { grid-template-columns: 1fr; }
+  .rock-layout { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE — TABLET (≤ 900px)
+═══════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .gemmes-layout { grid-template-columns: 1fr; }
+  .gemmes-right { flex-direction: row; height: auto; }
+  .gemmes-img-square { width: 45%; }
+  .noyaux-top-row { grid-template-columns: 1fr; }
+  #artefacts .stuff-grid { grid-template-columns: 1fr; }
+  .variantes-grid.cols3 { grid-template-columns: 1fr; }
+  .variantes-grid.cols2 { grid-template-columns: 1fr 1fr; }
 }
 
 /* ═══════════════════════════════════════════════
@@ -1148,8 +1163,6 @@ footer span { color: var(--accent); }
   .main-content { margin-left: 64px; }
   .section, .section-full, .element-section { padding: 40px 24px; }
   .page-section { flex: none; min-height: auto; }
-  .element-layout { grid-template-columns: 1fr; }
-  .noyaux-top-row { grid-template-columns: 1fr; }
   #artefacts .col-body { grid-template-columns: 1fr; }
 }
 
@@ -1234,7 +1247,9 @@ footer span { color: var(--accent); }
 
   /* Gemmes */
   .gemmes-layout { grid-template-columns: 1fr; }
-  .gemmes-img-full { height: 220px; margin-top: 14px; }
+  .gemmes-right { flex-direction: column; height: auto; }
+  .gemmes-img-square { width: 100%; aspect-ratio: 1/1; }
+  .gemmes-img-full { height: 200px; margin-top: 12px; }
   .gemme-icon { width: 44px; font-size: 16px; }
 
   /* Ombres */
