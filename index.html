@@ -989,7 +989,11 @@ body {
   border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid rgba(255,255,255,0.07);
+  display: flex;
+  flex-direction: column;
 }
+.variante-img { flex: 1; }
+.variante-footer { margin-top: auto; }
 .variante-header {
   padding: 10px 14px;
   font-size: 12px;
@@ -2987,14 +2991,11 @@ footer span { color: var(--accent); }
         <div class="rock-row"><div class="rock-key">Noyau</div><div class="rock-val">À compléter</div></div>
         <div class="rock-row"><div class="rock-key">Boss concernés</div><div class="rock-val">Premier boss + Dernier boss</div></div>
       </div>
-      <div style="display:flex; flex-direction:column; gap:8px;">
-        <p style="font-size:13px; color:var(--gray); font-style:italic; margin:0;">ℹ️ Sung se jouera la plupart du temps en full Intelligence — Sauf exception suivant les bénédictions.</p>
-        <div class="rock-img"><img src="images/BOT/SUNG BOT.png" alt="Sung BOT" style="width:100%;height:100%;object-fit:contain;"></div>
-      </div>
+      <div class="rock-img img-placeholder">[ Screenshot build Boss 1 &amp; 3 ]</div>
     </div>
 
     <!-- Boss 2 -->
-    <h3 style="font-size:15px; color:var(--white); margin: 36px 0 14px; font-weight:700;">Boss 2 — À compléter</h3>
+    <h3 style="font-size:15px; color:var(--white); margin: 36px 0 14px; font-weight:700;">Boss 2 — Ce qui est mandatory à up !</h3>
     <div class="variantes-grid cols3">
       <div class="variante-card">
         <div class="variante-header" style="background: var(--teal);">Variante 1</div>
@@ -3041,54 +3042,51 @@ footer span { color: var(--accent); }
       <span class="badge badge-red">KF / Avancé</span>
     </div>
 
-    <!-- Boss 1 & 3 -->
-    <h3 style="font-size:15px; color:var(--white); margin-bottom:14px; font-weight:700;">Boss 1 &amp; 3</h3>
-    <div class="rock-warning">⚠️ À compléter — informations sur les boss 1 &amp; 3 de Battle field of time</div>
-    <div class="rock-layout">
-      <div class="rock-table">
-        <h4>Build recommandé</h4>
-        <div class="rock-row"><div class="rock-key">Contenu</div><div class="rock-val">À compléter</div></div>
-        <div class="rock-row"><div class="rock-key">Avec</div><div class="rock-val">À compléter</div></div>
-        <div class="rock-row"><div class="rock-key">Ombres</div><div class="rock-val">À compléter</div></div>
-        <div class="rock-row"><div class="rock-key">Stat clé</div><div class="rock-val">À compléter</div></div>
-        <div class="rock-row"><div class="rock-key">Noyau</div><div class="rock-val">À compléter</div></div>
-        <div class="rock-row"><div class="rock-key">Boss concernés</div><div class="rock-val">Premier boss + Dernier boss</div></div>
+    <div class="rock-warning">⚠️ Le BOT (Battlefield of Time) est un contenu où l'on doit aller le plus vite possible. Nous vous expliquons ici ce qu'il faut, ou ne faut pas, pour faire ce contenu.</div>
+    <div style="display:flex; flex-direction:column; gap:8px;">
+      <p style="font-size:13px; color:var(--gray); font-style:italic; margin:0;">ℹ️ Sung se jouera la plupart du temps en full Intelligence — Sauf exception suivant les bénédictions.</p>
+      <div style="display:flex; gap:12px;">
+        <div class="rock-img" style="flex:1;"><img src="images/BOT/SUNG BOT.png" alt="Sung BOT" style="width:100%;height:100%;object-fit:contain;"></div>
+        <div class="rock-img" style="flex:2;"><img src="images/BOT/BOT.png" alt="BOT" style="width:100%;height:100%;object-fit:contain;"></div>
       </div>
-      <div class="rock-img img-placeholder">[ Screenshot build Boss 1 &amp; 3 ]</div>
     </div>
 
     <!-- Boss 2 -->
-    <h3 style="font-size:15px; color:var(--white); margin: 36px 0 14px; font-weight:700;">Boss 2 — À compléter</h3>
+    <h3 style="font-size:15px; color:var(--white); margin: 36px 0 14px; font-weight:700;">Ce qui compte réellement en Battle Field Of Time</h3>
     <div class="variantes-grid cols3">
       <div class="variante-card">
-        <div class="variante-header" style="background: var(--teal);">Variante 1</div>
-        <div class="variante-img img-placeholder">[ Screenshot Variante 1 ]</div>
-        <div class="variante-footer">Jouer Myro ou les Puissances Rémanentes selon qui vous apporte le plus de BP</div>
+        <div class="variante-header" style="background: var(--teal);">Conseil N°1</div>
+        <div class="variante-img" style="display:flex; flex-direction:column; gap:6px; padding:8px;">
+          <img src="images/BOT/Skill arme.png" alt="Skill arme" style="width:100%; object-fit:contain;">
+          <img src="images/BOT/Niveau arne.png" alt="Niveau arme" style="width:100%; object-fit:contain;">
+        </div>
+        <div class="variante-footer" style="color:var(--gold);">Le niveau de vos armes ne COMPTE PAS, alors que vos doublons jusqu'à la C10 et le niveau de vos skills comptent</div>
       </div>
       <div class="variante-card">
-        <div class="variante-header" style="background: var(--accent2);">Variante 2</div>
-        <div class="variante-img img-placeholder">[ Screenshot Variante 2 ]</div>
-        <div class="variante-footer">Jouer Myro ou les Puissances Rémanentes selon qui vous apporte le plus de BP</div>
+        <div class="variante-header" style="background: var(--accent2);">Conseil N°2</div>
+        <div class="variante-img"><img src="images/BOT/Stuff BOT.png" alt="Stuff BOT" style="width:100%;height:100%;object-fit:contain;"></div>
+        <div class="variante-footer" style="color:var(--gold);">Le niveau de vos artefacts ne compte pas, avoir le bon ensemble suffira</div>
       </div>
       <div class="variante-card">
-        <div class="variante-header" style="background: var(--accent);">Variante 3</div>
-        <div class="variante-img img-placeholder">[ Screenshot Variante 3 ]</div>
-        <div class="variante-footer">Jouer Myro ou les Puissances Rémanentes selon qui vous apporte le plus de BP</div>
+        <div class="variante-header" style="background: var(--accent);">Conseil N°3</div>
+        <div class="variante-img"><img src="images/BOT/ombre Bot.png" alt="Ombres BOT" style="width:100%;height:100%;object-fit:contain;"></div>
+        <div class="variante-footer" style="color:var(--gold);">Les ombres sont TRÈS importantes pour leur passif, choisissez-les avec la plus grande attention</div>
       </div>
     </div>
 
-    <!-- Dernier boss -->
-    <h3 style="font-size:15px; color:var(--white); margin: 36px 0 14px; font-weight:700;">Dernier Boss — À compléter</h3>
     <div class="variantes-grid cols2">
       <div class="variante-card">
-        <div class="variante-header" style="background: var(--green); color:#0a1a14;">Variante 1</div>
-        <div class="variante-img img-placeholder">[ Screenshot Variante 1 ]</div>
-        <div class="variante-footer">Jouer Myro ou les Puissances Rémanentes selon qui vous apporte le plus de BP</div>
+        <div class="variante-header" style="background: var(--green); color:#0a1a14;">Conseil N°4</div>
+        <div class="variante-img"><img src="images/BOT/power BOT.png" alt="Power BOT" style="width:100%;height:100%;object-fit:contain;"></div>
+        <div class="variante-footer" style="color:var(--gold);">Montez au maximum votre Puissance Rémanente, notamment via Rockpassa, étant donné qu'elle vous permettra de one-shot certains boss</div>
       </div>
       <div class="variante-card">
-        <div class="variante-header" style="background: var(--green); color:#0a1a14;">Variante 2</div>
-        <div class="variante-img img-placeholder">[ Screenshot Variante 2 ]</div>
-        <div class="variante-footer">Jouer Myro ou les Puissances Rémanentes selon qui vous apporte le plus de BP</div>
+        <div class="variante-header" style="background: var(--green); color:#0a1a14;">Conseil N°5</div>
+        <div class="variante-img" style="display:flex; flex-direction:row; gap:6px; padding:8px; height:100%; max-height:400px;">
+          <img src="images/BOT/Kanae Bot.png" alt="Kanae BOT" style="flex:1; width:0; height:100%; object-fit:contain;">
+          <img src="images/BOT/skills bot.png" alt="Skills BOT" style="flex:1; width:0; height:100%; object-fit:contain;">
+        </div>
+        <div class="variante-footer" style="color:var(--gold);">Les skills et les doublons de hunters comptent également — assurez-vous que tout est au maximum avant de lancer vos runs</div>
       </div>
     </div>
 
