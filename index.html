@@ -719,7 +719,7 @@ body {
 .gemmes-img-full {
   width: 75%;
   height: auto;
-  margin: 20px auto 0;
+  margin: 12px 0 0;
   display: block;
 }
 .sung-note {
@@ -2112,7 +2112,18 @@ footer span { color: var(--accent); }
         </div>
       </div>
     </div>
-    <img class="gemmes-img-full" src="images/Gemmes/screenshot gemmes.png" alt="Screenshot gemmes">
+    <div class="el-tabs" style="margin-top: 20px;">
+      <div class="el-tab-btns">
+        <button class="el-tab-btn active" onclick="elTab(this,'gemmes-visuel')">Visuel Gemmes</button>
+        <button class="el-tab-btn" onclick="elTab(this,'gemmes-stats')">Stats Gemmes</button>
+      </div>
+      <div class="el-tab-panel active" data-tab="gemmes-visuel">
+        <img class="gemmes-img-full" src="images/Gemmes/screenshot gemmes.png" alt="Screenshot gemmes">
+      </div>
+      <div class="el-tab-panel" data-tab="gemmes-stats">
+        <div class="gemmes-img-full img-placeholder">[ Screenshot Stats Gemmes ]</div>
+      </div>
+    </div>
   </div>
 </section>
 
