@@ -964,13 +964,13 @@ footer span { color: var(--accent); }
 /* ═══════════════════════════════════════════════
    STUFF PARFAIT
 ═══════════════════════════════════════════════ */
-#stuff .stuff-grid {
+#artefacts .stuff-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 14px;
 }
-#stuff .col { border-radius: 12px; overflow: hidden; background: var(--bg2); }
-#stuff .col-header {
+#artefacts .col { border-radius: 12px; overflow: hidden; background: var(--bg2); }
+#artefacts .col-header {
   padding: 11px 14px;
   text-align: center;
   font-size: 13px;
@@ -983,28 +983,28 @@ footer span { color: var(--accent); }
   justify-content: center;
   gap: 8px;
 }
-#stuff .col-header .ico { font-size: 16px; }
-#stuff .col.atk .col-header { background: #c93a3a; }
-#stuff .col.def .col-header { background: #2a9d5c; }
-#stuff .col.pv  .col-header { background: #2472b0; }
-#stuff .col.sung .col-header { background: #7c3aed; }
-#stuff .col.atk  { border: 1px solid #c93a3a44; }
-#stuff .col.def  { border: 1px solid #2a9d5c44; }
-#stuff .col.pv   { border: 1px solid #2472b044; }
-#stuff .col.sung { border: 1px solid #7c3aed44; }
-#stuff .col-body {
+#artefacts .col-header .ico { font-size: 16px; }
+#artefacts .col.atk .col-header { background: #c93a3a; }
+#artefacts .col.def .col-header { background: #2a9d5c; }
+#artefacts .col.pv  .col-header { background: #2472b0; }
+#artefacts .col.sung .col-header { background: #7c3aed; }
+#artefacts .col.atk  { border: 1px solid #c93a3a44; }
+#artefacts .col.def  { border: 1px solid #2a9d5c44; }
+#artefacts .col.pv   { border: 1px solid #2472b044; }
+#artefacts .col.sung { border: 1px solid #7c3aed44; }
+#artefacts .col-body {
   padding: 10px 10px 14px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 7px;
 }
-#stuff .slot {
+#artefacts .slot {
   background: var(--bg3);
   border-radius: 8px;
   padding: 8px 9px 9px;
   border: 1px solid rgba(255,255,255,0.05);
 }
-#stuff .slot-name {
+#artefacts .slot-name {
   display: inline-block;
   font-size: 10px;
   font-weight: 700;
@@ -1014,14 +1014,14 @@ footer span { color: var(--accent); }
   border-radius: 4px;
   margin-bottom: 5px;
 }
-#stuff .sn-red    { background: #3a1414; color: #f08080; }
-#stuff .sn-green  { background: #0d2a18; color: #5eda9a; }
-#stuff .sn-orange { background: #2a1a0a; color: #e8a06a; }
-#stuff .sn-yellow { background: #2a2010; color: #e8c84a; }
-#stuff .sn-teal   { background: #0a2523; color: #2dd4bf; }
-#stuff .sn-purple { background: #20103a; color: #c47bff; }
-#stuff .sn-blue   { background: #0d1f38; color: #6ab8f0; }
-#stuff .stat {
+#artefacts .sn-red    { background: #3a1414; color: #f08080; }
+#artefacts .sn-green  { background: #0d2a18; color: #5eda9a; }
+#artefacts .sn-orange { background: #2a1a0a; color: #e8a06a; }
+#artefacts .sn-yellow { background: #2a2010; color: #e8c84a; }
+#artefacts .sn-teal   { background: #0a2523; color: #2dd4bf; }
+#artefacts .sn-purple { background: #20103a; color: #c47bff; }
+#artefacts .sn-blue   { background: #0d1f38; color: #6ab8f0; }
+#artefacts .stat {
   display: inline-block;
   font-size: 10px;
   font-weight: 800;
@@ -1031,15 +1031,15 @@ footer span { color: var(--accent); }
   text-transform: uppercase;
   letter-spacing: 0.3px;
 }
-#stuff .s-red    { background: #b83232; color: #fff; }
-#stuff .s-green  { background: #1f8a4f; color: #fff; }
-#stuff .s-blue   { background: #1a6faa; color: #fff; }
-#stuff .s-yellow { background: #a07a10; color: #fff; }
-#stuff .s-teal   { background: #0f7a7a; color: #fff; }
-#stuff .s-orange { background: #a05020; color: #fff; }
-#stuff .s-purple { background: #6020b0; color: #fff; }
-#stuff ul { list-style: none; padding: 0; }
-#stuff ul li {
+#artefacts .s-red    { background: #b83232; color: #fff; }
+#artefacts .s-green  { background: #1f8a4f; color: #fff; }
+#artefacts .s-blue   { background: #1a6faa; color: #fff; }
+#artefacts .s-yellow { background: #a07a10; color: #fff; }
+#artefacts .s-teal   { background: #0f7a7a; color: #fff; }
+#artefacts .s-orange { background: #a05020; color: #fff; }
+#artefacts .s-purple { background: #6020b0; color: #fff; }
+#artefacts ul { list-style: none; padding: 0; }
+#artefacts ul li {
   font-size: 11px;
   color: var(--gray);
   line-height: 1.55;
@@ -1047,14 +1047,14 @@ footer span { color: var(--accent); }
   align-items: flex-start;
   gap: 4px;
 }
-#stuff ul li::before { content: "›"; color: #444466; flex-shrink: 0; }
-#stuff ul li .i { margin-right: 1px; font-size: 11px; }
-#stuff .i-atk  { color: #f08080; }
-#stuff .i-tc   { color: #e8c84a; }
-#stuff .i-def  { color: #5eda9a; }
-#stuff .i-pv   { color: #f0a0a0; }
-#stuff .i-neut { color: #6060a0; }
-#stuff .stuff-note {
+#artefacts ul li::before { content: "›"; color: #444466; flex-shrink: 0; }
+#artefacts ul li .i { margin-right: 1px; font-size: 11px; }
+#artefacts .i-atk  { color: #f08080; }
+#artefacts .i-tc   { color: #e8c84a; }
+#artefacts .i-def  { color: #5eda9a; }
+#artefacts .i-pv   { color: #f0a0a0; }
+#artefacts .i-neut { color: #6060a0; }
+#artefacts .stuff-note {
   margin-top: 16px;
   background: var(--bg3);
   border-left: 3px solid var(--gold);
@@ -1065,8 +1065,8 @@ footer span { color: var(--accent); }
   line-height: 1.7;
   text-align: center;
 }
-#stuff .stuff-note strong { color: var(--text); }
-#stuff .stuff-note em { color: #c47bff; font-style: normal; }
+#artefacts .stuff-note strong { color: var(--text); }
+#artefacts .stuff-note em { color: #c47bff; font-style: normal; }
 
 /* ═══════════════════════════════════════════════
    HAMBURGER BUTTON
@@ -1115,7 +1115,7 @@ footer span { color: var(--accent); }
 @media (max-width: 1100px) {
   .artefacts-grid { grid-template-columns: repeat(3, 1fr); }
   .variantes-grid.cols3 { grid-template-columns: repeat(2, 1fr); }
-  #stuff .stuff-grid { grid-template-columns: repeat(2, 1fr); }
+  #artefacts .stuff-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ═══════════════════════════════════════════════
@@ -1134,7 +1134,7 @@ footer span { color: var(--accent); }
   .page-section { flex: none; min-height: auto; }
   .element-layout { grid-template-columns: 1fr; }
   .noyaux-top-row { grid-template-columns: 1fr; }
-  #stuff .col-body { grid-template-columns: 1fr; }
+  #artefacts .col-body { grid-template-columns: 1fr; }
 }
 
 /* ═══════════════════════════════════════════════
@@ -1195,8 +1195,8 @@ footer span { color: var(--accent); }
   .artefact-img { min-height: 110px; }
 
   /* Stuff parfait */
-  #stuff .stuff-grid { grid-template-columns: 1fr; }
-  #stuff .col-body { grid-template-columns: 1fr; }
+  #artefacts .stuff-grid { grid-template-columns: 1fr; }
+  #artefacts .col-body { grid-template-columns: 1fr; }
 
   /* Noyaux */
   .noyaux-frame { padding: 12px; }
@@ -1258,8 +1258,7 @@ footer span { color: var(--accent); }
     <a class="sidebar-item active" onclick="showSection('accueil',this)"><span class="sidebar-icon">🏠</span><span>Accueil</span></a>
     <div class="sidebar-sep"></div>
     <div class="sidebar-label">Équipement</div>
-    <a class="sidebar-item" onclick="showSection('artefacts',this)"><span class="sidebar-icon">💎</span><span>Artefacts</span></a>
-    <a class="sidebar-item" onclick="showSection('stuff',this)"><span class="sidebar-icon">⚔</span><span>Stuff Parfait</span></a>
+    <a class="sidebar-item" onclick="showSection('artefacts',this)"><span class="sidebar-icon">💎</span><span>Artefacts & Stuff</span></a>
     <a class="sidebar-item" onclick="showSection('noyaux',this)"><span class="sidebar-icon">🔮</span><span>Noyaux</span></a>
     <div class="sidebar-sep"></div>
     <div class="sidebar-label">Gameplay</div>
@@ -1304,7 +1303,7 @@ footer span { color: var(--accent); }
       <div class="accueil-card-title">Artefacts</div>
       <div class="accueil-card-desc">Emplacements, stats et priorités d'artefacts</div>
     </div>
-    <div class="accueil-card" onclick="showSection('stuff','stuff')">
+    <div class="accueil-card" onclick="showSection('artefacts','artefacts')">
       <div class="accueil-card-icon">⚔</div>
       <div class="accueil-card-title">Stuff Parfait</div>
       <div class="accueil-card-desc">Substats optimales par rôle de hunter</div>
@@ -1425,15 +1424,8 @@ footer span { color: var(--accent); }
         <div class="artefact-note">Nom des artefacts à compléter</div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ══════════════════════════════════════════════
-     STUFF PARFAIT
-══════════════════════════════════════════════ -->
-<section id="stuff" class="page-section">
-  <div class="section">
-    <div class="section-header teal">
+    <div class="section-header teal" style="margin-top: 48px;">
       <h2 class="section-title teal">Partie 1 — Stuff Parfait</h2>
       <span class="badge badge-teal">Équipement</span>
     </div>
@@ -2443,7 +2435,7 @@ footer span { color: var(--accent); }
 </div><!-- /.main-content -->
 
 <script>
-const ALL_SECTIONS = ['accueil', 'artefacts', 'stuff', 'noyaux', 'team', 'gemmes', 'ombres', 'coop', 'rockpassa'];
+const ALL_SECTIONS = ['accueil', 'artefacts', 'noyaux', 'team', 'gemmes', 'ombres', 'coop', 'rockpassa'];
 
 function showSection(id, btnOrId) {
   ALL_SECTIONS.forEach(sid => {
@@ -2485,7 +2477,7 @@ function closeSidebar() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  ['artefacts', 'stuff', 'noyaux', 'team', 'gemmes', 'ombres', 'coop', 'rockpassa'].forEach(sid => {
+  ['artefacts', 'noyaux', 'team', 'gemmes', 'ombres', 'coop', 'rockpassa'].forEach(sid => {
     const el = document.getElementById(sid);
     if (el) el.style.display = 'none';
   });
