@@ -575,7 +575,7 @@ body {
   background: var(--bg2);
   border-left: 5px solid;
 }
-.element-emoji { font-size: 28px; }
+.element-emoji { width: 32px; height: 32px; object-fit: contain; }
 .element-name {
   font-size: 22px;
   font-weight: 900;
@@ -846,6 +846,7 @@ body {
 .coop-box-row.t-a .coop-box-gnum { color: var(--accent); opacity: 0.7; }
 .coop-box-row.low { border-left: 3px solid rgba(255,255,255,0.07); }
 /* Onglets éléments — mêmes couleurs que la section Team */
+.elem-tab-icon { width: 16px; height: 16px; object-fit: contain; vertical-align: middle; margin-right: 4px; }
 .el-tab-btn.elem-fire.active  { background: var(--fire);     border-color: var(--fire);     color: #fff; }
 .el-tab-btn.elem-water.active { background: var(--water);    border-color: var(--water);    color: #0a1a1f; }
 .el-tab-btn.elem-wind.active  { background: var(--wind);     border-color: var(--wind);     color: #0a1a14; }
@@ -1257,7 +1258,7 @@ footer span { color: var(--accent); }
   .element-section { padding: 22px 16px; }
   .element-layout { grid-template-columns: 1fr; }
   .element-header { padding: 10px 14px; gap: 10px; }
-  .element-emoji { font-size: 22px; }
+  .element-emoji { width: 24px; height: 24px; }
   .element-name { font-size: 17px; letter-spacing: 2px; }
   .element-main-img { height: 240px; }
 
@@ -1907,7 +1908,7 @@ footer span { color: var(--accent); }
   <!-- WIND -->
   <div class="element-section el-wind" style="padding-top:0;">
     <div class="element-header">
-      <span class="element-emoji">🌀</span>
+      <img class="element-emoji" src="images/Icones/WIND.webp" alt="Vent">
       <span class="element-name">Wind</span>
     </div>
     <div class="element-layout">
@@ -1944,7 +1945,7 @@ footer span { color: var(--accent); }
   <!-- WATER -->
   <div class="element-section el-water" style="padding-top:20px;">
     <div class="element-header">
-      <span class="element-emoji">💧</span>
+      <img class="element-emoji" src="images/Icones/WATER.webp" alt="Eau">
       <span class="element-name">Water</span>
     </div>
     <div class="element-layout">
@@ -1981,7 +1982,7 @@ footer span { color: var(--accent); }
   <!-- DARK -->
   <div class="element-section el-dark" style="padding-top:20px;">
     <div class="element-header">
-      <span class="element-emoji">🌑</span>
+      <img class="element-emoji" src="images/Icones/DARK.webp" alt="Ténèbres">
       <span class="element-name">Dark</span>
     </div>
     <div class="element-layout">
@@ -2018,7 +2019,7 @@ footer span { color: var(--accent); }
   <!-- LIGHT -->
   <div class="element-section el-light" style="padding-top:20px;">
     <div class="element-header">
-      <span class="element-emoji">✨</span>
+      <img class="element-emoji" src="images/Icones/LIGHT.webp" alt="Lumière">
       <span class="element-name">Light</span>
     </div>
     <div class="element-layout">
@@ -2055,7 +2056,7 @@ footer span { color: var(--accent); }
   <!-- FIRE -->
   <div class="element-section el-fire" style="padding-top:20px;">
     <div class="element-header">
-      <span class="element-emoji">🔥</span>
+      <img class="element-emoji" src="images/Icones/FIRE.webp" alt="Feu">
       <span class="element-name">Fire</span>
     </div>
     <div class="element-layout">
@@ -2378,11 +2379,11 @@ footer span { color: var(--accent); }
     </div>
     <div class="el-tabs">
       <div class="el-tab-btns">
-        <button class="el-tab-btn elem-fire active" onclick="elTab(this,'coop-fire')">🔥 Feu</button>
-        <button class="el-tab-btn elem-water" onclick="elTab(this,'coop-water')">💧 Eau</button>
-        <button class="el-tab-btn elem-wind" onclick="elTab(this,'coop-wind')">🌀 Vent</button>
-        <button class="el-tab-btn elem-light" onclick="elTab(this,'coop-light')">✨ Lumière</button>
-        <button class="el-tab-btn elem-dark" onclick="elTab(this,'coop-dark')">🌑 Ténèbres</button>
+        <button class="el-tab-btn elem-fire active" onclick="elTab(this,'coop-fire')"><img src="images/Icones/FIRE.webp" class="elem-tab-icon" alt=""> Feu</button>
+        <button class="el-tab-btn elem-water" onclick="elTab(this,'coop-water')"><img src="images/Icones/WATER.webp" class="elem-tab-icon" alt=""> Eau</button>
+        <button class="el-tab-btn elem-wind" onclick="elTab(this,'coop-wind')"><img src="images/Icones/WIND.webp" class="elem-tab-icon" alt=""> Vent</button>
+        <button class="el-tab-btn elem-light" onclick="elTab(this,'coop-light')"><img src="images/Icones/LIGHT.webp" class="elem-tab-icon" alt=""> Lumière</button>
+        <button class="el-tab-btn elem-dark" onclick="elTab(this,'coop-dark')"><img src="images/Icones/DARK.webp" class="elem-tab-icon" alt=""> Ténèbres</button>
       </div>
       <div class="el-tab-panel active" data-tab="coop-fire">
         <img class="coop-img" src="images/Coop/Coop fire.png" alt="Coop Feu">
