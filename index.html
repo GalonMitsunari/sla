@@ -1047,36 +1047,184 @@ footer span { color: var(--accent); }
 #stuff .stuff-note em { color: #c47bff; font-style: normal; }
 
 /* ═══════════════════════════════════════════════
-   RESPONSIVE
+   HAMBURGER BUTTON
+═══════════════════════════════════════════════ */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 290;
+  width: 42px;
+  height: 42px;
+  background: var(--bg2);
+  border: 1px solid rgba(123,97,255,0.4);
+  border-radius: 8px;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 0;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+.hamburger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: all 0.2s;
+  pointer-events: none;
+}
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  z-index: 195;
+  backdrop-filter: blur(2px);
+}
+.sidebar-overlay.active { display: block; }
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE — TABLET (≤ 1100px)
 ═══════════════════════════════════════════════ */
 @media (max-width: 1100px) {
   .artefacts-grid { grid-template-columns: repeat(3, 1fr); }
   .variantes-grid.cols3 { grid-template-columns: repeat(2, 1fr); }
   #stuff .stuff-grid { grid-template-columns: repeat(2, 1fr); }
 }
-@media (max-width: 800px) {
-  .sidebar { width: 56px; }
-  .sidebar-logo { padding: 16px 0; text-align: center; letter-spacing: 0; font-size: 16px; }
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE — SIDEBAR ICONES (≤ 860px)
+═══════════════════════════════════════════════ */
+@media (max-width: 860px) {
+  .sidebar { width: 64px; }
+  .sidebar-logo { padding: 16px 0; text-align: center; }
+  .sidebar-logo-title { font-size: 16px; letter-spacing: 2px; }
   .sidebar-logo small { display: none; }
-  .sidebar-item span { display: none; }
-  .sidebar-item { padding: 12px 0; justify-content: center; }
-  .main-content { margin-left: 56px; }
-  .section, .section-full, .element-section { padding: 40px 20px; }
+  .sidebar-label, .sidebar-sep, .sidebar-footer { display: none; }
+  .sidebar-item { padding: 13px 0; justify-content: center; }
+  .sidebar-item > span:not(.sidebar-icon) { display: none; }
+  .main-content { margin-left: 64px; }
+  .section, .section-full, .element-section { padding: 40px 24px; }
   .page-section { flex: none; min-height: auto; }
-  .sommaire-grid { grid-template-columns: 1fr; }
-  .noyaux-list { grid-template-columns: 1fr; }
-  .gemmes-layout, .coop-layout, .rock-layout { grid-template-columns: 1fr; }
   .element-layout { grid-template-columns: 1fr; }
-  .ombres-grid { grid-template-columns: 1fr; }
-  .artefacts-grid { grid-template-columns: repeat(2, 1fr); }
-  #accueil { padding: 60px 30px; }
-  .cover-title { font-size: 44px; }
+  .noyaux-top-row { grid-template-columns: 1fr; }
+  #stuff .col-body { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE — MOBILE (≤ 600px)
+═══════════════════════════════════════════════ */
+@media (max-width: 600px) {
+  /* Hamburger visible, sidebar masquée par défaut */
+  .hamburger { display: flex; }
+  .sidebar {
+    width: 240px;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    z-index: 300;
+  }
+  .sidebar.open { transform: translateX(0); }
+  /* Rétablir le sidebar plein sur mobile (annule les règles 860px) */
+  .sidebar-logo { padding: 24px 20px 16px; text-align: left; }
+  .sidebar-logo-title { font-size: 22px; letter-spacing: 4px; }
+  .sidebar-logo small { display: block; }
+  .sidebar-label { display: block; }
+  .sidebar-sep { display: block; }
+  .sidebar-footer { display: block; }
+  .sidebar-item { padding: 12px 20px; justify-content: flex-start; }
+  .sidebar-item > span:not(.sidebar-icon) { display: inline; }
+
+  /* Layout de base */
+  .main-content { margin-left: 0; padding-top: 58px; }
+  .section, .section-full, .element-section { padding: 22px 16px; }
+  .page-section { flex: none; min-height: auto; }
+  footer { padding: 14px 16px; font-size: 11px; }
+
+  /* Accueil cover */
+  #accueil { padding: 36px 20px 28px; min-height: 35vh; }
+  .cover-label { font-size: 10px; letter-spacing: 3px; }
+  .cover-title { font-size: 36px; }
+  .cover-game { font-size: 13px; letter-spacing: 1px; margin-bottom: 18px; }
+  .cover-divider { margin-bottom: 10px; }
+  .cover-badge { display: none; }
+  .accueil-body { padding: 20px 16px 28px; }
+  .accueil-welcome h2 { font-size: 20px; }
+  .accueil-cards { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .accueil-card { padding: 14px 10px; }
+  .accueil-card-icon { font-size: 20px; margin-bottom: 6px; }
+  .accueil-card-title { font-size: 11px; }
+  .accueil-card-desc { display: none; }
+
+  /* En-têtes de section */
+  .section-header { flex-direction: column; align-items: flex-start; gap: 8px; padding-bottom: 10px; }
+  .section-title { font-size: 14px; letter-spacing: 1px; }
+  .section-title::before { height: 18px; }
+  .badge { font-size: 9px; padding: 3px 9px; }
+
+  /* Sommaire */
+  .sommaire-grid { grid-template-columns: 1fr; gap: 10px; }
+
+  /* Artefacts */
+  .artefacts-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .artefact-img { min-height: 110px; }
+
+  /* Stuff parfait */
   #stuff .stuff-grid { grid-template-columns: 1fr; }
-  .accueil-body { padding: 30px 20px; }
+  #stuff .col-body { grid-template-columns: 1fr; }
+
+  /* Noyaux */
+  .noyaux-frame { padding: 12px; }
+  .noyaux-top-row { grid-template-columns: 1fr; }
+  .noyau-content { padding: 12px 12px; }
+  .noyau-title { font-size: 14px; }
+  .noyau-stats li { padding: 5px 0; gap: 8px; }
+  .noyau-stat-img { width: 36px; height: 36px; }
+  .noyau-stat-effect { font-size: 12px; }
+  .noyau-stat-hunter { font-size: 11px; }
+
+  /* Team Building */
+  .element-section { padding: 22px 16px; }
+  .element-layout { grid-template-columns: 1fr; }
+  .element-header { padding: 10px 14px; gap: 10px; }
+  .element-emoji { font-size: 22px; }
+  .element-name { font-size: 17px; letter-spacing: 2px; }
+  .element-main-img { height: 240px; }
+
+  /* Gemmes */
+  .gemmes-layout { grid-template-columns: 1fr; }
+  .gemmes-img { height: 190px; }
+  .gemme-icon { width: 44px; font-size: 16px; }
+
+  /* Ombres */
+  .ombres-grid { grid-template-columns: 1fr; }
+  .ombre-name-block { width: 72px; }
+
+  /* Coop */
+  .coop-layout { grid-template-columns: 1fr; }
+  .coop-img { height: 200px; }
+  .priority-grid { grid-template-columns: 1fr 1fr; gap: 5px; }
+
+  /* Rockpassa */
+  .rock-layout { grid-template-columns: 1fr; }
+  .rock-img { height: 190px; }
+  .variantes-grid.cols3, .variantes-grid.cols2 { grid-template-columns: 1fr; }
+  .variante-img { height: 150px; }
+  .rock-key { width: 90px; font-size: 11px; padding: 8px 10px; }
+  .rock-val { font-size: 11px; padding: 8px 10px; }
 }
 </style>
 </head>
 <body>
+
+<!-- HAMBURGER (mobile) -->
+<button class="hamburger" onclick="toggleSidebar()" aria-label="Menu">
+  <span></span><span></span><span></span>
+</button>
+<div class="sidebar-overlay" onclick="toggleSidebar()"></div>
 
 <!-- SIDEBAR -->
 <aside class="sidebar">
@@ -2285,16 +2433,13 @@ footer span { color: var(--accent); }
 const ALL_SECTIONS = ['accueil', 'sommaire', 'artefacts', 'stuff', 'noyaux', 'team', 'gemmes', 'ombres', 'coop', 'rockpassa'];
 
 function showSection(id, btnOrId) {
-  // Masquer toutes les sections
   ALL_SECTIONS.forEach(sid => {
     const el = document.getElementById(sid);
     if (el) el.style.display = 'none';
   });
-  // Toujours masquer accueil-body
   const ab = document.querySelector('.accueil-body');
   if (ab) ab.style.display = 'none';
 
-  // Afficher la section cible
   if (id === 'accueil') {
     document.getElementById('accueil').style.display = '';
     if (ab) ab.style.display = '';
@@ -2303,19 +2448,29 @@ function showSection(id, btnOrId) {
     if (el) el.style.display = '';
   }
 
-  // Mettre à jour l'item actif dans la sidebar
   document.querySelectorAll('.sidebar-item').forEach(b => b.classList.remove('active'));
   if (btnOrId && typeof btnOrId === 'string') {
-    // Appelé depuis une carte accueil avec l'id en string
     const sideBtn = document.querySelector('.sidebar-item[onclick*="' + btnOrId + '"]');
     if (sideBtn) sideBtn.classList.add('active');
   } else if (btnOrId && btnOrId.classList) {
     btnOrId.classList.add('active');
   }
+
+  // Fermer le menu mobile après navigation
+  closeSidebar();
   window.scrollTo(0, 0);
 }
 
-// Init : masquer toutes les sections sauf accueil
+function toggleSidebar() {
+  document.querySelector('.sidebar').classList.toggle('open');
+  document.querySelector('.sidebar-overlay').classList.toggle('active');
+}
+
+function closeSidebar() {
+  document.querySelector('.sidebar').classList.remove('open');
+  document.querySelector('.sidebar-overlay').classList.remove('active');
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   ['sommaire', 'artefacts', 'stuff', 'noyaux', 'team', 'gemmes', 'ombres', 'coop', 'rockpassa'].forEach(sid => {
     const el = document.getElementById(sid);
