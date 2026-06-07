@@ -661,7 +661,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  align-items: start;
+  align-items: stretch;
 }
 .gemmes-rules { display: flex; flex-direction: column; gap: 10px; }
 .gemme-rule {
@@ -700,10 +700,11 @@ body {
 .g4 .gemme-icon { background: var(--accent2); color: #fff; }
 .g4 .gemme-text strong { color: var(--accent2); }
 
-.gemmes-right { display: flex; flex-direction: column; gap: 14px; }
+.gemmes-right { display: flex; flex-direction: column; gap: 14px; height: 100%; }
 .gemmes-img-square {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  flex: 1;
+  min-height: 0;
 }
 .gemmes-img-full {
   width: 100%;
