@@ -701,8 +701,15 @@ body {
 .g4 .gemme-text strong { color: var(--accent2); }
 
 .gemmes-right { display: flex; flex-direction: column; gap: 14px; }
-.gemmes-imgs { display: flex; flex-direction: column; gap: 14px; }
-.gemmes-img { height: 280px; }
+.gemmes-img-square {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+.gemmes-img-full {
+  width: 100%;
+  height: 340px;
+  margin-top: 20px;
+}
 .sung-note {
   background: var(--bg3);
   border-radius: var(--radius);
@@ -1218,7 +1225,7 @@ footer span { color: var(--accent); }
 
   /* Gemmes */
   .gemmes-layout { grid-template-columns: 1fr; }
-  .gemmes-img { height: 190px; }
+  .gemmes-img-full { height: 220px; margin-top: 14px; }
   .gemme-icon { width: 44px; font-size: 16px; }
 
   /* Ombres */
@@ -2088,16 +2095,14 @@ footer span { color: var(--accent); }
         </div>
       </div>
       <div class="gemmes-right">
-        <div class="gemmes-imgs">
-          <div class="gemmes-img img-placeholder">[ Screenshot gemmes ]</div>
-          <div class="gemmes-img img-placeholder">[ Diagramme de Sung ]</div>
-        </div>
+        <div class="gemmes-img-square img-placeholder">[ Diagramme de Sung ]</div>
         <div class="sung-note">
           <h4>Diagramme de Sung</h4>
           <p>Une fois les gemmes placées, construire Sung tel qu'indiqué dans le diagramme ci-contre.</p>
         </div>
       </div>
     </div>
+    <div class="gemmes-img-full img-placeholder">[ Screenshot gemmes ]</div>
   </div>
 </section>
 
