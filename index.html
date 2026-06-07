@@ -1305,14 +1305,14 @@ footer span { color: var(--accent); }
     <div class="sidebar-label">Équipement</div>
     <a class="sidebar-item" onclick="showSection('artefacts',this)"><span class="sidebar-icon">💎</span><span>Artefacts & Stuff</span></a>
     <a class="sidebar-item" onclick="showSection('noyaux',this)"><span class="sidebar-icon">🔮</span><span>Noyaux</span></a>
-    <div class="sidebar-sep"></div>
-    <div class="sidebar-label">Gameplay</div>
-    <a class="sidebar-item" onclick="showSection('team',this)"><span class="sidebar-icon">👥</span><span>Team Building</span></a>
     <a class="sidebar-item" onclick="showSection('gemmes',this)"><span class="sidebar-icon">💠</span><span>Gemmes</span></a>
+    <a class="sidebar-item" onclick="showSection('coop',this)"><span class="sidebar-icon">🤝</span><span>Coop</span></a>
+    <div class="sidebar-sep"></div>
+    <div class="sidebar-label">Team building</div>
+    <a class="sidebar-item" onclick="showSection('team',this)"><span class="sidebar-icon">👥</span><span>Team</span></a>
     <a class="sidebar-item" onclick="showSection('ombres',this)"><span class="sidebar-icon">👤</span><span>Ombres</span></a>
     <div class="sidebar-sep"></div>
     <div class="sidebar-label">Contenus</div>
-    <a class="sidebar-item" onclick="showSection('coop',this)"><span class="sidebar-icon">🤝</span><span>Coop</span></a>
     <a class="sidebar-item" onclick="showSection('rockpassa',this)"><span class="sidebar-icon">🎯</span><span>Rockpassa</span></a>
     <a class="sidebar-item" onclick="showSection('legia',this)"><span class="sidebar-icon">⚔️</span><span>Legia</span></a>
   </nav>
@@ -1347,38 +1347,33 @@ footer span { color: var(--accent); }
   <div class="accueil-cards">
     <div class="accueil-card" onclick="showSection('artefacts','artefacts')">
       <div class="accueil-card-icon">💎</div>
-      <div class="accueil-card-title">Artefacts</div>
+      <div class="accueil-card-title">Artefacts & Stuff</div>
       <div class="accueil-card-desc">Emplacements, stats et priorités d'artefacts</div>
-    </div>
-    <div class="accueil-card" onclick="showSection('artefacts','artefacts')">
-      <div class="accueil-card-icon">⚔</div>
-      <div class="accueil-card-title">Stuff Parfait</div>
-      <div class="accueil-card-desc">Substats optimales par rôle de hunter</div>
     </div>
     <div class="accueil-card" onclick="showSection('noyaux','noyaux')">
       <div class="accueil-card-icon">🔮</div>
       <div class="accueil-card-title">Noyaux</div>
       <div class="accueil-card-desc">Effets et hunters recommandés pour chaque core</div>
     </div>
-    <div class="accueil-card" onclick="showSection('team','team')">
-      <div class="accueil-card-icon">👥</div>
-      <div class="accueil-card-title">Team Building</div>
-      <div class="accueil-card-desc">Compositions par élément et synergies</div>
-    </div>
     <div class="accueil-card" onclick="showSection('gemmes','gemmes')">
       <div class="accueil-card-icon">💠</div>
       <div class="accueil-card-title">Gemmes</div>
       <div class="accueil-card-desc">Tout savoir sur les gemmes et leur optimisation</div>
     </div>
+    <div class="accueil-card" onclick="showSection('coop','coop')">
+      <div class="accueil-card-icon">🤝</div>
+      <div class="accueil-card-title">Coop</div>
+      <div class="accueil-card-desc">Entraînement en coopération par élément</div>
+    </div>
+    <div class="accueil-card" onclick="showSection('team','team')">
+      <div class="accueil-card-icon">👥</div>
+      <div class="accueil-card-title">Team</div>
+      <div class="accueil-card-desc">Compositions par élément et synergies</div>
+    </div>
     <div class="accueil-card" onclick="showSection('ombres','ombres')">
       <div class="accueil-card-icon">👤</div>
       <div class="accueil-card-title">Ombres</div>
       <div class="accueil-card-desc">Passifs, armes et rôles de chaque ombre</div>
-    </div>
-    <div class="accueil-card" onclick="showSection('coop','coop')">
-      <div class="accueil-card-icon">🤝</div>
-      <div class="accueil-card-title">Coop</div>
-      <div class="accueil-card-desc">Stratégies pour le mode coopératif</div>
     </div>
     <div class="accueil-card" onclick="showSection('rockpassa','rockpassa')">
       <div class="accueil-card-icon">🎯</div>
@@ -1397,25 +1392,26 @@ footer span { color: var(--accent); }
     <div class="sommaire-card s1">
       <div class="sommaire-card-header">
         <div class="sommaire-num">01</div>
-        <div class="sommaire-card-title">L'essentiel de Solo Leveling Arise</div>
+        <div class="sommaire-card-title">Équipement</div>
       </div>
       <div class="sommaire-card-body">
         <ul>
-          <li>Système Artefacts &amp; Team Building</li>
+          <li>Artefacts &amp; Stuff Parfait</li>
           <li>Tout savoir sur les Noyaux</li>
+          <li>Tout savoir sur les Gemmes</li>
+          <li>Entraînement en Coopération</li>
         </ul>
       </div>
     </div>
     <div class="sommaire-card s2">
       <div class="sommaire-card-header">
         <div class="sommaire-num">02</div>
-        <div class="sommaire-card-title">Maximiser son Battle Power (BP)</div>
+        <div class="sommaire-card-title">Team Building</div>
       </div>
       <div class="sommaire-card-body">
         <ul>
+          <li>Compositions par Élément</li>
           <li>Tout savoir sur les Ombres</li>
-          <li>Tout savoir sur les Gemmes</li>
-          <li>L'entraînement en coopération</li>
         </ul>
       </div>
     </div>
