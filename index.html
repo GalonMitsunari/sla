@@ -1234,7 +1234,6 @@ footer span { color: var(--accent); }
   </div>
   <nav class="sidebar-nav">
     <a class="sidebar-item active" onclick="showSection('accueil',this)"><span class="sidebar-icon">🏠</span><span>Accueil</span></a>
-    <a class="sidebar-item" onclick="showSection('sommaire',this)"><span class="sidebar-icon">📋</span><span>Sommaire</span></a>
     <div class="sidebar-sep"></div>
     <div class="sidebar-label">Équipement</div>
     <a class="sidebar-item" onclick="showSection('artefacts',this)"><span class="sidebar-icon">💎</span><span>Artefacts</span></a>
@@ -1319,56 +1318,48 @@ footer span { color: var(--accent); }
       <div class="accueil-card-desc">Guides de boss et variantes de build</div>
     </div>
   </div>
-</div>
 
-<!-- ══════════════════════════════════════════════
-     SOMMAIRE
-══════════════════════════════════════════════ -->
-<section id="sommaire" class="page-section" style="background: var(--bg2);">
-  <div class="section">
-    <div class="section-header">
-      <h2 class="section-title accent">Sommaire</h2>
+  <div class="accueil-section-title" style="margin-top: 40px;">Plan du guide</div>
+  <div class="sommaire-grid">
+    <div class="sommaire-card s1">
+      <div class="sommaire-card-header">
+        <div class="sommaire-num">01</div>
+        <div class="sommaire-card-title">L'essentiel de Solo Leveling Arise</div>
+      </div>
+      <div class="sommaire-card-body">
+        <ul>
+          <li>Système Artefacts &amp; Team Building</li>
+          <li>Tout savoir sur les Noyaux</li>
+        </ul>
+      </div>
     </div>
-    <div class="sommaire-grid">
-      <div class="sommaire-card s1">
-        <div class="sommaire-card-header">
-          <div class="sommaire-num">01</div>
-          <div class="sommaire-card-title">L'essentiel de Solo Leveling Arise</div>
-        </div>
-        <div class="sommaire-card-body">
-          <ul>
-            <li>Système Artefacts &amp; Team Building</li>
-            <li>Tout savoir sur les Noyaux</li>
-          </ul>
-        </div>
+    <div class="sommaire-card s2">
+      <div class="sommaire-card-header">
+        <div class="sommaire-num">02</div>
+        <div class="sommaire-card-title">Maximiser son Battle Power (BP)</div>
       </div>
-      <div class="sommaire-card s2">
-        <div class="sommaire-card-header">
-          <div class="sommaire-num">02</div>
-          <div class="sommaire-card-title">Maximiser son Battle Power (BP)</div>
-        </div>
-        <div class="sommaire-card-body">
-          <ul>
-            <li>Tout savoir sur les Ombres</li>
-            <li>Tout savoir sur les Gemmes</li>
-            <li>L'entraînement en coopération</li>
-          </ul>
-        </div>
+      <div class="sommaire-card-body">
+        <ul>
+          <li>Tout savoir sur les Ombres</li>
+          <li>Tout savoir sur les Gemmes</li>
+          <li>L'entraînement en coopération</li>
+        </ul>
       </div>
-      <div class="sommaire-card s3">
-        <div class="sommaire-card-header">
-          <div class="sommaire-num">03</div>
-          <div class="sommaire-card-title">Contenus Avancés</div>
-        </div>
-        <div class="sommaire-card-body">
-          <ul>
-            <li>Comment foudroyer Rockpassa (KF)</li>
-          </ul>
-        </div>
+    </div>
+    <div class="sommaire-card s3">
+      <div class="sommaire-card-header">
+        <div class="sommaire-num">03</div>
+        <div class="sommaire-card-title">Contenus Avancés</div>
+      </div>
+      <div class="sommaire-card-body">
+        <ul>
+          <li>Comment foudroyer Rockpassa (KF)</li>
+        </ul>
       </div>
     </div>
   </div>
-</section>
+</div>
+
 
 <!-- ══════════════════════════════════════════════
      ARTEFACTS
@@ -2430,7 +2421,7 @@ footer span { color: var(--accent); }
 </div><!-- /.main-content -->
 
 <script>
-const ALL_SECTIONS = ['accueil', 'sommaire', 'artefacts', 'stuff', 'noyaux', 'team', 'gemmes', 'ombres', 'coop', 'rockpassa'];
+const ALL_SECTIONS = ['accueil', 'artefacts', 'stuff', 'noyaux', 'team', 'gemmes', 'ombres', 'coop', 'rockpassa'];
 
 function showSection(id, btnOrId) {
   ALL_SECTIONS.forEach(sid => {
@@ -2472,7 +2463,7 @@ function closeSidebar() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  ['sommaire', 'artefacts', 'stuff', 'noyaux', 'team', 'gemmes', 'ombres', 'coop', 'rockpassa'].forEach(sid => {
+  ['artefacts', 'stuff', 'noyaux', 'team', 'gemmes', 'ombres', 'coop', 'rockpassa'].forEach(sid => {
     const el = document.getElementById(sid);
     if (el) el.style.display = 'none';
   });
