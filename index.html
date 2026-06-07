@@ -272,11 +272,26 @@ body {
   image-rendering: auto;
   opacity: 0.95;
 }
+.cover-liu {
+  position: absolute;
+  top: 50%;
+  right: 540px;
+  transform: translateY(-50%);
+  width: 420px;
+  height: auto;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  image-rendering: auto;
+  opacity: 0.95;
+}
 @media (max-width: 1100px) {
   .cover-chae { width: 340px; right: 30px; }
+  .cover-liu  { width: 300px; right: 390px; }
 }
 @media (max-width: 860px) {
   .cover-chae { width: 240px; right: 16px; opacity: 0.5; }
+  .cover-liu  { display: none; }
 }
 @media (max-width: 600px) {
   .cover-chae { display: none; }
@@ -1318,6 +1333,7 @@ footer span { color: var(--accent); }
   <div class="cover-accent-bar"></div>
   <div class="cover-top-bar"></div>
   <img src="images/CHAE/Cha_Hae-In_The_Flutter_of_Dreams.webp" alt="Cha Hae-In" class="cover-chae">
+  <img src="images/CHAE/Liu.webp" alt="Liu Zhaiyu" class="cover-liu">
   <div class="cover-title" style="font-size: clamp(36px, 5.5vw, 72px);">SOLO LEVELING ARISE</div>
   <div class="cover-game">— GUIDE —</div>
   <div class="cover-divider"></div>
