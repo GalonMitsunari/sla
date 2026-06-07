@@ -1967,7 +1967,18 @@ footer span { color: var(--accent); }
       <div class="element-side">
         <div class="side-block">
           <div class="side-block-header">Ombres recommandées</div>
-          <div class="side-block-img"><img src="images/compo team/Ombre wind.png" alt="Ombres Wind" style="width:100%;height:100%;object-fit:contain;"></div>
+          <div class="el-tabs" style="margin-top:8px;">
+            <div class="el-tab-btns">
+              <button class="el-tab-btn active" onclick="elTab(this,'ombre-wind-premium')">Premium</button>
+              <button class="el-tab-btn" onclick="elTab(this,'ombre-wind-f2p')">F2P</button>
+            </div>
+            <div class="el-tab-panel active" data-tab="ombre-wind-premium">
+              <div class="side-block-img"><img src="images/compo team/Ombre wind.png" alt="Ombres Wind" style="width:100%;height:100%;object-fit:contain;"></div>
+            </div>
+            <div class="el-tab-panel" data-tab="ombre-wind-f2p">
+              <div class="side-block-img"><img src="images/compo team/ombre wind f2p.png" alt="Ombres Wind F2P" style="width:100%;height:100%;object-fit:contain;"></div>
+            </div>
+          </div>
         </div>
         <div class="side-block">
           <div class="side-block-header" style="background: var(--bg3); color:var(--gray);">Notes &amp; Synergies</div>
