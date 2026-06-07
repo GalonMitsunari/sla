@@ -811,17 +811,17 @@ body {
   color: var(--white);
 }
 .coop-img { width: 100%; height: 400px; }
-/* Onglets éléments */
-.el-tab-btn.elem-fire.active  { background: #d94f2b; border-color: #d94f2b; color: #fff; }
-.el-tab-btn.elem-water.active { background: #2b8ce0; border-color: #2b8ce0; color: #fff; }
-.el-tab-btn.elem-wind.active  { background: #3dba6a; border-color: #3dba6a; color: #fff; }
-.el-tab-btn.elem-light.active { background: #c8a82a; border-color: #c8a82a; color: #fff; }
-.el-tab-btn.elem-dark.active  { background: var(--accent); border-color: var(--accent); color: #fff; }
-.el-tab-btn.elem-fire:not(.active):hover  { border-color: #d94f2b; color: #d94f2b; }
-.el-tab-btn.elem-water:not(.active):hover { border-color: #2b8ce0; color: #2b8ce0; }
-.el-tab-btn.elem-wind:not(.active):hover  { border-color: #3dba6a; color: #3dba6a; }
-.el-tab-btn.elem-light:not(.active):hover { border-color: #c8a82a; color: #c8a82a; }
-.el-tab-btn.elem-dark:not(.active):hover  { border-color: var(--accent); color: var(--accent); }
+/* Onglets éléments — mêmes couleurs que la section Team */
+.el-tab-btn.elem-fire.active  { background: var(--fire);     border-color: var(--fire);     color: #fff; }
+.el-tab-btn.elem-water.active { background: var(--water);    border-color: var(--water);    color: #0a1a1f; }
+.el-tab-btn.elem-wind.active  { background: var(--wind);     border-color: var(--wind);     color: #0a1a14; }
+.el-tab-btn.elem-light.active { background: var(--light-el); border-color: var(--light-el); color: #1a1400; }
+.el-tab-btn.elem-dark.active  { background: var(--dark-el);  border-color: var(--dark-el);  color: #fff; }
+.el-tab-btn.elem-fire:not(.active):hover  { border-color: var(--fire);     color: var(--fire); }
+.el-tab-btn.elem-water:not(.active):hover { border-color: var(--water);    color: var(--water); }
+.el-tab-btn.elem-wind:not(.active):hover  { border-color: var(--wind);     color: var(--wind); }
+.el-tab-btn.elem-light:not(.active):hover { border-color: var(--light-el); color: var(--light-el); }
+.el-tab-btn.elem-dark:not(.active):hover  { border-color: var(--dark-el);  color: var(--dark-el); }
 .p-num {
   width: 26px;
   height: 26px;
@@ -2343,8 +2343,8 @@ footer span { color: var(--accent); }
       <div class="el-tab-btns">
         <button class="el-tab-btn elem-fire active" onclick="elTab(this,'coop-fire')">🔥 Feu</button>
         <button class="el-tab-btn elem-water" onclick="elTab(this,'coop-water')">💧 Eau</button>
-        <button class="el-tab-btn elem-wind" onclick="elTab(this,'coop-wind')">🌪️ Vent</button>
-        <button class="el-tab-btn elem-light" onclick="elTab(this,'coop-light')">☀️ Lumière</button>
+        <button class="el-tab-btn elem-wind" onclick="elTab(this,'coop-wind')">🌀 Vent</button>
+        <button class="el-tab-btn elem-light" onclick="elTab(this,'coop-light')">✨ Lumière</button>
         <button class="el-tab-btn elem-dark" onclick="elTab(this,'coop-dark')">🌑 Ténèbres</button>
       </div>
       <div class="el-tab-panel active" data-tab="coop-fire">
