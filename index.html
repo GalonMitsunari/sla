@@ -179,6 +179,12 @@ body {
   box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
 .accueil-card-icon { font-size: 26px; margin-bottom: 10px; }
+.accueil-card.card-bg { position: relative; overflow: hidden; padding: 0; min-height: 130px; display: flex; align-items: flex-end; }
+.accueil-card.card-bg .card-bg-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.accueil-card.card-bg .card-bg-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0.2) 100%); }
+.accueil-card.card-bg .card-bg-content { position: relative; z-index: 1; padding: 14px 16px; width: 100%; }
+.accueil-card.card-bg .accueil-card-title { font-size: 13px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+.accueil-card.card-bg .accueil-card-desc { font-size: 10.5px; color: rgba(255,255,255,0.7); line-height: 1.5; }
 .accueil-card-title { font-size: 13px; font-weight: 700; color: var(--white); margin-bottom: 5px; }
 .accueil-card-desc { font-size: 10.5px; color: var(--gray); line-height: 1.5; }
 
@@ -1314,8 +1320,8 @@ footer span { color: var(--accent); }
     <a class="sidebar-item" onclick="showSection('ombres',this)"><span class="sidebar-icon">👤</span><span>Ombres</span></a>
     <div class="sidebar-sep"></div>
     <div class="sidebar-label">Contenus</div>
-    <a class="sidebar-item" onclick="showSection('rockpassa',this)"><span class="sidebar-icon">🎯</span><span>Rockpassa</span></a>
-    <a class="sidebar-item" onclick="showSection('legia',this)"><span class="sidebar-icon">⚔️</span><span>Legia</span></a>
+    <a class="sidebar-item" onclick="showSection('rockpassa',this)"><img class="sidebar-icon" src="images/Icones/Rockpassa.png" alt="Rockpassa" style="width:18px;height:18px;object-fit:contain;"><span>Rockpassa</span></a>
+    <a class="sidebar-item" onclick="showSection('legia',this)"><img class="sidebar-icon" src="images/Icones/Legia.png" alt="Legia" style="width:18px;height:18px;object-fit:contain;"><span>Legia</span></a>
   </nav>
   <div class="sidebar-footer">Made by<br>Natsuki · Usagi · Mitsunari · Miergoat</div>
 </aside>
@@ -1346,45 +1352,69 @@ footer span { color: var(--accent); }
   </div>
   <div class="accueil-section-title">Accès rapide aux sections</div>
   <div class="accueil-cards">
-    <div class="accueil-card" onclick="showSection('artefacts','artefacts')">
-      <div class="accueil-card-icon">💎</div>
-      <div class="accueil-card-title">Artefacts & Stuff</div>
-      <div class="accueil-card-desc">Emplacements, stats et priorités d'artefacts</div>
+    <div class="accueil-card card-bg" onclick="showSection('artefacts','artefacts')">
+      <img class="card-bg-img" src="images/Icones/artefact.png" alt="Artefacts">
+      <div class="card-bg-overlay"></div>
+      <div class="card-bg-content">
+        <div class="accueil-card-title">Artefacts & Stuff</div>
+        <div class="accueil-card-desc">Emplacements, stats et priorités d'artefacts</div>
+      </div>
     </div>
-    <div class="accueil-card" onclick="showSection('noyaux','noyaux')">
-      <div class="accueil-card-icon">🔮</div>
-      <div class="accueil-card-title">Noyaux</div>
-      <div class="accueil-card-desc">Effets et hunters recommandés pour chaque core</div>
+    <div class="accueil-card card-bg" onclick="showSection('noyaux','noyaux')">
+      <img class="card-bg-img" src="images/Icones/noyaux.jpeg" alt="Noyaux">
+      <div class="card-bg-overlay"></div>
+      <div class="card-bg-content">
+        <div class="accueil-card-title">Noyaux</div>
+        <div class="accueil-card-desc">Effets et hunters recommandés pour chaque core</div>
+      </div>
     </div>
-    <div class="accueil-card" onclick="showSection('gemmes','gemmes')">
-      <div class="accueil-card-icon">💠</div>
-      <div class="accueil-card-title">Gemmes</div>
-      <div class="accueil-card-desc">Tout savoir sur les gemmes et leur optimisation</div>
+    <div class="accueil-card card-bg" onclick="showSection('gemmes','gemmes')">
+      <img class="card-bg-img" src="images/Icones/Gemmes.png" alt="Gemmes">
+      <div class="card-bg-overlay"></div>
+      <div class="card-bg-content">
+        <div class="accueil-card-title">Gemmes</div>
+        <div class="accueil-card-desc">Tout savoir sur les gemmes et leur optimisation</div>
+      </div>
     </div>
-    <div class="accueil-card" onclick="showSection('coop','coop')">
-      <div class="accueil-card-icon">🤝</div>
-      <div class="accueil-card-title">Coop</div>
-      <div class="accueil-card-desc">Entraînement en coopération par élément</div>
+    <div class="accueil-card card-bg" onclick="showSection('coop','coop')">
+      <img class="card-bg-img" src="images/Icones/Coop.png" alt="Coop">
+      <div class="card-bg-overlay"></div>
+      <div class="card-bg-content">
+        <div class="accueil-card-title">Coop</div>
+        <div class="accueil-card-desc">Entraînement en coopération par élément</div>
+      </div>
     </div>
-    <div class="accueil-card" onclick="showSection('team','team')">
-      <div class="accueil-card-icon">👥</div>
-      <div class="accueil-card-title">Team</div>
-      <div class="accueil-card-desc">Compositions par élément et synergies</div>
+    <div class="accueil-card card-bg" onclick="showSection('team','team')">
+      <img class="card-bg-img" src="images/Icones/hunter.png" alt="Team">
+      <div class="card-bg-overlay"></div>
+      <div class="card-bg-content">
+        <div class="accueil-card-title">Team</div>
+        <div class="accueil-card-desc">Compositions par élément et synergies</div>
+      </div>
     </div>
-    <div class="accueil-card" onclick="showSection('ombres','ombres')">
-      <div class="accueil-card-icon">👤</div>
-      <div class="accueil-card-title">Ombres</div>
-      <div class="accueil-card-desc">Passifs, armes et rôles de chaque ombre</div>
+    <div class="accueil-card card-bg" onclick="showSection('ombres','ombres')">
+      <img class="card-bg-img" src="images/Icones/Ombres.png" alt="Ombres">
+      <div class="card-bg-overlay"></div>
+      <div class="card-bg-content">
+        <div class="accueil-card-title">Ombres</div>
+        <div class="accueil-card-desc">Passifs, armes et rôles de chaque ombre</div>
+      </div>
     </div>
-    <div class="accueil-card" onclick="showSection('rockpassa','rockpassa')">
-      <div class="accueil-card-icon">🎯</div>
-      <div class="accueil-card-title">Rockpassa</div>
-      <div class="accueil-card-desc">Guides de boss et variantes de build</div>
+    <div class="accueil-card card-bg" onclick="showSection('rockpassa','rockpassa')">
+      <img class="card-bg-img" src="images/Icones/Rockpassa.png" alt="Rockpassa">
+      <div class="card-bg-overlay"></div>
+      <div class="card-bg-content">
+        <div class="accueil-card-title">Rockpassa</div>
+        <div class="accueil-card-desc">Guides de boss et variantes de build</div>
+      </div>
     </div>
-    <div class="accueil-card" onclick="showSection('legia','legia')">
-      <div class="accueil-card-icon">⚔️</div>
-      <div class="accueil-card-title">Legia</div>
-      <div class="accueil-card-desc">Guides de boss et variantes de build</div>
+    <div class="accueil-card card-bg" onclick="showSection('legia','legia')">
+      <img class="card-bg-img" src="images/Icones/Legia.png" alt="Legia">
+      <div class="card-bg-overlay"></div>
+      <div class="card-bg-content">
+        <div class="accueil-card-title">Legia</div>
+        <div class="accueil-card-desc">Guides de boss et variantes de build</div>
+      </div>
     </div>
   </div>
 
