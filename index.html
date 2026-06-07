@@ -700,12 +700,20 @@ body {
 .g4 .gemme-icon { background: var(--accent2); color: #fff; }
 .g4 .gemme-text strong { color: var(--accent2); }
 
-.gemmes-right { display: flex; flex-direction: column; gap: 14px; height: 100%; }
-.gemmes-img-square {
-  width: 100%;
-  flex: 1;
-  min-height: 0;
+.gemmes-right {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  height: 100%;
+  align-items: stretch;
 }
+.gemmes-img-square {
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+  height: 100%;
+  width: auto;
+}
+.sung-note { flex: 1; display: flex; flex-direction: column; justify-content: center; }
 .gemmes-img-full {
   width: 100%;
   height: 340px;
