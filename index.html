@@ -712,12 +712,16 @@ body {
   flex-shrink: 0;
   width: 52%;
   align-self: flex-start;
+  object-fit: contain;
+  display: block;
 }
 .sung-note { flex: 1; min-width: 0; }
 .gemmes-img-full {
   width: 100%;
   height: 340px;
   margin-top: 20px;
+  object-fit: cover;
+  display: block;
 }
 .sung-note {
   background: var(--bg3);
@@ -2102,14 +2106,14 @@ footer span { color: var(--accent); }
         </div>
       </div>
       <div class="gemmes-right">
-        <div class="gemmes-img-square img-placeholder">[ Diagramme de Sung ]</div>
+        <img class="gemmes-img-square" src="images/Gemmes/diagramme sung.png" alt="Diagramme de Sung">
         <div class="sung-note">
           <h4>Diagramme de Sung</h4>
           <p>Une fois les gemmes placées, construire Sung tel qu'indiqué dans le diagramme ci-contre.</p>
         </div>
       </div>
     </div>
-    <div class="gemmes-img-full img-placeholder">[ Screenshot gemmes ]</div>
+    <img class="gemmes-img-full" src="images/Gemmes/screenshot gemmes.png" alt="Screenshot gemmes">
   </div>
 </section>
 
