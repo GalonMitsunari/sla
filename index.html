@@ -815,26 +815,14 @@ body {
   color: var(--white);
 }
 .coop-img { width: 75%; height: auto; margin: 12px 0 0; display: block; }
-.coop-prio { margin-top: 14px; width: 75%; }
-.coop-prio-title { font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--water); margin-bottom: 10px; }
-.coop-prio-tiers { display: flex; flex-direction: column; gap: 8px; }
-.coop-prio-tier { background: var(--bg3); border-radius: 8px; padding: 10px 14px; }
-.coop-prio-tier-label { font-size: 10px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
-.coop-prio-tier.high .coop-prio-tier-label { color: var(--gold); }
-.coop-prio-tier.mid  .coop-prio-tier-label { color: var(--accent); }
-.coop-prio-tier.low  .coop-prio-tier-label { color: var(--gray); }
-.coop-psteps { display: flex; flex-wrap: wrap; gap: 6px; }
-.pstep { display: inline-flex; align-items: center; gap: 5px; border-radius: 20px; padding: 3px 10px 3px 4px; font-size: 11px; font-weight: 600; }
-.pstep-num { width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800; flex-shrink: 0; }
-.pstep.high { background: rgba(200,168,42,0.15); }
-.pstep.high .pstep-num { background: var(--gold); color: #1a1000; }
-.pstep.high .pstep-cat { color: var(--text); }
-.pstep.mid { background: rgba(123,97,255,0.15); }
-.pstep.mid .pstep-num { background: var(--accent); color: #fff; }
-.pstep.mid .pstep-cat { color: var(--text); }
-.pstep.low { background: var(--bg4); }
-.pstep.low .pstep-num { background: rgba(255,255,255,0.1); color: var(--gray); }
-.pstep.low .pstep-cat { color: var(--gray); }
+.coop-boxes { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 14px; }
+.coop-box { background: var(--bg3); border-radius: 8px; overflow: hidden; }
+.coop-box-header { padding: 9px 12px; font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; }
+.coop-box-body { padding: 8px 10px; display: flex; flex-direction: column; gap: 5px; }
+.coop-box-row { display: flex; align-items: center; gap: 8px; padding: 5px 8px; border-radius: 5px; background: var(--bg2); }
+.coop-box-rank { font-size: 10px; color: var(--gray); font-weight: 700; width: 30px; flex-shrink: 0; }
+.coop-box-pallier { font-size: 12px; color: var(--text); font-weight: 700; }
+.coop-box-gnum { font-size: 10px; color: var(--gray); margin-left: auto; }
 /* Onglets éléments — mêmes couleurs que la section Team */
 .el-tab-btn.elem-fire.active  { background: var(--fire);     border-color: var(--fire);     color: #fff; }
 .el-tab-btn.elem-water.active { background: var(--water);    border-color: var(--water);    color: #0a1a1f; }
@@ -2382,43 +2370,55 @@ footer span { color: var(--accent); }
       </div>
       <div class="el-tab-panel" data-tab="coop-water">
         <img class="coop-img" src="images/Coop/Coop water.png" alt="Coop Eau">
-        <div class="coop-prio">
-          <div class="coop-prio-title">📋 Ordre de priorité</div>
-          <div class="coop-prio-tiers">
-            <div class="coop-prio-tier high">
-              <div class="coop-prio-tier-label">Priorité haute — à monter en premier</div>
-              <div class="coop-psteps">
-                <span class="pstep high"><span class="pstep-num">1</span><span class="pstep-cat">Shared</span></span>
-                <span class="pstep high"><span class="pstep-num">2</span><span class="pstep-cat">Shared</span></span>
-                <span class="pstep high"><span class="pstep-num">3</span><span class="pstep-cat">Striker</span></span>
-                <span class="pstep high"><span class="pstep-num">4</span><span class="pstep-cat">Shared</span></span>
-                <span class="pstep high"><span class="pstep-num">5</span><span class="pstep-cat">Striker</span></span>
-                <span class="pstep high"><span class="pstep-num">6</span><span class="pstep-cat">Striker</span></span>
-                <span class="pstep high"><span class="pstep-num">7</span><span class="pstep-cat">Striker</span></span>
-              </div>
+        <div class="coop-boxes">
+          <!-- SHARED -->
+          <div class="coop-box">
+            <div class="coop-box-header" style="background:var(--gold);color:#1a1000;">Shared</div>
+            <div class="coop-box-body">
+              <div class="coop-box-row"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Pallier 2</span><span class="coop-box-gnum">#1</span></div>
+              <div class="coop-box-row"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">Pallier 1</span><span class="coop-box-gnum">#2</span></div>
+              <div class="coop-box-row"><span class="coop-box-rank">3ème</span><span class="coop-box-pallier">Pallier 3</span><span class="coop-box-gnum">#4</span></div>
             </div>
-            <div class="coop-prio-tier mid">
-              <div class="coop-prio-tier-label">Priorité moyenne</div>
-              <div class="coop-psteps">
-                <span class="pstep mid"><span class="pstep-num">8</span><span class="pstep-cat">Élémental</span></span>
-                <span class="pstep mid"><span class="pstep-num">9</span><span class="pstep-cat">Élémental</span></span>
-                <span class="pstep mid"><span class="pstep-num">10</span><span class="pstep-cat">Élémental</span></span>
-                <span class="pstep mid"><span class="pstep-num">11</span><span class="pstep-cat">Supporter</span></span>
-                <span class="pstep mid"><span class="pstep-num">12</span><span class="pstep-cat">Breaker</span></span>
-                <span class="pstep mid"><span class="pstep-num">13</span><span class="pstep-cat">Élémental</span></span>
-                <span class="pstep mid"><span class="pstep-num">14</span><span class="pstep-cat">Supporter</span></span>
-              </div>
+          </div>
+          <!-- STRIKER -->
+          <div class="coop-box">
+            <div class="coop-box-header" style="background:var(--red);">Striker</div>
+            <div class="coop-box-body">
+              <div class="coop-box-row"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Pallier 2</span><span class="coop-box-gnum">#3</span></div>
+              <div class="coop-box-row"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">Pallier 4</span><span class="coop-box-gnum">#5</span></div>
+              <div class="coop-box-row"><span class="coop-box-rank">3ème</span><span class="coop-box-pallier">Pallier 5</span><span class="coop-box-gnum">#6</span></div>
+              <div class="coop-box-row"><span class="coop-box-rank">4ème</span><span class="coop-box-pallier">Pallier 1</span><span class="coop-box-gnum">#7</span></div>
+              <div class="coop-box-row"><span class="coop-box-rank">5ème</span><span class="coop-box-pallier">Pallier 3</span><span class="coop-box-gnum">#18</span></div>
             </div>
-            <div class="coop-prio-tier low">
-              <div class="coop-prio-tier-label">Remplissage</div>
-              <div class="coop-psteps">
-                <span class="pstep low"><span class="pstep-num">15</span><span class="pstep-cat">Breaker</span></span>
-                <span class="pstep low"><span class="pstep-num">16</span><span class="pstep-cat">Breaker</span></span>
-                <span class="pstep low"><span class="pstep-num">17</span><span class="pstep-cat">Breaker</span></span>
-                <span class="pstep low"><span class="pstep-num">18</span><span class="pstep-cat">Striker</span></span>
-                <span class="pstep low"><span class="pstep-num">19</span><span class="pstep-cat">Supporter</span></span>
-                <span class="pstep low"><span class="pstep-num">20</span><span class="pstep-cat">Supporter</span></span>
-              </div>
+          </div>
+          <!-- BREAKER -->
+          <div class="coop-box">
+            <div class="coop-box-header" style="background:var(--teal);color:#0a1a1f;">Breaker</div>
+            <div class="coop-box-body">
+              <div class="coop-box-row"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Pallier 4</span><span class="coop-box-gnum">#12</span></div>
+              <div class="coop-box-row"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">Pallier 1</span><span class="coop-box-gnum">#15</span></div>
+              <div class="coop-box-row"><span class="coop-box-rank">3ème</span><span class="coop-box-pallier">Pallier 2</span><span class="coop-box-gnum">#16</span></div>
+              <div class="coop-box-row"><span class="coop-box-rank">4ème</span><span class="coop-box-pallier">Pallier 3</span><span class="coop-box-gnum">#17</span></div>
+            </div>
+          </div>
+          <!-- SUPPORTER -->
+          <div class="coop-box">
+            <div class="coop-box-header" style="background:var(--green);color:#0a1a14;">Supporter</div>
+            <div class="coop-box-body">
+              <div class="coop-box-row"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Pallier 4</span><span class="coop-box-gnum">#11</span></div>
+              <div class="coop-box-row"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">Pallier 3</span><span class="coop-box-gnum">#14</span></div>
+              <div class="coop-box-row"><span class="coop-box-rank">3ème</span><span class="coop-box-pallier">Pallier 1</span><span class="coop-box-gnum">#19</span></div>
+              <div class="coop-box-row"><span class="coop-box-rank">4ème</span><span class="coop-box-pallier">Pallier 2</span><span class="coop-box-gnum">#20</span></div>
+            </div>
+          </div>
+          <!-- ÉLÉMENTAL EAU -->
+          <div class="coop-box">
+            <div class="coop-box-header" style="background:var(--water);color:#0a1a1f;">Élémental</div>
+            <div class="coop-box-body">
+              <div class="coop-box-row"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Pallier 4</span><span class="coop-box-gnum">#8</span></div>
+              <div class="coop-box-row"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">Pallier 2</span><span class="coop-box-gnum">#9</span></div>
+              <div class="coop-box-row"><span class="coop-box-rank">3ème</span><span class="coop-box-pallier">Pallier 1</span><span class="coop-box-gnum">#10</span></div>
+              <div class="coop-box-row"><span class="coop-box-rank">4ème</span><span class="coop-box-pallier">Pallier 3</span><span class="coop-box-gnum">#13</span></div>
             </div>
           </div>
         </div>
