@@ -53,78 +53,134 @@ body {
 .sidebar {
   position: fixed;
   left: 0; top: 0; bottom: 0;
-  width: 220px;
-  background: var(--bg2);
-  border-right: 2px solid rgba(123,97,255,0.25);
+  width: 230px;
+  background: linear-gradient(180deg, #0f1626 0%, var(--bg2) 100%);
+  border-right: 1px solid rgba(123,97,255,0.2);
   display: flex;
   flex-direction: column;
   z-index: 200;
   overflow-y: auto;
+  box-shadow: 4px 0 24px rgba(0,0,0,0.4);
 }
 .sidebar-logo {
-  padding: 26px 20px 18px;
-  font-size: 22px;
+  padding: 28px 22px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(123,97,255,0.12) 0%, transparent 70%);
+}
+.sidebar-logo-title {
+  font-size: 24px;
   font-weight: 900;
   color: var(--white);
-  letter-spacing: 4px;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-  flex-shrink: 0;
+  letter-spacing: 5px;
+  line-height: 1;
 }
+.sidebar-logo-title span { color: var(--accent); }
 .sidebar-logo small {
   display: block;
-  font-size: 10px;
+  font-size: 9px;
   color: var(--gray);
-  letter-spacing: 1px;
-  font-weight: 400;
-  margin-top: 4px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  margin-top: 6px;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+.sidebar-nav { display: flex; flex-direction: column; padding: 16px 0; gap: 2px; flex: 1; }
+.sidebar-sep { height: 1px; background: rgba(255,255,255,0.06); margin: 8px 16px; }
+.sidebar-label {
+  padding: 6px 22px 2px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.25);
   text-transform: uppercase;
 }
-.sidebar-nav { display: flex; flex-direction: column; padding: 12px 0; gap: 2px; flex: 1; }
-.sidebar-sep { height: 1px; background: rgba(255,255,255,0.07); margin: 6px 12px; }
 .sidebar-item {
-  padding: 10px 18px;
+  padding: 10px 22px;
   color: var(--gray);
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.18s;
+  transition: all 0.15s;
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 10px;
   border-left: 3px solid transparent;
   user-select: none;
+  letter-spacing: 0.2px;
 }
-.sidebar-item:hover { color: var(--white); background: rgba(123,97,255,0.1); border-left-color: rgba(123,97,255,0.35); }
-.sidebar-item.active { color: var(--white); background: rgba(123,97,255,0.18); border-left-color: var(--accent); }
-.sidebar-icon { font-size: 15px; flex-shrink: 0; }
+.sidebar-item:hover {
+  color: var(--white);
+  background: rgba(123,97,255,0.08);
+  border-left-color: rgba(123,97,255,0.4);
+}
+.sidebar-item.active {
+  color: var(--white);
+  background: rgba(123,97,255,0.16);
+  border-left-color: var(--accent);
+}
+.sidebar-icon { font-size: 14px; flex-shrink: 0; width: 18px; text-align: center; }
+.sidebar-footer {
+  padding: 16px 22px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  font-size: 10px;
+  color: rgba(255,255,255,0.2);
+  line-height: 1.6;
+}
 
 /* MAIN CONTENT */
-.main-content { margin-left: 220px; }
+.main-content { margin-left: 230px; min-height: 100vh; display: flex; flex-direction: column; }
+.main-content footer { margin-top: auto; }
 
 /* ACCUEIL */
-.accueil-body { padding: 60px; max-width: 1280px; margin: 0 auto; }
-.accueil-welcome { margin-bottom: 48px; }
-.accueil-welcome h2 { font-size: 30px; font-weight: 800; color: var(--gold); margin-bottom: 16px; }
-.accueil-welcome p { font-size: 15px; color: var(--gray); line-height: 1.85; max-width: 780px; margin-bottom: 12px; }
+.accueil-body {
+  padding: 50px 60px 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+.accueil-divider {
+  width: 50px; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--gold));
+  border-radius: 2px;
+  margin-bottom: 32px;
+}
+.accueil-welcome { margin-bottom: 50px; }
+.accueil-welcome h2 { font-size: 26px; font-weight: 800; color: var(--white); margin-bottom: 14px; }
+.accueil-welcome h2 span { color: var(--gold); }
+.accueil-welcome p { font-size: 14px; color: var(--gray); line-height: 1.9; max-width: 720px; margin-bottom: 10px; }
+.accueil-section-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 16px;
+}
 .accueil-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 14px;
 }
 .accueil-card {
   background: var(--bg3);
-  border: 1px solid rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.06);
   border-radius: var(--radius);
-  padding: 22px 18px;
+  padding: 20px 16px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
   text-align: center;
 }
-.accueil-card:hover { background: var(--bg4); border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(123,97,255,0.15); }
-.accueil-card-icon { font-size: 30px; margin-bottom: 10px; }
-.accueil-card-title { font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
-.accueil-card-desc { font-size: 11px; color: var(--gray); line-height: 1.5; }
+.accueil-card:hover {
+  border-color: rgba(123,97,255,0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+.accueil-card-icon { font-size: 26px; margin-bottom: 10px; }
+.accueil-card-title { font-size: 13px; font-weight: 700; color: var(--white); margin-bottom: 5px; }
+.accueil-card-desc { font-size: 10.5px; color: var(--gray); line-height: 1.5; }
 
 /* ═══════════════════════════════════════════════
    COVER
@@ -138,7 +194,7 @@ body {
   padding: 80px 60px;
   overflow: hidden;
 }
-#cover::before {
+#accueil::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -1026,22 +1082,29 @@ footer span { color: var(--accent); }
 
 <!-- SIDEBAR -->
 <aside class="sidebar">
-  <div class="sidebar-logo">SLA<small>Guide du Chasseur</small></div>
+  <div class="sidebar-logo">
+    <div class="sidebar-logo-title">S<span>L</span>A</div>
+    <small>Guide du Chasseur</small>
+  </div>
   <nav class="sidebar-nav">
     <a class="sidebar-item active" onclick="showSection('accueil',this)"><span class="sidebar-icon">🏠</span><span>Accueil</span></a>
     <a class="sidebar-item" onclick="showSection('sommaire',this)"><span class="sidebar-icon">📋</span><span>Sommaire</span></a>
     <div class="sidebar-sep"></div>
+    <div class="sidebar-label">Équipement</div>
     <a class="sidebar-item" onclick="showSection('artefacts',this)"><span class="sidebar-icon">💎</span><span>Artefacts</span></a>
     <a class="sidebar-item" onclick="showSection('stuff',this)"><span class="sidebar-icon">⚔</span><span>Stuff Parfait</span></a>
     <a class="sidebar-item" onclick="showSection('noyaux',this)"><span class="sidebar-icon">🔮</span><span>Noyaux</span></a>
     <div class="sidebar-sep"></div>
+    <div class="sidebar-label">Gameplay</div>
     <a class="sidebar-item" onclick="showSection('team',this)"><span class="sidebar-icon">👥</span><span>Team Building</span></a>
     <a class="sidebar-item" onclick="showSection('gemmes',this)"><span class="sidebar-icon">💠</span><span>Gemmes</span></a>
     <a class="sidebar-item" onclick="showSection('ombres',this)"><span class="sidebar-icon">👤</span><span>Ombres</span></a>
     <div class="sidebar-sep"></div>
+    <div class="sidebar-label">Contenus</div>
     <a class="sidebar-item" onclick="showSection('coop',this)"><span class="sidebar-icon">🤝</span><span>Coop</span></a>
     <a class="sidebar-item" onclick="showSection('rockpassa',this)"><span class="sidebar-icon">🎯</span><span>Rockpassa</span></a>
   </nav>
+  <div class="sidebar-footer">Made by<br>Natsuki · Usagi · Mitsunari · Miergoat</div>
 </aside>
 
 <div class="main-content">
@@ -1062,47 +1125,49 @@ footer span { color: var(--accent); }
 
 <div class="accueil-body">
   <div class="accueil-welcome">
-    <h2>Bienvenue, Chasseur</h2>
+    <h2>Bienvenue, <span>Chasseur</span></h2>
+    <div class="accueil-divider"></div>
     <p>Ce guide communautaire a été conçu pour t'accompagner dans ta progression sur <strong style="color:var(--white)">Solo Leveling Arise</strong>. Que tu sois débutant ou chasseur expérimenté, tu trouveras ici tout ce qu'il te faut pour optimiser ton build, tes ombres, tes noyaux et ta composition d'équipe.</p>
     <p>Utilise le menu à gauche pour naviguer entre les différentes sections du guide.</p>
   </div>
+  <div class="accueil-section-title">Accès rapide aux sections</div>
   <div class="accueil-cards">
-    <div class="accueil-card" onclick="showSection('artefacts', document.querySelector('[onclick*=artefacts]'))">
+    <div class="accueil-card" onclick="showSection('artefacts','artefacts')">
       <div class="accueil-card-icon">💎</div>
       <div class="accueil-card-title">Artefacts</div>
       <div class="accueil-card-desc">Emplacements, stats et priorités d'artefacts</div>
     </div>
-    <div class="accueil-card" onclick="showSection('stuff', document.querySelector('[onclick*=stuff]'))">
+    <div class="accueil-card" onclick="showSection('stuff','stuff')">
       <div class="accueil-card-icon">⚔</div>
       <div class="accueil-card-title">Stuff Parfait</div>
       <div class="accueil-card-desc">Substats optimales par rôle de hunter</div>
     </div>
-    <div class="accueil-card" onclick="showSection('noyaux', document.querySelector('[onclick*=noyaux]'))">
+    <div class="accueil-card" onclick="showSection('noyaux','noyaux')">
       <div class="accueil-card-icon">🔮</div>
       <div class="accueil-card-title">Noyaux</div>
       <div class="accueil-card-desc">Effets et hunters recommandés pour chaque core</div>
     </div>
-    <div class="accueil-card" onclick="showSection('team', document.querySelector('[onclick*=team]'))">
+    <div class="accueil-card" onclick="showSection('team','team')">
       <div class="accueil-card-icon">👥</div>
       <div class="accueil-card-title">Team Building</div>
       <div class="accueil-card-desc">Compositions par élément et synergies</div>
     </div>
-    <div class="accueil-card" onclick="showSection('gemmes', document.querySelector('[onclick*=gemmes]'))">
+    <div class="accueil-card" onclick="showSection('gemmes','gemmes')">
       <div class="accueil-card-icon">💠</div>
       <div class="accueil-card-title">Gemmes</div>
       <div class="accueil-card-desc">Tout savoir sur les gemmes et leur optimisation</div>
     </div>
-    <div class="accueil-card" onclick="showSection('ombres', document.querySelector('[onclick*=ombres]'))">
+    <div class="accueil-card" onclick="showSection('ombres','ombres')">
       <div class="accueil-card-icon">👤</div>
       <div class="accueil-card-title">Ombres</div>
       <div class="accueil-card-desc">Passifs, armes et rôles de chaque ombre</div>
     </div>
-    <div class="accueil-card" onclick="showSection('coop', document.querySelector('[onclick*=coop]'))">
+    <div class="accueil-card" onclick="showSection('coop','coop')">
       <div class="accueil-card-icon">🤝</div>
       <div class="accueil-card-title">Coop</div>
       <div class="accueil-card-desc">Stratégies pour le mode coopératif</div>
     </div>
-    <div class="accueil-card" onclick="showSection('rockpassa', document.querySelector('[onclick*=rockpassa]'))">
+    <div class="accueil-card" onclick="showSection('rockpassa','rockpassa')">
       <div class="accueil-card-icon">🎯</div>
       <div class="accueil-card-title">Rockpassa</div>
       <div class="accueil-card-desc">Guides de boss et variantes de build</div>
@@ -2219,24 +2284,34 @@ footer span { color: var(--accent); }
 <script>
 const ALL_SECTIONS = ['accueil', 'sommaire', 'artefacts', 'stuff', 'noyaux', 'team', 'gemmes', 'ombres', 'coop', 'rockpassa'];
 
-function showSection(id, btn) {
+function showSection(id, btnOrId) {
+  // Masquer toutes les sections
   ALL_SECTIONS.forEach(sid => {
     const el = document.getElementById(sid);
     if (el) el.style.display = 'none';
-    const body = document.getElementById(sid + '-body');
-    if (body) body.style.display = 'none';
   });
-  // Accueil = section#accueil + div.accueil-body
+  // Toujours masquer accueil-body
+  const ab = document.querySelector('.accueil-body');
+  if (ab) ab.style.display = 'none';
+
+  // Afficher la section cible
   if (id === 'accueil') {
     document.getElementById('accueil').style.display = '';
-    const ab = document.querySelector('.accueil-body');
     if (ab) ab.style.display = '';
   } else {
     const el = document.getElementById(id);
     if (el) el.style.display = '';
   }
+
+  // Mettre à jour l'item actif dans la sidebar
   document.querySelectorAll('.sidebar-item').forEach(b => b.classList.remove('active'));
-  if (btn) btn.classList.add('active');
+  if (btnOrId && typeof btnOrId === 'string') {
+    // Appelé depuis une carte accueil avec l'id en string
+    const sideBtn = document.querySelector('.sidebar-item[onclick*="' + btnOrId + '"]');
+    if (sideBtn) sideBtn.classList.add('active');
+  } else if (btnOrId && btnOrId.classList) {
+    btnOrId.classList.add('active');
+  }
   window.scrollTo(0, 0);
 }
 
