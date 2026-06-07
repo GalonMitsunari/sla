@@ -650,8 +650,9 @@ nav .nav-stuff:hover { color: var(--white); background: rgba(245,200,66,0.15); }
 }
 .ombres-cat-label:first-of-type { margin-top: 0; }
 .ombres-cat-atk  { color: var(--accent);  border-color: var(--accent); }
+.ombres-cat-tc   { color: var(--gold);    border-color: var(--gold); }
+.ombres-cat-pen  { color: var(--red);     border-color: var(--red); }
 .ombres-cat-def  { color: var(--green);   border-color: var(--green); }
-.ombres-cat-surv { color: var(--teal);    border-color: var(--teal); }
 .ombres-note {
   margin-top: 16px;
   font-size: 12px;
@@ -1785,34 +1786,8 @@ footer span { color: var(--accent); }
       <span class="badge badge-red">Ombres</span>
     </div>
 
-    <p class="ombres-cat-label ombres-cat-atk">⚔ Attaque</p>
+    <p class="ombres-cat-label ombres-cat-atk">⚔ ATK / Dégâts</p>
     <div class="ombres-grid">
-      <div class="ombre-card">
-        <div class="ombre-name-block" style="padding:0;"><img src="images/Beste.webp" alt="Beste"></div>
-        <div class="ombre-stats">
-          <div class="ombre-stat-row">
-            <div class="ombre-stat-label">Passif</div>
-            <div class="ombre-stat-val">Pen DEF +8%</div>
-          </div>
-          <div class="ombre-stat-row">
-            <div class="ombre-stat-label">Arme</div>
-            <div class="ombre-stat-val arme">ATK ombres +24%, Basic skills +15%</div>
-          </div>
-        </div>
-      </div>
-      <div class="ombre-card">
-        <div class="ombre-name-block" style="padding:0;"><img src="images/Uros.webp" alt="Uros"></div>
-        <div class="ombre-stats">
-          <div class="ombre-stat-row">
-            <div class="ombre-stat-label">Passif</div>
-            <div class="ombre-stat-val">TC équipe +8%</div>
-          </div>
-          <div class="ombre-stat-row">
-            <div class="ombre-stat-label">Arme</div>
-            <div class="ombre-stat-val arme">TC et DCC ombres +15%</div>
-          </div>
-        </div>
-      </div>
       <div class="ombre-card">
         <div class="ombre-name-block" style="padding:0;"><img src="images/Brute.webp" alt="Brute"></div>
         <div class="ombre-stats">
@@ -1827,6 +1802,19 @@ footer span { color: var(--accent); }
         </div>
       </div>
       <div class="ombre-card">
+        <div class="ombre-name-block" style="padding:0;"><img src="images/Jigma.webp" alt="Jigma"></div>
+        <div class="ombre-stats">
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Passif</div>
+            <div class="ombre-stat-val">ATK équipe +5%</div>
+          </div>
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Arme</div>
+            <div class="ombre-stat-val arme">13% chance shield → ATK +24% (10s)</div>
+          </div>
+        </div>
+      </div>
+      <div class="ombre-card">
         <div class="ombre-name-block" style="padding:0;"><img src="images/Igris.webp" alt="Igris"></div>
         <div class="ombre-stats">
           <div class="ombre-stat-row">
@@ -1836,32 +1824,6 @@ footer span { color: var(--accent); }
           <div class="ombre-stat-row">
             <div class="ombre-stat-label">Arme</div>
             <div class="ombre-stat-val arme">DCC +24%, dég. boss ombres +30%</div>
-          </div>
-        </div>
-      </div>
-      <div class="ombre-card">
-        <div class="ombre-name-block" style="padding:0;"><img src="images/Cerbie.webp" alt="Cerbie"></div>
-        <div class="ombre-stats">
-          <div class="ombre-stat-row">
-            <div class="ombre-stat-label">Passif</div>
-            <div class="ombre-stat-val">Dég. ténèbre +9%, DEF -20%</div>
-          </div>
-          <div class="ombre-stat-row">
-            <div class="ombre-stat-label">Arme</div>
-            <div class="ombre-stat-val arme">Pen DEF +24% pour tout le monde</div>
-          </div>
-        </div>
-      </div>
-      <div class="ombre-card">
-        <div class="ombre-name-block" style="padding:0;"><img src="images/Tank.webp" alt="Tank"></div>
-        <div class="ombre-stats">
-          <div class="ombre-stat-row">
-            <div class="ombre-stat-label">Passif</div>
-            <div class="ombre-stat-val">DCC +8%</div>
-          </div>
-          <div class="ombre-stat-row">
-            <div class="ombre-stat-label">Arme</div>
-            <div class="ombre-stat-val arme">Débuff combustion → skill dmg +50% (10s)</div>
           </div>
         </div>
       </div>
@@ -1892,19 +1854,6 @@ footer span { color: var(--accent); }
         </div>
       </div>
       <div class="ombre-card">
-        <div class="ombre-name-block" style="padding:0;"><img src="images/Jigma.webp" alt="Jigma"></div>
-        <div class="ombre-stats">
-          <div class="ombre-stat-row">
-            <div class="ombre-stat-label">Passif</div>
-            <div class="ombre-stat-val">ATK équipe +5%</div>
-          </div>
-          <div class="ombre-stat-row">
-            <div class="ombre-stat-label">Arme</div>
-            <div class="ombre-stat-val arme">13% chance shield → ATK +24% (10s)</div>
-          </div>
-        </div>
-      </div>
-      <div class="ombre-card">
         <div class="ombre-name-block" style="padding:0;"><img src="images/Croc.webp" alt="Croc"></div>
         <div class="ombre-stats">
           <div class="ombre-stat-row">
@@ -1914,6 +1863,66 @@ footer span { color: var(--accent); }
           <div class="ombre-stat-row">
             <div class="ombre-stat-label">Arme</div>
             <div class="ombre-stat-val arme">Ennemis &lt;50% HP → +50% dmg ombres</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="ombres-cat-label ombres-cat-tc">⚡ TC & DCC</p>
+    <div class="ombres-grid">
+      <div class="ombre-card">
+        <div class="ombre-name-block" style="padding:0;"><img src="images/Uros.webp" alt="Uros"></div>
+        <div class="ombre-stats">
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Passif</div>
+            <div class="ombre-stat-val">TC équipe +8%</div>
+          </div>
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Arme</div>
+            <div class="ombre-stat-val arme">TC et DCC ombres +15%</div>
+          </div>
+        </div>
+      </div>
+      <div class="ombre-card">
+        <div class="ombre-name-block" style="padding:0;"><img src="images/Tank.webp" alt="Tank"></div>
+        <div class="ombre-stats">
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Passif</div>
+            <div class="ombre-stat-val">DCC +8%</div>
+          </div>
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Arme</div>
+            <div class="ombre-stat-val arme">Débuff combustion → skill dmg +50% (10s)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="ombres-cat-label ombres-cat-pen">🎯 Pénétration DEF</p>
+    <div class="ombres-grid">
+      <div class="ombre-card">
+        <div class="ombre-name-block" style="padding:0;"><img src="images/Beste.webp" alt="Beste"></div>
+        <div class="ombre-stats">
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Passif</div>
+            <div class="ombre-stat-val">Pen DEF +8%</div>
+          </div>
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Arme</div>
+            <div class="ombre-stat-val arme">ATK ombres +24%, Basic skills +15%</div>
+          </div>
+        </div>
+      </div>
+      <div class="ombre-card">
+        <div class="ombre-name-block" style="padding:0;"><img src="images/Cerbie.webp" alt="Cerbie"></div>
+        <div class="ombre-stats">
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Passif</div>
+            <div class="ombre-stat-val">Dég. ténèbre +9%, DEF -20%</div>
+          </div>
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Arme</div>
+            <div class="ombre-stat-val arme">Pen DEF +24% pour tout le monde</div>
           </div>
         </div>
       </div>
@@ -1932,7 +1941,7 @@ footer span { color: var(--accent); }
       </div>
     </div>
 
-    <p class="ombres-cat-label ombres-cat-def">🛡 Défense & Survivabilité</p>
+    <p class="ombres-cat-label ombres-cat-def">🛡 Défense & Survie</p>
     <div class="ombres-grid">
       <div class="ombre-card">
         <div class="ombre-name-block" style="padding:0;"><img src="images/Kaisel.webp" alt="Kaisel"></div>
