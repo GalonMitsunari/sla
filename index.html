@@ -264,17 +264,13 @@ body {
    LAYOUT HELPERS
 ═══════════════════════════════════════════════ */
 .section {
-  padding: 60px 40px;
-  max-width: 1280px;
-  margin: 0 auto;
+  padding: 60px 60px;
 }
 .section-full {
-  padding: 60px 40px;
-  margin: 0 auto;
-  max-width: 1280px;
+  padding: 60px 60px;
 }
 
-.page-section { border-top: 1px solid rgba(255,255,255,0.05); }
+.page-section { border-top: 1px solid rgba(255,255,255,0.05); flex: 1; }
 
 .section-header {
   display: flex;
@@ -456,7 +452,8 @@ body {
   flex-direction: column;
   gap: 20px;
 }
-.noyaux-list { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; align-items: start; }
+.noyaux-list { display: flex; flex-direction: column; gap: 16px; }
+.noyaux-top-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
 .noyau-card {
   background: var(--bg2);
   border-radius: var(--radius);
@@ -465,34 +462,34 @@ body {
   display: flex;
 }
 .noyau-bar {
-  width: 5px;
+  width: 6px;
   flex-shrink: 0;
 }
-.noyau-content { padding: 12px 14px; flex: 1; }
+.noyau-content { padding: 16px 18px; flex: 1; }
 .noyau-title {
-  font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 8px;
-  padding-bottom: 6px;
+  font-size: 17px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 .noyau-stats { list-style: none; }
 .noyau-stats li {
-  padding: 4px 0;
+  padding: 7px 0;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   border-bottom: 1px solid rgba(255,255,255,0.04);
 }
-.noyau-stat-text { display: flex; flex-direction: column; flex: 1; gap: 2px; }
-.noyau-stat-effect { font-size: 12px; color: var(--gray); }
-.noyau-stat-hunter { font-size: 10px; color: var(--gold); font-weight: 600; }
+.noyau-stat-text { display: flex; flex-direction: column; flex: 1; gap: 3px; }
+.noyau-stat-effect { font-size: 14px; color: var(--gray); }
+.noyau-stat-hunter { font-size: 13px; color: var(--gold); font-weight: 600; }
 .noyau-stat-hunter.unused { color: rgba(255,255,255,0.25); font-style: italic; font-weight: 400; }
-.noyaux-frame { border: 2px solid rgba(255,255,255,0.15); border-radius: var(--radius); padding: 16px; display: flex; flex-direction: column; gap: 16px; }
+.noyaux-frame { border: 2px solid rgba(255,255,255,0.15); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 16px; }
 .noyau-note { font-size: 14px; color: var(--red); font-style: italic; font-weight: 700; text-align: center; line-height: 1.5; }
 .noyau-stat-img {
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   flex-shrink: 0;
   border-radius: 4px;
   background: var(--bg4);
@@ -534,7 +531,7 @@ body {
 /* ═══════════════════════════════════════════════
    TEAM BUILDING
 ═══════════════════════════════════════════════ */
-.element-section { padding: 50px 40px; max-width: 1280px; margin: 0 auto; }
+.element-section { padding: 50px 60px; }
 .element-header {
   display: flex;
   align-items: center;
@@ -1065,6 +1062,7 @@ footer span { color: var(--accent); }
   .sidebar-item { padding: 12px 0; justify-content: center; }
   .main-content { margin-left: 56px; }
   .section, .section-full, .element-section { padding: 40px 20px; }
+  .page-section { flex: none; min-height: auto; }
   .sommaire-grid { grid-template-columns: 1fr; }
   .noyaux-list { grid-template-columns: 1fr; }
   .gemmes-layout, .coop-layout, .rock-layout { grid-template-columns: 1fr; }
@@ -1648,6 +1646,7 @@ footer span { color: var(--accent); }
     <div class="noyaux-layout">
       <div class="noyaux-frame">
       <div class="noyaux-list">
+      <div class="noyaux-top-row">
         <div class="noyau-card n-atk">
           <div class="noyau-bar"></div>
           <div class="noyau-content">
@@ -1676,6 +1675,7 @@ footer span { color: var(--accent); }
             </ul>
           </div>
         </div>
+      </div>
         <div class="noyau-card n-pv">
           <div class="noyau-bar"></div>
           <div class="noyau-content">
