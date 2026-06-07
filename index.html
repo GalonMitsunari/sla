@@ -397,7 +397,8 @@ nav .nav-stuff:hover { color: var(--white); background: rgba(245,200,66,0.15); }
 .noyau-stat-effect { font-size: 12px; color: var(--gray); }
 .noyau-stat-hunter { font-size: 10px; color: var(--gold); font-weight: 600; }
 .noyau-stat-hunter.unused { color: rgba(255,255,255,0.25); font-style: italic; font-weight: 400; }
-.noyau-note { margin-top: 14px; font-size: 11px; color: var(--red); font-style: italic; font-weight: 600; text-align: center; line-height: 1.4; }
+.noyaux-frame { border: 2px solid rgba(255,255,255,0.15); border-radius: var(--radius); padding: 16px; display: flex; flex-direction: column; gap: 16px; }
+.noyau-note { font-size: 14px; color: var(--red); font-style: italic; font-weight: 700; text-align: center; line-height: 1.5; }
 .noyau-stat-img {
   width: 40px;
   height: 40px;
@@ -1482,6 +1483,7 @@ footer span { color: var(--accent); }
       <h2 class="section-title gold">Tout savoir sur les Noyaux</h2>
     </div>
     <div class="noyaux-layout">
+      <div class="noyaux-frame">
       <div class="noyaux-list">
         <div class="noyau-card n-atk">
           <div class="noyau-bar"></div>
@@ -1527,6 +1529,7 @@ footer span { color: var(--accent); }
         </div>
       </div>
       <p class="noyau-note">On précise certains hunters pour certaines cores, mais ils peuvent varier suivant vos besoins</p>
+      </div>
       <div class="noyaux-right">
         <div class="noyaux-img img-placeholder">[ Screenshot noyaux ]</div>
         <div class="reco-card">
