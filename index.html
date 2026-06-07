@@ -361,12 +361,11 @@ nav .nav-stuff:hover { color: var(--white); background: rgba(245,200,66,0.15); }
    NOYAUX
 ═══════════════════════════════════════════════ */
 .noyaux-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 20px;
-  align-items: start;
 }
-.noyaux-list { display: flex; flex-direction: column; gap: 12px; }
+.noyaux-list { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; align-items: start; }
 .noyau-card {
   background: var(--bg2);
   border-radius: var(--radius);
@@ -969,7 +968,8 @@ footer span { color: var(--accent); }
 @media (max-width: 800px) {
   .section, .section-full, .element-section { padding: 40px 20px; }
   .sommaire-grid { grid-template-columns: 1fr; }
-  .noyaux-layout, .gemmes-layout, .coop-layout, .rock-layout { grid-template-columns: 1fr; }
+  .noyaux-list { grid-template-columns: 1fr; }
+  .gemmes-layout, .coop-layout, .rock-layout { grid-template-columns: 1fr; }
   .element-layout { grid-template-columns: 1fr; }
   .ombres-grid { grid-template-columns: 1fr; }
   .artefacts-grid { grid-template-columns: repeat(2, 1fr); }
