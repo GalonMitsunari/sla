@@ -704,15 +704,15 @@ body {
   display: flex;
   flex-direction: row;
   gap: 16px;
-  height: 100%;
-  align-items: stretch;
+  align-items: flex-start;
 }
 .gemmes-img-square {
   aspect-ratio: 1 / 1;
   flex-shrink: 0;
   width: 52%;
+  align-self: flex-start;
 }
-.sung-note { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center; }
+.sung-note { flex: 1; min-width: 0; }
 .gemmes-img-full {
   width: 100%;
   height: 340px;
@@ -1137,12 +1137,10 @@ footer span { color: var(--accent); }
 }
 
 /* ═══════════════════════════════════════════════
-   RESPONSIVE — TABLET (≤ 900px)
+   RESPONSIVE — TABLET (≤ 1000px)
 ═══════════════════════════════════════════════ */
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .gemmes-layout { grid-template-columns: 1fr; }
-  .gemmes-right { flex-direction: row; height: auto; }
-  .gemmes-img-square { width: 45%; }
   .noyaux-top-row { grid-template-columns: 1fr; }
   #artefacts .stuff-grid { grid-template-columns: 1fr; }
   .variantes-grid.cols3 { grid-template-columns: 1fr; }
