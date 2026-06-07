@@ -1298,6 +1298,7 @@ footer span { color: var(--accent); }
     <div class="sidebar-label">Contenus</div>
     <a class="sidebar-item" onclick="showSection('coop',this)"><span class="sidebar-icon">🤝</span><span>Coop</span></a>
     <a class="sidebar-item" onclick="showSection('rockpassa',this)"><span class="sidebar-icon">🎯</span><span>Rockpassa</span></a>
+    <a class="sidebar-item" onclick="showSection('legia',this)"><span class="sidebar-icon">⚔️</span><span>Legia</span></a>
   </nav>
   <div class="sidebar-footer">Made by<br>Natsuki · Usagi · Mitsunari · Miergoat</div>
 </aside>
@@ -1367,6 +1368,11 @@ footer span { color: var(--accent); }
       <div class="accueil-card-title">Rockpassa</div>
       <div class="accueil-card-desc">Guides de boss et variantes de build</div>
     </div>
+    <div class="accueil-card" onclick="showSection('legia','legia')">
+      <div class="accueil-card-icon">⚔️</div>
+      <div class="accueil-card-title">Legia</div>
+      <div class="accueil-card-desc">Guides de boss et variantes de build</div>
+    </div>
   </div>
 
   <div class="accueil-section-title" style="margin-top: 40px;">Plan du guide</div>
@@ -1403,7 +1409,8 @@ footer span { color: var(--accent); }
       </div>
       <div class="sommaire-card-body">
         <ul>
-          <li>Comment foudroyer Rockpassa (KF)</li>
+          <li>Comment faire Rockpassa</li>
+          <li>Comment faire Legia</li>
         </ul>
       </div>
     </div>
@@ -2455,6 +2462,70 @@ footer span { color: var(--accent); }
   </div>
 </section>
 
+<!-- ══════════════════════════════════════════════
+     LEGIA
+══════════════════════════════════════════════ -->
+<section id="legia" class="page-section">
+  <div class="section">
+    <div class="section-header red">
+      <h2 class="section-title red">Partie 3 — Build Legia</h2>
+      <span class="badge badge-red">KF / Avancé</span>
+    </div>
+
+    <!-- Boss 1 & 3 -->
+    <h3 style="font-size:15px; color:var(--white); margin-bottom:14px; font-weight:700;">Boss 1 &amp; 3</h3>
+    <div class="rock-warning">⚠️ À compléter — informations sur les boss 1 &amp; 3 de Legia</div>
+    <div class="rock-layout">
+      <div class="rock-table">
+        <h4>Build recommandé</h4>
+        <div class="rock-row"><div class="rock-key">Contenu</div><div class="rock-val">À compléter</div></div>
+        <div class="rock-row"><div class="rock-key">Avec</div><div class="rock-val">À compléter</div></div>
+        <div class="rock-row"><div class="rock-key">Ombres</div><div class="rock-val">À compléter</div></div>
+        <div class="rock-row"><div class="rock-key">Stat clé</div><div class="rock-val">À compléter</div></div>
+        <div class="rock-row"><div class="rock-key">Noyau</div><div class="rock-val">À compléter</div></div>
+        <div class="rock-row"><div class="rock-key">Boss concernés</div><div class="rock-val">Premier boss + Dernier boss</div></div>
+      </div>
+      <div class="rock-img img-placeholder">[ Screenshot build Boss 1 &amp; 3 ]</div>
+    </div>
+
+    <!-- Boss 2 -->
+    <h3 style="font-size:15px; color:var(--white); margin: 36px 0 14px; font-weight:700;">Boss 2 — À compléter</h3>
+    <div class="variantes-grid cols3">
+      <div class="variante-card">
+        <div class="variante-header" style="background: var(--teal);">Variante 1</div>
+        <div class="variante-img img-placeholder">[ Screenshot Variante 1 ]</div>
+        <div class="variante-footer">Ombres : variable — À adapter selon vos hunters disponibles</div>
+      </div>
+      <div class="variante-card">
+        <div class="variante-header" style="background: var(--accent2);">Variante 2</div>
+        <div class="variante-img img-placeholder">[ Screenshot Variante 2 ]</div>
+        <div class="variante-footer">Ombres : variable — À adapter selon vos hunters disponibles</div>
+      </div>
+      <div class="variante-card">
+        <div class="variante-header" style="background: var(--accent);">Variante 3</div>
+        <div class="variante-img img-placeholder">[ Screenshot Variante 3 ]</div>
+        <div class="variante-footer">Ombres : variable — À adapter selon vos hunters disponibles</div>
+      </div>
+    </div>
+
+    <!-- Dernier boss -->
+    <h3 style="font-size:15px; color:var(--white); margin: 36px 0 14px; font-weight:700;">Dernier Boss — À compléter</h3>
+    <div class="variantes-grid cols2">
+      <div class="variante-card">
+        <div class="variante-header" style="background: var(--green); color:#0a1a14;">Variante 1</div>
+        <div class="variante-img img-placeholder">[ Screenshot Variante 1 ]</div>
+        <div class="variante-footer">Ombres : variable</div>
+      </div>
+      <div class="variante-card">
+        <div class="variante-header" style="background: var(--green); color:#0a1a14;">Variante 2</div>
+        <div class="variante-img img-placeholder">[ Screenshot Variante 2 ]</div>
+        <div class="variante-footer">Ombres : variable</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <p>Solo Leveling Arise — Guide du Chasseur &nbsp;•&nbsp; Made by : <span>Natsuki, Usagi, Mitsunari, Miergoat</span></p>
@@ -2462,7 +2533,7 @@ footer span { color: var(--accent); }
 </div><!-- /.main-content -->
 
 <script>
-const ALL_SECTIONS = ['accueil', 'artefacts', 'noyaux', 'team', 'gemmes', 'ombres', 'coop', 'rockpassa'];
+const ALL_SECTIONS = ['accueil', 'artefacts', 'noyaux', 'team', 'gemmes', 'ombres', 'coop', 'rockpassa', 'legia'];
 
 function showSection(id, btnOrId) {
   ALL_SECTIONS.forEach(sid => {
@@ -2504,7 +2575,7 @@ function closeSidebar() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  ['artefacts', 'noyaux', 'team', 'gemmes', 'ombres', 'coop', 'rockpassa'].forEach(sid => {
+  ['artefacts', 'noyaux', 'team', 'gemmes', 'ombres', 'coop', 'rockpassa', 'legia'].forEach(sid => {
     const el = document.getElementById(sid);
     if (el) el.style.display = 'none';
   });
