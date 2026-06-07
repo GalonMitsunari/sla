@@ -264,17 +264,19 @@ body {
   top: 50%;
   right: 60px;
   transform: translateY(-50%);
-  width: 250px;
-  height: 272px;
+  width: 464px;
+  height: auto;
   object-fit: contain;
-  object-position: center;
   pointer-events: none;
   user-select: none;
   image-rendering: auto;
-  opacity: 0.9;
+  opacity: 0.95;
+}
+@media (max-width: 1100px) {
+  .cover-chae { width: 340px; right: 30px; }
 }
 @media (max-width: 860px) {
-  .cover-chae { width: 180px; height: 196px; right: 20px; opacity: 0.6; }
+  .cover-chae { width: 240px; right: 16px; opacity: 0.5; }
 }
 @media (max-width: 600px) {
   .cover-chae { display: none; }
