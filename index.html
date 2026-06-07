@@ -186,12 +186,14 @@ body {
    COVER
 ═══════════════════════════════════════════════ */
 #accueil {
-  min-height: 50vh;
+  min-height: 55vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
+  text-align: center;
   position: relative;
-  padding: 80px 60px;
+  padding: 60px 360px;
   overflow: hidden;
 }
 #accueil::before {
@@ -231,7 +233,7 @@ body {
   width: 80px;
   height: 3px;
   background: var(--gold);
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
 }
 .cover-credits {
   font-size: 13px;
@@ -251,47 +253,41 @@ body {
   background: var(--gold);
 }
 .cover-badge {
-  position: absolute;
-  bottom: 40px;
-  right: 60px;
   font-size: 11px;
   color: var(--gray);
   letter-spacing: 2px;
   text-transform: uppercase;
+  margin-top: 8px;
 }
 .cover-chae {
   position: absolute;
-  top: 50%;
-  right: 60px;
-  transform: translateY(-50%);
-  width: 464px;
+  bottom: 0;
+  right: 0;
+  width: 320px;
   height: auto;
   object-fit: contain;
   pointer-events: none;
   user-select: none;
-  image-rendering: auto;
   opacity: 0.95;
 }
 .cover-liu {
   position: absolute;
-  top: 50%;
-  right: 540px;
-  transform: translateY(-50%);
-  width: 420px;
+  bottom: 0;
+  left: 0;
+  width: 300px;
   height: auto;
   object-fit: contain;
   pointer-events: none;
   user-select: none;
-  image-rendering: auto;
   opacity: 0.95;
 }
 @media (max-width: 1100px) {
-  .cover-chae { width: 340px; right: 30px; }
-  .cover-liu  { width: 300px; right: 390px; }
+  .cover-chae { width: 240px; }
+  .cover-liu  { width: 220px; }
 }
 @media (max-width: 860px) {
-  .cover-chae { width: 240px; right: 16px; opacity: 0.5; }
-  .cover-liu  { display: none; }
+  .cover-chae { width: 180px; opacity: 0.4; }
+  .cover-liu  { width: 160px; opacity: 0.4; }
 }
 @media (max-width: 600px) {
   .cover-chae { display: none; }
@@ -1217,7 +1213,7 @@ footer span { color: var(--accent); }
   footer { padding: 14px 16px; font-size: 11px; }
 
   /* Accueil cover */
-  #accueil { padding: 36px 20px 28px; min-height: 35vh; }
+  #accueil { padding: 36px 180px 28px; min-height: 35vh; }
   .cover-label { font-size: 10px; letter-spacing: 3px; }
   .cover-title { font-size: 36px; }
   .cover-game { font-size: 13px; letter-spacing: 1px; margin-bottom: 18px; }
