@@ -48,53 +48,88 @@ body {
 }
 
 /* ═══════════════════════════════════════════════
-   NAV
+   SIDEBAR
 ═══════════════════════════════════════════════ */
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(10,14,26,0.95);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(123,97,255,0.2);
-  padding: 0 24px;
+.sidebar {
+  position: fixed;
+  left: 0; top: 0; bottom: 0;
+  width: 220px;
+  background: var(--bg2);
+  border-right: 2px solid rgba(123,97,255,0.25);
   display: flex;
-  align-items: center;
-  gap: 4px;
-  overflow-x: auto;
-  white-space: nowrap;
-  height: 52px;
+  flex-direction: column;
+  z-index: 200;
+  overflow-y: auto;
 }
-nav a {
+.sidebar-logo {
+  padding: 26px 20px 18px;
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--white);
+  letter-spacing: 4px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  flex-shrink: 0;
+}
+.sidebar-logo small {
+  display: block;
+  font-size: 10px;
   color: var(--gray);
-  text-decoration: none;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  padding: 6px 12px;
-  border-radius: 6px;
-  transition: all 0.2s;
+  letter-spacing: 1px;
+  font-weight: 400;
+  margin-top: 4px;
   text-transform: uppercase;
 }
-nav a:hover { color: var(--white); background: rgba(123,97,255,0.15); }
-nav .nav-logo {
-  color: var(--white);
-  font-weight: 800;
+.sidebar-nav { display: flex; flex-direction: column; padding: 12px 0; gap: 2px; flex: 1; }
+.sidebar-sep { height: 1px; background: rgba(255,255,255,0.07); margin: 6px 12px; }
+.sidebar-item {
+  padding: 10px 18px;
+  color: var(--gray);
   font-size: 13px;
-  letter-spacing: 2px;
-  margin-right: 12px;
-  padding: 0;
-  background: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-left: 3px solid transparent;
+  user-select: none;
 }
-nav .nav-logo:hover { background: none; color: var(--gold); }
-nav .sep { color: rgba(255,255,255,0.1); margin: 0 4px; }
-nav .nav-stuff { color: var(--gold); }
-nav .nav-stuff:hover { color: var(--white); background: rgba(245,200,66,0.15); }
+.sidebar-item:hover { color: var(--white); background: rgba(123,97,255,0.1); border-left-color: rgba(123,97,255,0.35); }
+.sidebar-item.active { color: var(--white); background: rgba(123,97,255,0.18); border-left-color: var(--accent); }
+.sidebar-icon { font-size: 15px; flex-shrink: 0; }
+
+/* MAIN CONTENT */
+.main-content { margin-left: 220px; }
+
+/* ACCUEIL */
+.accueil-body { padding: 60px; max-width: 1280px; margin: 0 auto; }
+.accueil-welcome { margin-bottom: 48px; }
+.accueil-welcome h2 { font-size: 30px; font-weight: 800; color: var(--gold); margin-bottom: 16px; }
+.accueil-welcome p { font-size: 15px; color: var(--gray); line-height: 1.85; max-width: 780px; margin-bottom: 12px; }
+.accueil-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 16px;
+}
+.accueil-card {
+  background: var(--bg3);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius);
+  padding: 22px 18px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+.accueil-card:hover { background: var(--bg4); border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(123,97,255,0.15); }
+.accueil-card-icon { font-size: 30px; margin-bottom: 10px; }
+.accueil-card-title { font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+.accueil-card-desc { font-size: 11px; color: var(--gray); line-height: 1.5; }
 
 /* ═══════════════════════════════════════════════
    COVER
 ═══════════════════════════════════════════════ */
-#cover {
+#accueil {
   min-height: 50vh;
   display: flex;
   flex-direction: column;
@@ -967,6 +1002,12 @@ footer span { color: var(--accent); }
   #stuff .stuff-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 800px) {
+  .sidebar { width: 56px; }
+  .sidebar-logo { padding: 16px 0; text-align: center; letter-spacing: 0; font-size: 16px; }
+  .sidebar-logo small { display: none; }
+  .sidebar-item span { display: none; }
+  .sidebar-item { padding: 12px 0; justify-content: center; }
+  .main-content { margin-left: 56px; }
   .section, .section-full, .element-section { padding: 40px 20px; }
   .sommaire-grid { grid-template-columns: 1fr; }
   .noyaux-list { grid-template-columns: 1fr; }
@@ -974,34 +1015,41 @@ footer span { color: var(--accent); }
   .element-layout { grid-template-columns: 1fr; }
   .ombres-grid { grid-template-columns: 1fr; }
   .artefacts-grid { grid-template-columns: repeat(2, 1fr); }
-  #cover { padding: 60px 30px; }
+  #accueil { padding: 60px 30px; }
   .cover-title { font-size: 44px; }
   #stuff .stuff-grid { grid-template-columns: 1fr; }
+  .accueil-body { padding: 30px 20px; }
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <a href="#cover" class="nav-logo">SLA</a>
-  <span class="sep">|</span>
-  <a href="#sommaire">Sommaire</a>
-  <a href="#artefacts">Artefacts</a>
-  <a href="#noyaux">Noyaux</a>
-  <a href="#team">Team</a>
-  <a href="#gemmes">Gemmes</a>
-  <a href="#ombres">Ombres</a>
-  <a href="#coop">Coop</a>
-  <a href="#rockpassa">Rockpassa</a>
-  <span class="sep">|</span>
-  <a href="#stuff" class="nav-stuff">Stuff Parfait</a>
-</nav>
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sidebar-logo">SLA<small>Guide du Chasseur</small></div>
+  <nav class="sidebar-nav">
+    <a class="sidebar-item active" onclick="showSection('accueil',this)"><span class="sidebar-icon">🏠</span><span>Accueil</span></a>
+    <a class="sidebar-item" onclick="showSection('sommaire',this)"><span class="sidebar-icon">📋</span><span>Sommaire</span></a>
+    <div class="sidebar-sep"></div>
+    <a class="sidebar-item" onclick="showSection('artefacts',this)"><span class="sidebar-icon">💎</span><span>Artefacts</span></a>
+    <a class="sidebar-item" onclick="showSection('stuff',this)"><span class="sidebar-icon">⚔</span><span>Stuff Parfait</span></a>
+    <a class="sidebar-item" onclick="showSection('noyaux',this)"><span class="sidebar-icon">🔮</span><span>Noyaux</span></a>
+    <div class="sidebar-sep"></div>
+    <a class="sidebar-item" onclick="showSection('team',this)"><span class="sidebar-icon">👥</span><span>Team Building</span></a>
+    <a class="sidebar-item" onclick="showSection('gemmes',this)"><span class="sidebar-icon">💠</span><span>Gemmes</span></a>
+    <a class="sidebar-item" onclick="showSection('ombres',this)"><span class="sidebar-icon">👤</span><span>Ombres</span></a>
+    <div class="sidebar-sep"></div>
+    <a class="sidebar-item" onclick="showSection('coop',this)"><span class="sidebar-icon">🤝</span><span>Coop</span></a>
+    <a class="sidebar-item" onclick="showSection('rockpassa',this)"><span class="sidebar-icon">🎯</span><span>Rockpassa</span></a>
+  </nav>
+</aside>
+
+<div class="main-content">
 
 <!-- ══════════════════════════════════════════════
-     COVER
+     ACCUEIL
 ══════════════════════════════════════════════ -->
-<section id="cover">
+<section id="accueil">
   <div class="cover-accent-bar"></div>
   <div class="cover-top-bar"></div>
   <div class="cover-label">Guide du</div>
@@ -1011,6 +1059,56 @@ footer span { color: var(--accent); }
   <div class="cover-credits">Made by : Natsuki, Usagi, Mitsunari, Miergoat</div>
   <div class="cover-badge">Guide Communautaire • Édition complète</div>
 </section>
+
+<div class="accueil-body">
+  <div class="accueil-welcome">
+    <h2>Bienvenue, Chasseur</h2>
+    <p>Ce guide communautaire a été conçu pour t'accompagner dans ta progression sur <strong style="color:var(--white)">Solo Leveling Arise</strong>. Que tu sois débutant ou chasseur expérimenté, tu trouveras ici tout ce qu'il te faut pour optimiser ton build, tes ombres, tes noyaux et ta composition d'équipe.</p>
+    <p>Utilise le menu à gauche pour naviguer entre les différentes sections du guide.</p>
+  </div>
+  <div class="accueil-cards">
+    <div class="accueil-card" onclick="showSection('artefacts', document.querySelector('[onclick*=artefacts]'))">
+      <div class="accueil-card-icon">💎</div>
+      <div class="accueil-card-title">Artefacts</div>
+      <div class="accueil-card-desc">Emplacements, stats et priorités d'artefacts</div>
+    </div>
+    <div class="accueil-card" onclick="showSection('stuff', document.querySelector('[onclick*=stuff]'))">
+      <div class="accueil-card-icon">⚔</div>
+      <div class="accueil-card-title">Stuff Parfait</div>
+      <div class="accueil-card-desc">Substats optimales par rôle de hunter</div>
+    </div>
+    <div class="accueil-card" onclick="showSection('noyaux', document.querySelector('[onclick*=noyaux]'))">
+      <div class="accueil-card-icon">🔮</div>
+      <div class="accueil-card-title">Noyaux</div>
+      <div class="accueil-card-desc">Effets et hunters recommandés pour chaque core</div>
+    </div>
+    <div class="accueil-card" onclick="showSection('team', document.querySelector('[onclick*=team]'))">
+      <div class="accueil-card-icon">👥</div>
+      <div class="accueil-card-title">Team Building</div>
+      <div class="accueil-card-desc">Compositions par élément et synergies</div>
+    </div>
+    <div class="accueil-card" onclick="showSection('gemmes', document.querySelector('[onclick*=gemmes]'))">
+      <div class="accueil-card-icon">💠</div>
+      <div class="accueil-card-title">Gemmes</div>
+      <div class="accueil-card-desc">Tout savoir sur les gemmes et leur optimisation</div>
+    </div>
+    <div class="accueil-card" onclick="showSection('ombres', document.querySelector('[onclick*=ombres]'))">
+      <div class="accueil-card-icon">👤</div>
+      <div class="accueil-card-title">Ombres</div>
+      <div class="accueil-card-desc">Passifs, armes et rôles de chaque ombre</div>
+    </div>
+    <div class="accueil-card" onclick="showSection('coop', document.querySelector('[onclick*=coop]'))">
+      <div class="accueil-card-icon">🤝</div>
+      <div class="accueil-card-title">Coop</div>
+      <div class="accueil-card-desc">Stratégies pour le mode coopératif</div>
+    </div>
+    <div class="accueil-card" onclick="showSection('rockpassa', document.querySelector('[onclick*=rockpassa]'))">
+      <div class="accueil-card-icon">🎯</div>
+      <div class="accueil-card-title">Rockpassa</div>
+      <div class="accueil-card-desc">Guides de boss et variantes de build</div>
+    </div>
+  </div>
+</div>
 
 <!-- ══════════════════════════════════════════════
      SOMMAIRE
@@ -2116,8 +2214,40 @@ footer span { color: var(--accent); }
 <footer>
   <p>Solo Leveling Arise — Guide du Chasseur &nbsp;•&nbsp; Made by : <span>Natsuki, Usagi, Mitsunari, Miergoat</span></p>
 </footer>
+</div><!-- /.main-content -->
 
 <script>
+const ALL_SECTIONS = ['accueil', 'sommaire', 'artefacts', 'stuff', 'noyaux', 'team', 'gemmes', 'ombres', 'coop', 'rockpassa'];
+
+function showSection(id, btn) {
+  ALL_SECTIONS.forEach(sid => {
+    const el = document.getElementById(sid);
+    if (el) el.style.display = 'none';
+    const body = document.getElementById(sid + '-body');
+    if (body) body.style.display = 'none';
+  });
+  // Accueil = section#accueil + div.accueil-body
+  if (id === 'accueil') {
+    document.getElementById('accueil').style.display = '';
+    const ab = document.querySelector('.accueil-body');
+    if (ab) ab.style.display = '';
+  } else {
+    const el = document.getElementById(id);
+    if (el) el.style.display = '';
+  }
+  document.querySelectorAll('.sidebar-item').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+// Init : masquer toutes les sections sauf accueil
+document.addEventListener('DOMContentLoaded', function() {
+  ['sommaire', 'artefacts', 'stuff', 'noyaux', 'team', 'gemmes', 'ombres', 'coop', 'rockpassa'].forEach(sid => {
+    const el = document.getElementById(sid);
+    if (el) el.style.display = 'none';
+  });
+});
+
 function elTab(btn, tab) {
   const root = btn.closest('.el-tabs');
   root.querySelectorAll('.el-tab-btn').forEach(b => b.classList.remove('active'));
