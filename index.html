@@ -459,6 +459,25 @@ nav .nav-stuff:hover { color: var(--white); background: rgba(245,200,66,0.15); }
   align-items: start;
 }
 .element-main-img { height: 360px; }
+.el-tabs { display: flex; flex-direction: column; gap: 8px; }
+.el-tab-btns { display: flex; gap: 6px; }
+.el-tab-btn {
+  padding: 5px 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: var(--bg3);
+  color: var(--gray);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, border-color 0.18s;
+}
+.el-tab-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.el-tab-btn:not(.active):hover { border-color: rgba(255,255,255,0.3); color: var(--text); }
+.el-tab-panel { display: none; }
+.el-tab-panel.active { display: block; }
 .element-side { display: flex; flex-direction: column; gap: 12px; }
 .side-block {
   background: var(--bg2);
@@ -1522,7 +1541,18 @@ footer span { color: var(--accent); }
       <span class="element-name">Wind</span>
     </div>
     <div class="element-layout">
-      <div class="element-main-img img-placeholder">[ Composition WIND — Hunters recommandés ]</div>
+      <div class="el-tabs">
+        <div class="el-tab-btns">
+          <button class="el-tab-btn active" onclick="elTab(this,'premium')">Premium</button>
+          <button class="el-tab-btn" onclick="elTab(this,'f2p')">F2P</button>
+        </div>
+        <div class="el-tab-panel active" data-tab="premium">
+          <div class="element-main-img img-placeholder">[ Premium — Composition WIND ]</div>
+        </div>
+        <div class="el-tab-panel" data-tab="f2p">
+          <div class="element-main-img img-placeholder">[ F2P — Composition WIND ]</div>
+        </div>
+      </div>
       <div class="element-side">
         <div class="side-block">
           <div class="side-block-header">Ombres recommandées</div>
@@ -1548,7 +1578,18 @@ footer span { color: var(--accent); }
       <span class="element-name">Water</span>
     </div>
     <div class="element-layout">
-      <div class="element-main-img img-placeholder">[ Composition WATER — Hunters recommandés ]</div>
+      <div class="el-tabs">
+        <div class="el-tab-btns">
+          <button class="el-tab-btn active" onclick="elTab(this,'premium')">Premium</button>
+          <button class="el-tab-btn" onclick="elTab(this,'f2p')">F2P</button>
+        </div>
+        <div class="el-tab-panel active" data-tab="premium">
+          <div class="element-main-img img-placeholder">[ Premium — Composition WATER ]</div>
+        </div>
+        <div class="el-tab-panel" data-tab="f2p">
+          <div class="element-main-img img-placeholder">[ F2P — Composition WATER ]</div>
+        </div>
+      </div>
       <div class="element-side">
         <div class="side-block">
           <div class="side-block-header">Ombres recommandées</div>
@@ -1574,7 +1615,18 @@ footer span { color: var(--accent); }
       <span class="element-name">Dark</span>
     </div>
     <div class="element-layout">
-      <div class="element-main-img img-placeholder">[ Composition DARK — Hunters recommandés ]</div>
+      <div class="el-tabs">
+        <div class="el-tab-btns">
+          <button class="el-tab-btn active" onclick="elTab(this,'premium')">Premium</button>
+          <button class="el-tab-btn" onclick="elTab(this,'f2p')">F2P</button>
+        </div>
+        <div class="el-tab-panel active" data-tab="premium">
+          <div class="element-main-img img-placeholder">[ Premium — Composition DARK ]</div>
+        </div>
+        <div class="el-tab-panel" data-tab="f2p">
+          <div class="element-main-img img-placeholder">[ F2P — Composition DARK ]</div>
+        </div>
+      </div>
       <div class="element-side">
         <div class="side-block">
           <div class="side-block-header">Ombres recommandées</div>
@@ -1600,7 +1652,18 @@ footer span { color: var(--accent); }
       <span class="element-name">Light</span>
     </div>
     <div class="element-layout">
-      <div class="element-main-img img-placeholder">[ Composition LIGHT — Hunters recommandés ]</div>
+      <div class="el-tabs">
+        <div class="el-tab-btns">
+          <button class="el-tab-btn active" onclick="elTab(this,'premium')">Premium</button>
+          <button class="el-tab-btn" onclick="elTab(this,'f2p')">F2P</button>
+        </div>
+        <div class="el-tab-panel active" data-tab="premium">
+          <div class="element-main-img img-placeholder">[ Premium — Composition LIGHT ]</div>
+        </div>
+        <div class="el-tab-panel" data-tab="f2p">
+          <div class="element-main-img img-placeholder">[ F2P — Composition LIGHT ]</div>
+        </div>
+      </div>
       <div class="element-side">
         <div class="side-block">
           <div class="side-block-header">Ombres recommandées</div>
@@ -1626,7 +1689,18 @@ footer span { color: var(--accent); }
       <span class="element-name">Fire</span>
     </div>
     <div class="element-layout">
-      <div class="element-main-img img-placeholder">[ Composition FIRE — Hunters recommandés ]</div>
+      <div class="el-tabs">
+        <div class="el-tab-btns">
+          <button class="el-tab-btn active" onclick="elTab(this,'premium')">Premium</button>
+          <button class="el-tab-btn" onclick="elTab(this,'f2p')">F2P</button>
+        </div>
+        <div class="el-tab-panel active" data-tab="premium">
+          <div class="element-main-img img-placeholder">[ Premium — Composition FIRE ]</div>
+        </div>
+        <div class="el-tab-panel" data-tab="f2p">
+          <div class="element-main-img img-placeholder">[ F2P — Composition FIRE ]</div>
+        </div>
+      </div>
       <div class="element-side">
         <div class="side-block">
           <div class="side-block-header">Ombres recommandées</div>
@@ -2029,5 +2103,14 @@ footer span { color: var(--accent); }
   <p>Solo Leveling Arise — Guide du Chasseur &nbsp;•&nbsp; Made by : <span>Natsuki, Usagi, Mitsunari, Miergoat</span></p>
 </footer>
 
+<script>
+function elTab(btn, tab) {
+  const root = btn.closest('.el-tabs');
+  root.querySelectorAll('.el-tab-btn').forEach(b => b.classList.remove('active'));
+  root.querySelectorAll('.el-tab-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  root.querySelector('[data-tab="' + tab + '"]').classList.add('active');
+}
+</script>
 </body>
 </html>
