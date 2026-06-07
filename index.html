@@ -620,6 +620,19 @@ nav .nav-stuff:hover { color: var(--white); background: rgba(245,200,66,0.15); }
 .ombre-stat-val { font-size: 11px; color: var(--text); }
 .ombre-stat-val.arme { color: var(--teal); }
 
+.ombres-cat-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin: 22px 0 10px;
+  padding-left: 8px;
+  border-left: 3px solid;
+}
+.ombres-cat-label:first-of-type { margin-top: 0; }
+.ombres-cat-atk  { color: var(--accent);  border-color: var(--accent); }
+.ombres-cat-def  { color: var(--green);   border-color: var(--green); }
+.ombres-cat-surv { color: var(--teal);    border-color: var(--teal); }
 .ombres-note {
   margin-top: 16px;
   font-size: 12px;
@@ -1698,7 +1711,7 @@ footer span { color: var(--accent); }
       <span class="badge badge-red">Ombres</span>
     </div>
 
-    <p style="font-size:12px; font-weight:700; color:var(--gray); letter-spacing:1px; text-transform:uppercase; margin-bottom:12px;">1 / 2</p>
+    <p class="ombres-cat-label ombres-cat-atk">⚔ Attaque</p>
     <div class="ombres-grid">
       <div class="ombre-card">
         <div class="ombre-name-block" style="padding:0;"><img src="images/Beste.webp" alt="Beste"></div>
@@ -1779,36 +1792,6 @@ footer span { color: var(--accent); }
         </div>
       </div>
       <div class="ombre-card">
-        <div class="ombre-name-block" style="padding:0;"><img src="images/Baruka.webp" alt="Baruka"></div>
-        <div class="ombre-stats">
-          <div class="ombre-stat-row">
-            <div class="ombre-stat-label">Passif</div>
-            <div class="ombre-stat-val">HP +12%</div>
-          </div>
-          <div class="ombre-stat-row">
-            <div class="ombre-stat-label">Arme</div>
-            <div class="ombre-stat-val arme">HP ombres +24%, chance shield +36%</div>
-          </div>
-        </div>
-      </div>
-      <div class="ombre-card">
-        <div class="ombre-name-block" style="padding:0;"><img src="images/Iron.webp" alt="Iron"></div>
-        <div class="ombre-stats">
-          <div class="ombre-stat-row">
-            <div class="ombre-stat-label">Passif</div>
-            <div class="ombre-stat-val">ATK et DCC +5%</div>
-          </div>
-          <div class="ombre-stat-row">
-            <div class="ombre-stat-label">Arme</div>
-            <div class="ombre-stat-val arme">Pen DEF +15%, heals ombres +90%</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <p style="font-size:12px; font-weight:700; color:var(--gray); letter-spacing:1px; text-transform:uppercase; margin: 28px 0 12px;">2 / 2</p>
-    <div class="ombres-grid">
-      <div class="ombre-card">
         <div class="ombre-name-block" style="padding:0;"><img src="images/Bigrock.webp" alt="Bigrock"></div>
         <div class="ombre-stats">
           <div class="ombre-stat-row">
@@ -1818,19 +1801,6 @@ footer span { color: var(--accent); }
           <div class="ombre-stat-row">
             <div class="ombre-stat-label">Arme</div>
             <div class="ombre-stat-val arme">TC et DCC +18%, ATK +20% (10s)</div>
-          </div>
-        </div>
-      </div>
-      <div class="ombre-card">
-        <div class="ombre-name-block" style="padding:0;"><img src="images/Kaisel.webp" alt="Kaisel"></div>
-        <div class="ombre-stats">
-          <div class="ombre-stat-row">
-            <div class="ombre-stat-label">Passif</div>
-            <div class="ombre-stat-val">DEF équipe +12%</div>
-          </div>
-          <div class="ombre-stat-row">
-            <div class="ombre-stat-label">Arme</div>
-            <div class="ombre-stat-val arme">Pen DEF +15%, dmg ombres normaux +50%</div>
           </div>
         </div>
       </div>
@@ -1861,19 +1831,6 @@ footer span { color: var(--accent); }
         </div>
       </div>
       <div class="ombre-card">
-        <div class="ombre-name-block" style="padding:0;"><img src="images/Crane.webp" alt="Crane"></div>
-        <div class="ombre-stats">
-          <div class="ombre-stat-row">
-            <div class="ombre-stat-label">Passif</div>
-            <div class="ombre-stat-val">MP +12%, MP conso +5%</div>
-          </div>
-          <div class="ombre-stat-row">
-            <div class="ombre-stat-label">Arme</div>
-            <div class="ombre-stat-val arme">DMG +24% (10s) quand malus actif</div>
-          </div>
-        </div>
-      </div>
-      <div class="ombre-card">
         <div class="ombre-name-block" style="padding:0;"><img src="images/Croc.webp" alt="Croc"></div>
         <div class="ombre-stats">
           <div class="ombre-stat-row">
@@ -1883,6 +1840,66 @@ footer span { color: var(--accent); }
           <div class="ombre-stat-row">
             <div class="ombre-stat-label">Arme</div>
             <div class="ombre-stat-val arme">Ennemis &lt;50% HP → +50% dmg ombres</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="ombres-cat-label ombres-cat-def">🛡 Défense</p>
+    <div class="ombres-grid">
+      <div class="ombre-card">
+        <div class="ombre-name-block" style="padding:0;"><img src="images/Kaisel.webp" alt="Kaisel"></div>
+        <div class="ombre-stats">
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Passif</div>
+            <div class="ombre-stat-val">DEF équipe +12%</div>
+          </div>
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Arme</div>
+            <div class="ombre-stat-val arme">Pen DEF +15%, dmg ombres normaux +50%</div>
+          </div>
+        </div>
+      </div>
+      <div class="ombre-card">
+        <div class="ombre-name-block" style="padding:0;"><img src="images/Iron.webp" alt="Iron"></div>
+        <div class="ombre-stats">
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Passif</div>
+            <div class="ombre-stat-val">ATK et DCC +5%</div>
+          </div>
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Arme</div>
+            <div class="ombre-stat-val arme">Pen DEF +15%, heals ombres +90%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="ombres-cat-label ombres-cat-surv">💚 Survivabilité</p>
+    <div class="ombres-grid">
+      <div class="ombre-card">
+        <div class="ombre-name-block" style="padding:0;"><img src="images/Baruka.webp" alt="Baruka"></div>
+        <div class="ombre-stats">
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Passif</div>
+            <div class="ombre-stat-val">HP +12%</div>
+          </div>
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Arme</div>
+            <div class="ombre-stat-val arme">HP ombres +24%, chance shield +36%</div>
+          </div>
+        </div>
+      </div>
+      <div class="ombre-card">
+        <div class="ombre-name-block" style="padding:0;"><img src="images/Crane.webp" alt="Crane"></div>
+        <div class="ombre-stats">
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Passif</div>
+            <div class="ombre-stat-val">MP +12%, MP conso +5%</div>
+          </div>
+          <div class="ombre-stat-row">
+            <div class="ombre-stat-label">Arme</div>
+            <div class="ombre-stat-val arme">DMG +24% (10s) quand malus actif</div>
           </div>
         </div>
       </div>
