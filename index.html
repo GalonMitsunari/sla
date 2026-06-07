@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Solo Leveling Arise — Guide du Chasseur</title>
+<title>Solo Leveling Arise — Guide</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -258,6 +258,27 @@ body {
   color: var(--gray);
   letter-spacing: 2px;
   text-transform: uppercase;
+}
+.cover-chae {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: auto;
+  max-width: 55%;
+  object-fit: contain;
+  object-position: right bottom;
+  pointer-events: none;
+  user-select: none;
+  image-rendering: auto;
+  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.92) 55%, transparent 100%);
+  mask-image: linear-gradient(to left, rgba(0,0,0,0.92) 55%, transparent 100%);
+}
+@media (max-width: 860px) {
+  .cover-chae { max-width: 45%; opacity: 0.5; }
+}
+@media (max-width: 600px) {
+  .cover-chae { display: none; }
 }
 
 /* ═══════════════════════════════════════════════
@@ -1260,9 +1281,9 @@ footer span { color: var(--accent); }
 <section id="accueil">
   <div class="cover-accent-bar"></div>
   <div class="cover-top-bar"></div>
-  <div class="cover-label">Guide du</div>
-  <div class="cover-title">CHASSEUR</div>
-  <div class="cover-game">Solo Leveling Arise</div>
+  <img src="images/CHAE/Cha_Hae-In_The_Flutter_of_Dreams.webp" alt="Cha Hae-In" class="cover-chae">
+  <div class="cover-title" style="font-size: clamp(36px, 5.5vw, 72px);">SOLO LEVELING ARISE</div>
+  <div class="cover-game">— GUIDE —</div>
   <div class="cover-divider"></div>
   <div class="cover-credits">Made by : Natsuki, Usagi, Mitsunari, Miergoat</div>
   <div class="cover-badge">Guide Communautaire • Édition complète</div>
