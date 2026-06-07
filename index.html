@@ -1313,7 +1313,7 @@ footer span { color: var(--accent); }
     <a class="sidebar-item" onclick="showSection('artefacts',this)"><span class="sidebar-icon">💎</span><span>Artefacts & Stuff</span></a>
     <a class="sidebar-item" onclick="showSection('noyaux',this)"><span class="sidebar-icon">🔮</span><span>Noyaux</span></a>
     <a class="sidebar-item" onclick="showSection('gemmes',this)"><span class="sidebar-icon">💠</span><span>Gemmes</span></a>
-    <a class="sidebar-item" onclick="showSection('coop',this)"><span class="sidebar-icon">🤝</span><span>Coop</span></a>
+    <a class="sidebar-item" onclick="showSection('coop-training',this)"><span class="sidebar-icon">🤝</span><span>Coop-Training</span></a>
     <div class="sidebar-sep"></div>
     <div class="sidebar-label">Team building</div>
     <a class="sidebar-item" onclick="showSection('team',this)"><span class="sidebar-icon">👥</span><span>Team</span></a>
@@ -1376,11 +1376,11 @@ footer span { color: var(--accent); }
         <div class="accueil-card-desc">Tout savoir sur les gemmes et leur optimisation</div>
       </div>
     </div>
-    <div class="accueil-card card-bg" onclick="showSection('coop','coop')">
-      <img class="card-bg-img" src="images/Icones/Coop.png" alt="Coop">
+    <div class="accueil-card card-bg" onclick="showSection('coop-training','coop-training')">
+      <img class="card-bg-img" src="images/Icones/Coop.png" alt="Coop-Training">
       <div class="card-bg-overlay"></div>
       <div class="card-bg-content">
-        <div class="accueil-card-title">Coop</div>
+        <div class="accueil-card-title">Coop-Training</div>
         <div class="accueil-card-desc">Entraînement en coopération par élément</div>
       </div>
     </div>
@@ -1430,7 +1430,7 @@ footer span { color: var(--accent); }
           <li>Artefacts &amp; Stuff Parfait</li>
           <li>Tout savoir sur les Noyaux</li>
           <li>Tout savoir sur les Gemmes</li>
-          <li>Entraînement en Coopération</li>
+          <li>Coop-Training</li>
         </ul>
       </div>
     </div>
@@ -2399,10 +2399,10 @@ footer span { color: var(--accent); }
 <!-- ══════════════════════════════════════════════
      COOP TRAINING
 ══════════════════════════════════════════════ -->
-<section id="coop" class="page-section" style="background: var(--bg2);">
+<section id="coop-training" class="page-section" style="background: var(--bg2);">
   <div class="section">
     <div class="section-header green">
-      <h2 class="section-title green">Partie 2 — Entraînement en Coopération</h2>
+      <h2 class="section-title green">Partie 2 — Coop-Training</h2>
     </div>
     <div class="coop-alert">
       ⭐ Ultra important pour booster les stats de vos hunters. Aller jusqu'au pallier 12 puis changez d'élément !
@@ -2862,7 +2862,7 @@ footer span { color: var(--accent); }
 </div><!-- /.main-content -->
 
 <script>
-const ALL_SECTIONS = ['accueil', 'artefacts', 'noyaux', 'team', 'gemmes', 'ombres', 'coop', 'rockpassa', 'legia'];
+const ALL_SECTIONS = ['accueil', 'artefacts', 'noyaux', 'team', 'gemmes', 'ombres', 'coop-training', 'rockpassa', 'legia'];
 
 function showSection(id, btnOrId) {
   ALL_SECTIONS.forEach(sid => {
@@ -2904,7 +2904,7 @@ function closeSidebar() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  ['artefacts', 'noyaux', 'team', 'gemmes', 'ombres', 'coop', 'rockpassa', 'legia'].forEach(sid => {
+  ['artefacts', 'noyaux', 'team', 'gemmes', 'ombres', 'coop-training', 'rockpassa', 'legia'].forEach(sid => {
     const el = document.getElementById(sid);
     if (el) el.style.display = 'none';
   });
