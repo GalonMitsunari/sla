@@ -823,6 +823,11 @@ body {
 .coop-box-rank { font-size: 10px; color: var(--gray); font-weight: 700; width: 30px; flex-shrink: 0; }
 .coop-box-pallier { font-size: 12px; color: var(--text); font-weight: 700; }
 .coop-box-gnum { font-size: 10px; color: var(--gray); margin-left: auto; }
+.coop-box-sep { display: flex; align-items: center; gap: 6px; margin: 2px 0; }
+.coop-box-sep::before,.coop-box-sep::after { content:''; flex:1; height:1px; background:rgba(255,255,255,0.08); }
+.coop-box-sep-label { font-size: 9px; color: var(--gray); text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
+.coop-box-row.low .coop-box-pallier { color: var(--gray); }
+.coop-box-row.low .coop-box-rank { opacity: 0.5; }
 /* Onglets éléments — mêmes couleurs que la section Team */
 .el-tab-btn.elem-fire.active  { background: var(--fire);     border-color: var(--fire);     color: #fff; }
 .el-tab-btn.elem-water.active { background: var(--water);    border-color: var(--water);    color: #0a1a1f; }
@@ -2377,28 +2382,30 @@ footer span { color: var(--accent); }
             <div class="coop-box-body">
               <div class="coop-box-row"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Pallier 2</span><span class="coop-box-gnum">#1</span></div>
               <div class="coop-box-row"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">Pallier 1</span><span class="coop-box-gnum">#2</span></div>
-              <div class="coop-box-row"><span class="coop-box-rank">3ème</span><span class="coop-box-pallier">Pallier 3</span><span class="coop-box-gnum">#4</span></div>
+              <div class="coop-box-row"><span class="coop-box-rank">3ème</span><span class="coop-box-pallier">Pallier 4</span><span class="coop-box-gnum">#3</span></div>
+              <div class="coop-box-row"><span class="coop-box-rank">4ème</span><span class="coop-box-pallier">Pallier 3</span><span class="coop-box-gnum">#4</span></div>
             </div>
           </div>
           <!-- STRIKER -->
           <div class="coop-box">
             <div class="coop-box-header" style="background:var(--red);">Striker</div>
             <div class="coop-box-body">
-              <div class="coop-box-row"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Pallier 2</span><span class="coop-box-gnum">#3</span></div>
-              <div class="coop-box-row"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">Pallier 4</span><span class="coop-box-gnum">#5</span></div>
-              <div class="coop-box-row"><span class="coop-box-rank">3ème</span><span class="coop-box-pallier">Pallier 5</span><span class="coop-box-gnum">#6</span></div>
-              <div class="coop-box-row"><span class="coop-box-rank">4ème</span><span class="coop-box-pallier">Pallier 1</span><span class="coop-box-gnum">#7</span></div>
-              <div class="coop-box-row"><span class="coop-box-rank">5ème</span><span class="coop-box-pallier">Pallier 3</span><span class="coop-box-gnum">#18</span></div>
+              <div class="coop-box-row"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Pallier 2</span><span class="coop-box-gnum">#5</span></div>
+              <div class="coop-box-row"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">Pallier 4</span><span class="coop-box-gnum">#6</span></div>
+              <div class="coop-box-row"><span class="coop-box-rank">3ème</span><span class="coop-box-pallier">Pallier 1</span><span class="coop-box-gnum">#7</span></div>
+              <div class="coop-box-sep"><span class="coop-box-sep-label">ensuite</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Pallier 3</span><span class="coop-box-gnum">#18</span></div>
             </div>
           </div>
-          <!-- BREAKER -->
+          <!-- ÉLÉMENTAL -->
           <div class="coop-box">
-            <div class="coop-box-header" style="background:var(--teal);color:#0a1a1f;">Breaker</div>
+            <div class="coop-box-header" style="background:var(--water);color:#0a1a1f;">Élémental</div>
             <div class="coop-box-body">
-              <div class="coop-box-row"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Pallier 4</span><span class="coop-box-gnum">#12</span></div>
-              <div class="coop-box-row"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">Pallier 1</span><span class="coop-box-gnum">#15</span></div>
-              <div class="coop-box-row"><span class="coop-box-rank">3ème</span><span class="coop-box-pallier">Pallier 2</span><span class="coop-box-gnum">#16</span></div>
-              <div class="coop-box-row"><span class="coop-box-rank">4ème</span><span class="coop-box-pallier">Pallier 3</span><span class="coop-box-gnum">#17</span></div>
+              <div class="coop-box-row"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Pallier 4</span><span class="coop-box-gnum">#8</span></div>
+              <div class="coop-box-row"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">Pallier 2</span><span class="coop-box-gnum">#9</span></div>
+              <div class="coop-box-row"><span class="coop-box-rank">3ème</span><span class="coop-box-pallier">Pallier 1</span><span class="coop-box-gnum">#10</span></div>
+              <div class="coop-box-sep"><span class="coop-box-sep-label">ensuite</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Pallier 3</span><span class="coop-box-gnum">#13</span></div>
             </div>
           </div>
           <!-- SUPPORTER -->
@@ -2406,19 +2413,21 @@ footer span { color: var(--accent); }
             <div class="coop-box-header" style="background:var(--green);color:#0a1a14;">Supporter</div>
             <div class="coop-box-body">
               <div class="coop-box-row"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Pallier 4</span><span class="coop-box-gnum">#11</span></div>
-              <div class="coop-box-row"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">Pallier 3</span><span class="coop-box-gnum">#14</span></div>
-              <div class="coop-box-row"><span class="coop-box-rank">3ème</span><span class="coop-box-pallier">Pallier 1</span><span class="coop-box-gnum">#19</span></div>
-              <div class="coop-box-row"><span class="coop-box-rank">4ème</span><span class="coop-box-pallier">Pallier 2</span><span class="coop-box-gnum">#20</span></div>
+              <div class="coop-box-sep"><span class="coop-box-sep-label">ensuite</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Pallier 3</span><span class="coop-box-gnum">#14</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Pallier 1</span><span class="coop-box-gnum">#19</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Pallier 2</span><span class="coop-box-gnum">#20</span></div>
             </div>
           </div>
-          <!-- ÉLÉMENTAL EAU -->
+          <!-- BREAKER -->
           <div class="coop-box">
-            <div class="coop-box-header" style="background:var(--water);color:#0a1a1f;">Élémental</div>
+            <div class="coop-box-header" style="background:var(--teal);color:#0a1a1f;">Breaker</div>
             <div class="coop-box-body">
-              <div class="coop-box-row"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Pallier 4</span><span class="coop-box-gnum">#8</span></div>
-              <div class="coop-box-row"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">Pallier 2</span><span class="coop-box-gnum">#9</span></div>
-              <div class="coop-box-row"><span class="coop-box-rank">3ème</span><span class="coop-box-pallier">Pallier 1</span><span class="coop-box-gnum">#10</span></div>
-              <div class="coop-box-row"><span class="coop-box-rank">4ème</span><span class="coop-box-pallier">Pallier 3</span><span class="coop-box-gnum">#13</span></div>
+              <div class="coop-box-row"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Pallier 4</span><span class="coop-box-gnum">#12</span></div>
+              <div class="coop-box-sep"><span class="coop-box-sep-label">ensuite</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Pallier 1</span><span class="coop-box-gnum">#15</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Pallier 2</span><span class="coop-box-gnum">#16</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Pallier 3</span><span class="coop-box-gnum">#17</span></div>
             </div>
           </div>
         </div>
