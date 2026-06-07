@@ -810,33 +810,18 @@ body {
   font-weight: 600;
   color: var(--white);
 }
-.coop-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-.coop-img { height: 340px; }
-.coop-priority h4 {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--gold);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 14px;
-}
-.priority-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6px;
-}
-.p-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--bg2);
-  border-radius: 6px;
-  padding: 5px 10px;
-}
+.coop-img { width: 100%; height: 400px; }
+/* Onglets éléments */
+.el-tab-btn.elem-fire.active  { background: #d94f2b; border-color: #d94f2b; color: #fff; }
+.el-tab-btn.elem-water.active { background: #2b8ce0; border-color: #2b8ce0; color: #fff; }
+.el-tab-btn.elem-wind.active  { background: #3dba6a; border-color: #3dba6a; color: #fff; }
+.el-tab-btn.elem-light.active { background: #c8a82a; border-color: #c8a82a; color: #fff; }
+.el-tab-btn.elem-dark.active  { background: var(--accent); border-color: var(--accent); color: #fff; }
+.el-tab-btn.elem-fire:not(.active):hover  { border-color: #d94f2b; color: #d94f2b; }
+.el-tab-btn.elem-water:not(.active):hover { border-color: #2b8ce0; color: #2b8ce0; }
+.el-tab-btn.elem-wind:not(.active):hover  { border-color: #3dba6a; color: #3dba6a; }
+.el-tab-btn.elem-light:not(.active):hover { border-color: #c8a82a; color: #c8a82a; }
+.el-tab-btn.elem-dark:not(.active):hover  { border-color: var(--accent); color: var(--accent); }
 .p-num {
   width: 26px;
   height: 26px;
@@ -1132,7 +1117,6 @@ footer span { color: var(--accent); }
   .variantes-grid.cols3 { grid-template-columns: repeat(2, 1fr); }
   #artefacts .stuff-grid { grid-template-columns: repeat(2, 1fr); }
   .element-layout { grid-template-columns: 1fr; }
-  .coop-layout { grid-template-columns: 1fr; }
   .rock-layout { grid-template-columns: 1fr; }
 }
 
@@ -1255,9 +1239,7 @@ footer span { color: var(--accent); }
   .ombre-name-block { width: 72px; }
 
   /* Coop */
-  .coop-layout { grid-template-columns: 1fr; }
-  .coop-img { height: 200px; }
-  .priority-grid { grid-template-columns: 1fr 1fr; gap: 5px; }
+  .coop-img { height: 240px; }
 
   /* Rockpassa */
   .rock-layout { grid-template-columns: 1fr; }
@@ -2357,42 +2339,28 @@ footer span { color: var(--accent); }
     <div class="coop-alert">
       ⭐ Ultra important pour booster les stats de vos hunters. Montez jusqu'au niveau 12 puis changez d'élément !
     </div>
-    <div class="coop-layout">
-      <div class="coop-img img-placeholder">[ Screenshot arbre Coop-Training ]</div>
-      <div class="coop-priority">
-        <h4>Ordre de priorité</h4>
-        <div class="priority-grid">
-          <div class="p-row"><div class="p-num high">1</div><span class="p-label">Nœud 1</span></div>
-          <div class="p-row"><div class="p-num high">2</div><span class="p-label">Nœud 2</span></div>
-          <div class="p-row"><div class="p-num high">3</div><span class="p-label">Nœud 3</span></div>
-          <div class="p-row"><div class="p-num high">4</div><span class="p-label">Nœud 4</span></div>
-          <div class="p-row"><div class="p-num high">5</div><span class="p-label">Nœud 5</span></div>
-          <div class="p-row"><div class="p-num high">6</div><span class="p-label">Nœud 6</span></div>
-          <div class="p-row"><div class="p-num mid">7</div><span class="p-label">Nœud 7</span></div>
-          <div class="p-row"><div class="p-num mid">8</div><span class="p-label">Nœud 8</span></div>
-          <div class="p-row"><div class="p-num mid">9</div><span class="p-label">Nœud 9</span></div>
-          <div class="p-row"><div class="p-num mid">10</div><span class="p-label">Nœud 10</span></div>
-          <div class="p-row"><div class="p-num mid">11</div><span class="p-label">Nœud 11</span></div>
-          <div class="p-row"><div class="p-num mid">12</div><span class="p-label">Nœud 12</span></div>
-          <div class="p-row"><div class="p-num normal">13</div><span class="p-label">Nœud 13</span></div>
-          <div class="p-row"><div class="p-num normal">14</div><span class="p-label">Nœud 14</span></div>
-          <div class="p-row"><div class="p-num normal">15</div><span class="p-label">Nœud 15</span></div>
-          <div class="p-row"><div class="p-num normal">16</div><span class="p-label">Nœud 16</span></div>
-          <div class="p-row"><div class="p-num normal">17</div><span class="p-label">Nœud 17</span></div>
-          <div class="p-row"><div class="p-num normal">18</div><span class="p-label">Nœud 18</span></div>
-          <div class="p-row"><div class="p-num normal">19</div><span class="p-label">Nœud 19</span></div>
-          <div class="p-row"><div class="p-num normal">20</div><span class="p-label">Nœud 20</span></div>
-        </div>
-        <div class="priority-legend">
-          <div class="legend-item">
-            <div class="legend-dot" style="background: var(--gold);"></div>
-            Priorité haute (1–6)
-          </div>
-          <div class="legend-item">
-            <div class="legend-dot" style="background: var(--accent);"></div>
-            Priorité moyenne (7–12)
-          </div>
-        </div>
+    <div class="el-tabs">
+      <div class="el-tab-btns">
+        <button class="el-tab-btn elem-fire active" onclick="elTab(this,'coop-fire')">🔥 Feu</button>
+        <button class="el-tab-btn elem-water" onclick="elTab(this,'coop-water')">💧 Eau</button>
+        <button class="el-tab-btn elem-wind" onclick="elTab(this,'coop-wind')">🌪️ Vent</button>
+        <button class="el-tab-btn elem-light" onclick="elTab(this,'coop-light')">☀️ Lumière</button>
+        <button class="el-tab-btn elem-dark" onclick="elTab(this,'coop-dark')">🌑 Ténèbres</button>
+      </div>
+      <div class="el-tab-panel active" data-tab="coop-fire">
+        <div class="coop-img img-placeholder">[ Screenshot arbre Coop — Équipe Feu ]</div>
+      </div>
+      <div class="el-tab-panel" data-tab="coop-water">
+        <div class="coop-img img-placeholder">[ Screenshot arbre Coop — Équipe Eau ]</div>
+      </div>
+      <div class="el-tab-panel" data-tab="coop-wind">
+        <div class="coop-img img-placeholder">[ Screenshot arbre Coop — Équipe Vent ]</div>
+      </div>
+      <div class="el-tab-panel" data-tab="coop-light">
+        <div class="coop-img img-placeholder">[ Screenshot arbre Coop — Équipe Lumière ]</div>
+      </div>
+      <div class="el-tab-panel" data-tab="coop-dark">
+        <div class="coop-img img-placeholder">[ Screenshot arbre Coop — Équipe Ténèbres ]</div>
       </div>
     </div>
   </div>
