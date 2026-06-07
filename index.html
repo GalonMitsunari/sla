@@ -1951,42 +1951,48 @@ footer span { color: var(--accent); }
       <img class="element-emoji" src="images/Icones/WIND.webp" alt="Vent">
       <span class="element-name">Wind</span>
     </div>
-    <div class="element-layout">
-      <div class="el-tabs">
-        <div class="el-tab-btns">
-          <button class="el-tab-btn active" onclick="elTab(this,'premium')">Premium</button>
-          <button class="el-tab-btn" onclick="elTab(this,'f2p')">F2P</button>
-        </div>
-        <div class="el-tab-panel active" data-tab="premium">
-          <div class="element-main-img"><img src="images/compo team/team wind.png" alt="Compo Wind" style="width:100%;height:100%;object-fit:contain;"></div>
-        </div>
-        <div class="el-tab-panel" data-tab="f2p">
-          <div class="element-main-img"><img src="images/compo team/team wind f2p.png" alt="Compo Wind F2P" style="width:100%;height:100%;object-fit:contain;"></div>
-        </div>
+    <div class="el-tabs">
+      <div class="el-tab-btns">
+        <button class="el-tab-btn active" onclick="elTab(this,'wind-premium')">Premium</button>
+        <button class="el-tab-btn" onclick="elTab(this,'wind-f2p')">F2P</button>
       </div>
-      <div class="element-side">
-        <div class="side-block">
-          <div class="side-block-header">Ombres recommandées</div>
-          <div class="el-tabs" style="margin-top:8px;">
-            <div class="el-tab-btns">
-              <button class="el-tab-btn active" onclick="elTab(this,'ombre-wind-premium')">Premium</button>
-              <button class="el-tab-btn" onclick="elTab(this,'ombre-wind-f2p')">F2P</button>
-            </div>
-            <div class="el-tab-panel active" data-tab="ombre-wind-premium">
+      <div class="el-tab-panel active" data-tab="wind-premium">
+        <div class="element-layout">
+          <div class="element-main-img"><img src="images/compo team/team wind.png" alt="Compo Wind" style="width:100%;height:100%;object-fit:contain;"></div>
+          <div class="element-side">
+            <div class="side-block">
+              <div class="side-block-header">Ombres recommandées</div>
               <div class="side-block-img"><img src="images/compo team/Ombre wind.png" alt="Ombres Wind" style="width:100%;height:100%;object-fit:contain;"></div>
             </div>
-            <div class="el-tab-panel" data-tab="ombre-wind-f2p">
-              <div class="side-block-img"><img src="images/compo team/ombre wind f2p.png" alt="Ombres Wind F2P" style="width:100%;height:100%;object-fit:contain;"></div>
+            <div class="side-block">
+              <div class="side-block-header" style="background: var(--bg3); color:var(--gray);">Notes &amp; Synergies</div>
+              <div class="side-block-notes">
+                <p>À compléter :</p>
+                <div class="notes-line"></div>
+                <div class="notes-line"></div>
+                <div class="notes-line"></div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="side-block">
-          <div class="side-block-header" style="background: var(--bg3); color:var(--gray);">Notes &amp; Synergies</div>
-          <div class="side-block-notes">
-            <p>À compléter :</p>
-            <div class="notes-line"></div>
-            <div class="notes-line"></div>
-            <div class="notes-line"></div>
+      </div>
+      <div class="el-tab-panel" data-tab="wind-f2p">
+        <div class="element-layout">
+          <div class="element-main-img"><img src="images/compo team/team wind f2p.png" alt="Compo Wind F2P" style="width:100%;height:100%;object-fit:contain;"></div>
+          <div class="element-side">
+            <div class="side-block">
+              <div class="side-block-header">Ombres recommandées</div>
+              <div class="side-block-img"><img src="images/compo team/ombre wind f2p.png" alt="Ombres Wind F2P" style="width:100%;height:100%;object-fit:contain;"></div>
+            </div>
+            <div class="side-block">
+              <div class="side-block-header" style="background: var(--bg3); color:var(--gray);">Notes &amp; Synergies</div>
+              <div class="side-block-notes">
+                <p>À compléter :</p>
+                <div class="notes-line"></div>
+                <div class="notes-line"></div>
+                <div class="notes-line"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
