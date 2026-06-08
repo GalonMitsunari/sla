@@ -1012,6 +1012,9 @@ body {
   text-align: center;
   font-style: italic;
 }
+#battlefield .variante-img { max-height: 220px; margin: 6px 10px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+#battlefield .variante-img img { object-fit: contain; max-height: 220px; width: 100%; }
+#battlefield .variante-footer { font-size: 13px; padding: 10px 14px 14px; line-height: 1.5; }
 
 /* ═══════════════════════════════════════════════
    FOOTER
@@ -3038,56 +3041,12 @@ footer span { color: var(--accent); }
 <section id="battlefield" class="page-section">
   <div class="section">
     <div class="section-header red">
-      <h2 class="section-title red">Partie 4 — Battle field of time</h2>
+      <h2 class="section-title red">Partie 4 — Battle Field Of Time</h2>
       <span class="badge badge-red">KF / Avancé</span>
     </div>
 
-    <div class="rock-warning">⚠️ Le BOT (Battlefield of Time) est un contenu où l'on doit aller le plus vite possible. Nous vous expliquons ici ce qu'il faut, ou ne faut pas, pour faire ce contenu.</div>
-    <div style="display:flex; flex-direction:column; gap:8px;">
-      <p style="font-size:13px; color:var(--gray); font-style:italic; margin:0;">ℹ️ Sung se jouera la plupart du temps en full Intelligence — Sauf exception suivant les bénédictions.</p>
-      <div style="display:flex; gap:12px;">
-        <div class="rock-img" style="flex:1;"><img src="images/BOT/SUNG BOT.png" alt="Sung BOT" style="width:100%;height:100%;object-fit:contain;"></div>
-        <div class="rock-img" style="flex:2;"><img src="images/BOT/BOT.png" alt="BOT" style="width:100%;height:100%;object-fit:contain;"></div>
-      </div>
-    </div>
-
-    <!-- Boss 2 -->
-    <h3 style="font-size:15px; color:var(--white); margin: 36px 0 14px; font-weight:700;">Ce qui compte réellement en Battle Field Of Time</h3>
-    <div class="variantes-grid cols3">
-      <div class="variante-card">
-        <div class="variante-header" style="background: var(--teal);">Conseil N°1</div>
-        <div class="variante-img" style="display:flex; flex-direction:column; gap:6px; padding:8px;">
-          <img src="images/BOT/Skill arme.png" alt="Skill arme" style="width:100%; object-fit:contain;">
-          <img src="images/BOT/Niveau arne.png" alt="Niveau arme" style="width:100%; object-fit:contain;">
-        </div>
-        <div class="variante-footer" style="color:var(--gold);">Le niveau de vos armes ne COMPTE PAS, alors que vos doublons jusqu'à la C10 et le niveau de vos skills comptent</div>
-      </div>
-      <div class="variante-card">
-        <div class="variante-header" style="background: var(--accent2);">Conseil N°2</div>
-        <div class="variante-img"><img src="images/BOT/Stuff BOT.png" alt="Stuff BOT" style="width:100%;height:100%;object-fit:contain;"></div>
-        <div class="variante-footer" style="color:var(--gold);">Le niveau de vos artefacts ne compte pas, avoir le bon ensemble suffira</div>
-      </div>
-      <div class="variante-card">
-        <div class="variante-header" style="background: var(--accent);">Conseil N°3</div>
-        <div class="variante-img"><img src="images/BOT/ombre Bot.png" alt="Ombres BOT" style="width:100%;height:100%;object-fit:contain;"></div>
-        <div class="variante-footer" style="color:var(--gold);">Les ombres sont TRÈS importantes pour leur passif, choisissez-les avec la plus grande attention</div>
-      </div>
-    </div>
-
-    <div class="variantes-grid cols2">
-      <div class="variante-card">
-        <div class="variante-header" style="background: var(--green); color:#0a1a14;">Conseil N°4</div>
-        <div class="variante-img"><img src="images/BOT/power BOT.png" alt="Power BOT" style="width:100%;height:100%;object-fit:contain;"></div>
-        <div class="variante-footer" style="color:var(--gold);">Montez au maximum votre Puissance Rémanente, notamment via Rockpassa, étant donné qu'elle vous permettra de one-shot certains boss</div>
-      </div>
-      <div class="variante-card">
-        <div class="variante-header" style="background: var(--green); color:#0a1a14;">Conseil N°5</div>
-        <div class="variante-img" style="display:flex; flex-direction:row; gap:6px; padding:8px; height:100%; max-height:400px;">
-          <img src="images/BOT/Kanae Bot.png" alt="Kanae BOT" style="flex:1; width:0; height:100%; object-fit:contain;">
-          <img src="images/BOT/skills bot.png" alt="Skills BOT" style="flex:1; width:0; height:100%; object-fit:contain;">
-        </div>
-        <div class="variante-footer" style="color:var(--gold);">Les skills et les doublons de hunters comptent également — assurez-vous que tout est au maximum avant de lancer vos runs</div>
-      </div>
+    <div style="display:flex; align-items:center; justify-content:center; min-height:260px;">
+      <p style="font-size:32px; font-weight:800; color:var(--gray); letter-spacing:2px; opacity:0.4;">Coming Soon</p>
     </div>
 
   </div>
@@ -3101,6 +3060,14 @@ footer span { color: var(--accent); }
 
 <script>
 const ALL_SECTIONS = ['accueil', 'artefacts', 'noyaux', 'team', 'gemmes', 'ombres', 'coop-training', 'rockpassa', 'legia', 'battlefield'];
+
+function toggleBotVideo(btn) {
+  const conseils = document.getElementById('bot-conseils');
+  const videoSection = document.getElementById('bot-video-section');
+  const showing = videoSection.style.display !== 'none';
+  conseils.style.display = showing ? '' : 'none';
+  videoSection.style.display = showing ? 'none' : '';
+}
 
 function showSection(id, btnOrId) {
   ALL_SECTIONS.forEach(sid => {
