@@ -1760,7 +1760,7 @@ footer span { color: var(--accent); opacity: 0.9; }
       </div>
       <div class="artefact-card a-dps">
         <div class="artefact-card-top"></div>
-        <div class="artefact-label">DPS</div>
+        <div class="artefact-label">Striker</div>
         <img class="artefact-img" src="images/Artefact/DPS.png" alt="DPS">
       </div>
       <div class="artefact-card a-sup">
@@ -2185,8 +2185,8 @@ footer span { color: var(--accent); opacity: 0.9; }
               <li><span class="noyau-stat-img"><img src="images/Noyau/14.webp" alt=""></span><span class="noyau-stat-text"><span class="noyau-stat-effect">Break + 10%</span><span class="noyau-stat-hunter">Breaker</span></span></li>
               <li><span class="noyau-stat-img"><img src="images/Noyau/15.webp" alt=""></span><span class="noyau-stat-text"><span class="noyau-stat-effect">Si PM &lt; 20%, PM + 30% (1×/game)</span><span class="noyau-stat-hunter unused">Pas utilisé</span></span></li>
               <li><span class="noyau-stat-img"><img src="images/Noyau/16.webp" alt=""></span><span class="noyau-stat-text"><span class="noyau-stat-effect">Ult = +5% PM</span><span class="noyau-stat-hunter">Minnie / Thomas / Chae light / Mirei</span></span></li>
-              <li><span class="noyau-stat-img"><img src="images/Noyau/17.webp" alt=""></span><span class="noyau-stat-text"><span class="noyau-stat-effect">MP consumption +12% / MP recovery +10%</span><span class="noyau-stat-hunter">Tout le monde — si pas de problème de MP</span></span></li>
-              <li><span class="noyau-stat-img"><img src="images/Noyau/18.webp" alt=""></span><span class="noyau-stat-text"><span class="noyau-stat-effect">3 basic attaque = +3% jauge ult (cd 10s)</span><span class="noyau-stat-hunter">Tout le monde — si problème de MP</span></span></li>
+              <li><span class="noyau-stat-img"><img src="images/Noyau/17.webp" alt=""></span><span class="noyau-stat-text"><span class="noyau-stat-effect">3 basic attaque = +3% jauge ult (cd 10s)</span><span class="noyau-stat-hunter">Tout le monde — si pas de problème de MP</span></span></li>
+              <li><span class="noyau-stat-img"><img src="images/Noyau/18.webp" alt=""></span><span class="noyau-stat-text"><span class="noyau-stat-effect">MP consumption +12% / MP recovery +10%</span><span class="noyau-stat-hunter">Tout le monde — si problème de MP</span></span></li>
             </ul>
           </div>
         </div>
@@ -2205,6 +2205,12 @@ footer span { color: var(--accent); opacity: 0.9; }
     <div class="section-header teal">
       <h2 class="section-title teal">Team Building par Éléments</h2>
     </div>
+    <div style="background:rgba(0,194,203,0.08); border:1px solid rgba(0,194,203,0.25); border-left:4px solid var(--teal); border-radius:8px; padding:12px 16px; margin-top:16px; display:flex; align-items:flex-start; gap:10px;">
+      <span style="font-size:17px; flex-shrink:0; margin-top:1px;">ℹ️</span>
+      <div style="font-size:13.5px; color:var(--text); line-height:1.7;">
+        La variante <strong style="color:var(--teal);">F2P</strong> correspond à la team que vous pouvez obtenir sans invoquer, uniquement grâce à la complétion des <strong style="color:var(--teal);">Jalons de Monarques</strong>.
+      </div>
+    </div>
   </div>
 
   <!-- WIND -->
@@ -2215,17 +2221,13 @@ footer span { color: var(--accent); opacity: 0.9; }
     </div>
     <div class="el-tabs">
       <div class="el-tab-btns">
-        <button class="el-tab-btn active" onclick="elTab(this,'wind-premium')">Premium</button>
+        <button class="el-tab-btn active" onclick="elTab(this,'wind-premium')">Best</button>
         <button class="el-tab-btn" onclick="elTab(this,'wind-f2p')">F2P</button>
       </div>
       <div class="el-tab-panel active" data-tab="wind-premium">
         <div class="element-layout">
           <div class="element-main-img"><img src="images/compo team/team wind.png" alt="Compo Wind"></div>
           <div class="element-side">
-            <div class="side-block">
-              <div class="side-block-header">Ombres recommandées</div>
-              <div class="side-block-img"><img src="images/compo team/Ombre wind.png" alt="Ombres Wind"></div>
-            </div>
             <div class="side-block">
               <div class="side-block-header" style="background: var(--bg3); color:var(--gray);">Notes &amp; Synergies</div>
               <div class="side-block-notes">
@@ -2242,16 +2244,8 @@ footer span { color: var(--accent); opacity: 0.9; }
           <div class="element-main-img"><img src="images/compo team/team wind f2p.png" alt="Compo Wind F2P"></div>
           <div class="element-side">
             <div class="side-block">
-              <div class="side-block-header">Ombres recommandées</div>
-              <div class="side-block-img"><img src="images/compo team/ombre wind f2p.png" alt="Ombres Wind F2P"></div>
-            </div>
-            <div class="side-block">
               <div class="side-block-header" style="background: var(--bg3); color:var(--gray);">Notes &amp; Synergies</div>
-              <div class="side-block-notes">
-                <div class="note-entry"><span class="note-hunter">Jinah</span><span class="note-const">C2 – C5+</span></div>
-                <div class="note-entry"><span class="note-hunter">Sugimoto</span><span class="note-const">C2 – C5+</span></div>
-                <div class="note-entry"><span class="note-hunter">Mirei</span><span class="note-const">C3 – C5+</span></div>
-              </div>
+              <div style="font-size:12px; color:var(--gray); font-style:italic; margin-top:10px; padding:8px 10px; background:rgba(255,255,255,0.03); border-radius:6px; border:1px solid rgba(255,255,255,0.06); line-height:1.6;">Inutile d'investir des doublons sur ces hunters — il s'agit d'une team élémentaire jouable en attendant d'obtenir la team <strong style="color:var(--teal);">Best</strong>.</div>
             </div>
           </div>
         </div>
@@ -2267,21 +2261,18 @@ footer span { color: var(--accent); opacity: 0.9; }
     </div>
     <div class="el-tabs">
       <div class="el-tab-btns">
-        <button class="el-tab-btn active" onclick="elTab(this,'water-premium')">Premium</button>
+        <button class="el-tab-btn active" onclick="elTab(this,'water-premium')">Best</button>
         <button class="el-tab-btn" onclick="elTab(this,'water-f2p')">F2P</button>
+        <button class="el-tab-btn" onclick="elTab(this,'water-collab')">Collab</button>
       </div>
       <div class="el-tab-panel active" data-tab="water-premium">
         <div class="element-layout">
           <div class="element-main-img"><img src="images/compo team/team water.png" alt="Compo Water"></div>
           <div class="element-side">
             <div class="side-block">
-              <div class="side-block-header">Ombres recommandées</div>
-              <div class="side-block-img"><img src="images/compo team/Ombre wind.png" alt="Ombres recommandées"></div>
-            </div>
-            <div class="side-block">
               <div class="side-block-header" style="background: var(--bg3); color:var(--gray);">Notes &amp; Synergies</div>
               <div class="side-block-notes">
-                <div class="note-entry"><span class="note-hunter">Frieren</span><span class="note-const note-water">C5+</span></div>
+                <div class="note-entry"><span class="note-hunter">Elena</span><span class="note-const note-water">C5+</span></div>
                 <div class="note-entry"><span class="note-hunter">Meri Laine</span><span class="note-const note-water">C2 – C5+</span></div>
                 <div class="note-entry"><span class="note-hunter">Cha Hae-In</span><span class="note-const note-water">C2 min &rarr; C5–C10 idéal</span></div>
               </div>
@@ -2294,15 +2285,22 @@ footer span { color: var(--accent); opacity: 0.9; }
           <div class="element-main-img"><img src="images/compo team/team water f2p.png" alt="Compo Water F2P"></div>
           <div class="element-side">
             <div class="side-block">
-              <div class="side-block-header">Ombres recommandées</div>
-              <div class="side-block-img"><img src="images/compo team/Ombre wind.png" alt="Ombres recommandées"></div>
+              <div class="side-block-header" style="background: var(--bg3); color:var(--gray);">Notes &amp; Synergies</div>
+              <div style="font-size:12px; color:var(--gray); font-style:italic; margin-top:10px; padding:8px 10px; background:rgba(255,255,255,0.03); border-radius:6px; border:1px solid rgba(255,255,255,0.06); line-height:1.6;">Inutile d'investir des doublons sur ces hunters — il s'agit d'une team élémentaire jouable en attendant d'obtenir la team <strong style="color:var(--teal);">Best</strong>.</div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="el-tab-panel" data-tab="water-collab">
+        <div class="element-layout">
+          <div class="element-main-img"><img src="images/compo team/team water collab.png" alt="Compo Water Collab"></div>
+          <div class="element-side">
             <div class="side-block">
               <div class="side-block-header" style="background: var(--bg3); color:var(--gray);">Notes &amp; Synergies</div>
               <div class="side-block-notes">
-                <div class="note-entry"><span class="note-hunter">Seorin</span><span class="note-const note-water">C3 – C5+</span></div>
-                <div class="note-entry"><span class="note-hunter">Elena</span><span class="note-const note-water">C1 min &rarr; C5+ idéal</span></div>
-                <div class="note-entry"><span class="note-hunter">Alicia Blanche</span><span class="note-const note-water">C3 – C5+</span></div>
+                <div class="note-entry"><span class="note-hunter">Frieren</span><span class="note-const note-water">C5+</span></div>
+                <div class="note-entry"><span class="note-hunter">Meri Laine</span><span class="note-const note-water">C2 – C5+</span></div>
+                <div class="note-entry"><span class="note-hunter">Cha Hae-In</span><span class="note-const note-water">C2 min &rarr; C5–C10 idéal</span></div>
               </div>
             </div>
           </div>
@@ -2319,7 +2317,7 @@ footer span { color: var(--accent); opacity: 0.9; }
     </div>
     <div class="el-tabs">
       <div class="el-tab-btns">
-        <button class="el-tab-btn active" onclick="elTab(this,'dark-premium')">Premium</button>
+        <button class="el-tab-btn active" onclick="elTab(this,'dark-premium')">Best</button>
         <button class="el-tab-btn" onclick="elTab(this,'dark-f2p')">F2P</button>
         <button class="el-tab-btn" onclick="elTab(this,'dark-collab')">Collab</button>
       </div>
@@ -2327,10 +2325,6 @@ footer span { color: var(--accent); opacity: 0.9; }
         <div class="element-layout">
           <div class="element-main-img"><img src="images/compo team/team dark.png" alt="Compo Dark"></div>
           <div class="element-side">
-            <div class="side-block">
-              <div class="side-block-header">Ombres recommandées</div>
-              <div class="side-block-img"><img src="images/compo team/Ombre wind.png" alt="Ombres recommandées"></div>
-            </div>
             <div class="side-block">
               <div class="side-block-header" style="background: var(--bg3); color:var(--gray);">Notes &amp; Synergies</div>
               <div class="side-block-notes">
@@ -2347,16 +2341,8 @@ footer span { color: var(--accent); opacity: 0.9; }
           <div class="element-main-img"><img src="images/compo team/team dark f2p.png" alt="Compo Dark F2P"></div>
           <div class="element-side">
             <div class="side-block">
-              <div class="side-block-header">Ombres recommandées</div>
-              <div class="side-block-img"><img src="images/compo team/Ombre wind.png" alt="Ombres recommandées"></div>
-            </div>
-            <div class="side-block">
               <div class="side-block-header" style="background: var(--bg3); color:var(--gray);">Notes &amp; Synergies</div>
-              <div class="side-block-notes">
-                <div class="note-entry"><span class="note-hunter">Isla</span><span class="note-const note-dark">C3 min</span></div>
-                <div class="note-entry"><span class="note-hunter">Lim</span><span class="note-const note-dark">C3 min</span></div>
-                <div class="note-entry"><span class="note-hunter">Baek Beast</span><span class="note-const note-dark">C4+</span></div>
-              </div>
+              <div style="font-size:12px; color:var(--gray); font-style:italic; margin-top:10px; padding:8px 10px; background:rgba(255,255,255,0.03); border-radius:6px; border:1px solid rgba(255,255,255,0.06); line-height:1.6;">Inutile d'investir des doublons sur ces hunters — il s'agit d'une team élémentaire jouable en attendant d'obtenir la team <strong style="color:var(--teal);">Best</strong>.</div>
             </div>
           </div>
         </div>
@@ -2365,10 +2351,6 @@ footer span { color: var(--accent); opacity: 0.9; }
         <div class="element-layout">
           <div class="element-main-img"><img src="images/compo team/team dark collab.png" alt="Compo Dark Collab"></div>
           <div class="element-side">
-            <div class="side-block">
-              <div class="side-block-header">Ombres recommandées</div>
-              <div class="side-block-img"><img src="images/compo team/Ombre wind.png" alt="Ombres recommandées"></div>
-            </div>
             <div class="side-block">
               <div class="side-block-header" style="background: var(--bg3); color:var(--gray);">Notes &amp; Synergies</div>
               <div class="side-block-notes">
@@ -2391,7 +2373,7 @@ footer span { color: var(--accent); opacity: 0.9; }
     </div>
     <div class="el-tabs">
       <div class="el-tab-btns">
-        <button class="el-tab-btn active" onclick="elTab(this,'light-premium')">Premium</button>
+        <button class="el-tab-btn active" onclick="elTab(this,'light-premium')">Best</button>
         <button class="el-tab-btn" onclick="elTab(this,'light-f2p')">F2P</button>
         <button class="el-tab-btn" onclick="elTab(this,'light-collab')">Collab</button>
       </div>
@@ -2399,10 +2381,6 @@ footer span { color: var(--accent); opacity: 0.9; }
         <div class="element-layout">
           <div class="element-main-img"><img src="images/compo team/team light.png" alt="Compo Light"></div>
           <div class="element-side">
-            <div class="side-block">
-              <div class="side-block-header">Ombres recommandées</div>
-              <div class="side-block-img"><img src="images/compo team/Ombre wind.png" alt="Ombres recommandées"></div>
-            </div>
             <div class="side-block">
               <div class="side-block-header" style="background: var(--bg3); color:var(--gray);">Notes &amp; Synergies</div>
               <div class="side-block-notes">
@@ -2419,16 +2397,8 @@ footer span { color: var(--accent); opacity: 0.9; }
           <div class="element-main-img"><img src="images/compo team/team light f2p.png" alt="Compo Light F2P"></div>
           <div class="element-side">
             <div class="side-block">
-              <div class="side-block-header">Ombres recommandées</div>
-              <div class="side-block-img"><img src="images/compo team/Ombre wind.png" alt="Ombres recommandées"></div>
-            </div>
-            <div class="side-block">
               <div class="side-block-header" style="background: var(--bg3); color:var(--gray);">Notes &amp; Synergies</div>
-              <div class="side-block-notes">
-                <div class="note-entry"><span class="note-hunter">Go Gunhee</span><span class="note-const note-light">C1 min (arme C5)</span></div>
-                <div class="note-entry"><span class="note-hunter">Laura Walker</span><span class="note-const note-light">C2 min – C5+</span></div>
-                <div class="note-entry"><span class="note-hunter">Cha Hae-In</span><span class="note-const note-light">C5+</span></div>
-              </div>
+              <div style="font-size:12px; color:var(--gray); font-style:italic; margin-top:10px; padding:8px 10px; background:rgba(255,255,255,0.03); border-radius:6px; border:1px solid rgba(255,255,255,0.06); line-height:1.6;">Inutile d'investir des doublons sur ces hunters — il s'agit d'une team élémentaire jouable en attendant d'obtenir la team <strong style="color:var(--teal);">Best</strong>.</div>
             </div>
           </div>
         </div>
@@ -2437,10 +2407,6 @@ footer span { color: var(--accent); opacity: 0.9; }
         <div class="element-layout">
           <div class="element-main-img"><img src="images/compo team/team light collab.png" alt="Compo Light Collab"></div>
           <div class="element-side">
-            <div class="side-block">
-              <div class="side-block-header">Ombres recommandées</div>
-              <div class="side-block-img"><img src="images/compo team/ombre wind f2p.png" alt="Ombres recommandées"></div>
-            </div>
             <div class="side-block">
               <div class="side-block-header" style="background: var(--bg3); color:var(--gray);">Notes &amp; Synergies</div>
               <div class="side-block-notes">
@@ -2463,7 +2429,7 @@ footer span { color: var(--accent); opacity: 0.9; }
     </div>
     <div class="el-tabs">
       <div class="el-tab-btns">
-        <button class="el-tab-btn active" onclick="elTab(this,'fire-premium')">Premium</button>
+        <button class="el-tab-btn active" onclick="elTab(this,'fire-premium')">Best</button>
         <button class="el-tab-btn" onclick="elTab(this,'fire-f2p')">F2P</button>
         <button class="el-tab-btn" onclick="elTab(this,'fire-collab')">Collab</button>
       </div>
@@ -2471,10 +2437,6 @@ footer span { color: var(--accent); opacity: 0.9; }
         <div class="element-layout">
           <div class="element-main-img"><img src="images/compo team/team fire.png" alt="Compo Fire"></div>
           <div class="element-side">
-            <div class="side-block">
-              <div class="side-block-header">Ombres recommandées</div>
-              <div class="side-block-img"><img src="images/compo team/Ombre wind.png" alt="Ombres recommandées"></div>
-            </div>
             <div class="side-block">
               <div class="side-block-header" style="background: var(--bg3); color:var(--gray);">Notes &amp; Synergies</div>
               <div class="side-block-notes">
@@ -2491,16 +2453,8 @@ footer span { color: var(--accent); opacity: 0.9; }
           <div class="element-main-img"><img src="images/compo team/team fire f2p.png" alt="Compo Fire F2P"></div>
           <div class="element-side">
             <div class="side-block">
-              <div class="side-block-header">Ombres recommandées</div>
-              <div class="side-block-img"><img src="images/compo team/Ombre wind.png" alt="Ombres recommandées"></div>
-            </div>
-            <div class="side-block">
               <div class="side-block-header" style="background: var(--bg3); color:var(--gray);">Notes &amp; Synergies</div>
-              <div class="side-block-notes">
-                <div class="note-entry"><span class="note-hunter">Gina</span><span class="note-const note-fire">C4 min – C5+</span></div>
-                <div class="note-entry"><span class="note-hunter">Christopher Reed</span><span class="note-const note-fire">C2 – C5+</span></div>
-                <div class="note-entry"><span class="note-hunter">Yoo Soohyun</span><span class="note-const note-fire">C2 – C5+</span></div>
-              </div>
+              <div style="font-size:12px; color:var(--gray); font-style:italic; margin-top:10px; padding:8px 10px; background:rgba(255,255,255,0.03); border-radius:6px; border:1px solid rgba(255,255,255,0.06); line-height:1.6;">Inutile d'investir des doublons sur ces hunters — il s'agit d'une team élémentaire jouable en attendant d'obtenir la team <strong style="color:var(--teal);">Best</strong>.</div>
             </div>
           </div>
         </div>
@@ -2509,10 +2463,6 @@ footer span { color: var(--accent); opacity: 0.9; }
         <div class="element-layout">
           <div class="element-main-img"><img src="images/compo team/team fire collab.png" alt="Compo Fire Collab"></div>
           <div class="element-side">
-            <div class="side-block">
-              <div class="side-block-header">Ombres recommandées</div>
-              <div class="side-block-img"><img src="images/compo team/Ombre wind.png" alt="Ombres recommandées"></div>
-            </div>
             <div class="side-block">
               <div class="side-block-header" style="background: var(--bg3); color:var(--gray);">Notes &amp; Synergies</div>
               <div class="side-block-notes">
@@ -2550,7 +2500,7 @@ footer span { color: var(--accent); opacity: 0.9; }
           <div class="gemme-icon">↑</div>
           <div class="gemme-text">
             <strong>Stats prioritaires</strong>
-            <span>ATK% / DEF% / HP% — Aucune stat plate (flat) tolérée</span>
+            <span>ATK% / DEF% / HP% — Aucune stat flat tolérée</span>
           </div>
         </div>
         <div class="gemme-rule g3">
