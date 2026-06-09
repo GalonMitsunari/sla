@@ -1401,6 +1401,17 @@ footer span { color: var(--accent); opacity: 0.9; }
 }
 
 /* ═══════════════════════════════════════════════
+   RESPONSIVE — COOP MOBILE (≤ 768px)
+═══════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .coop-boxes { grid-template-columns: 1fr !important; }
+  .coop-box-pallier { font-size: 13px; white-space: normal; word-break: break-word; }
+  .coop-box-header { font-size: 11px; padding: 10px 14px; }
+  .coop-box-rank { font-size: 11px; width: 36px; }
+  .coop-box-gnum { font-size: 11px; }
+}
+
+/* ═══════════════════════════════════════════════
    RESPONSIVE — TABLET (≤ 1000px)
 ═══════════════════════════════════════════════ */
 @media (max-width: 1000px) {
