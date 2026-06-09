@@ -43,7 +43,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.65;
 }
 
@@ -775,12 +775,12 @@ body {
 .gemme-text { padding: 11px 14px; }
 .gemme-text strong {
   display: block;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 700;
-  margin-bottom: 3px;
+  margin-bottom: 4px;
 }
-.gemme-text span { font-size: 11px; color: var(--gray); }
-.gemme-note { display: block; margin-top: 5px; font-size: 10px; color: rgba(255,255,255,0.35); font-style: italic; }
+.gemme-text span { font-size: 14px; color: var(--gray); }
+.gemme-note { display: block; margin-top: 5px; font-size: 12px; color: rgba(255,255,255,0.35); font-style: italic; }
 
 .g1 .gemme-icon { background: var(--gold); }
 .g1 .gemme-text strong { color: var(--gold); }
@@ -857,14 +857,14 @@ body {
 .ombre-stats { padding: 10px 14px; flex: 1; display: flex; flex-direction: column-reverse; justify-content: flex-end; gap: 6px; }
 .ombre-stat-row { margin-bottom: 0; }
 .ombre-stat-label {
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 1px;
   text-transform: uppercase;
   color: var(--gray);
   margin-bottom: 2px;
 }
-.ombre-stat-val { font-size: 11px; color: var(--text); }
+.ombre-stat-val { font-size: 14px; color: var(--text); }
 .ombre-stat-val.arme { color: var(--teal); }
 
 .ombres-cat-label {
@@ -890,6 +890,117 @@ body {
   padding: 10px;
   border-top: 1px solid rgba(255,255,255,0.06);
 }
+
+/* ═══════════════════════════════════════════════
+   ARMES TIER LIST
+═══════════════════════════════════════════════ */
+.arme-tier-block { margin-bottom: 28px; }
+.arme-tier-header { display: flex; align-items: center; gap: 0; margin-bottom: 12px; }
+.arme-tier-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 58px; height: 44px; border-radius: 8px;
+  font-size: 15px; font-weight: 900; letter-spacing: 1px;
+  padding: 0 14px; flex-shrink: 0;
+}
+.tier-dark  { background: var(--dark-el);  color: #fff; }
+.tier-light { background: var(--light-el); color: #1a1000; }
+.tier-fire  { background: var(--fire);     color: #fff; }
+.tier-wind  { background: var(--wind);     color: #071a0e; }
+.tier-water { background: var(--water);    color: #071a1a; }
+
+.arme-grid {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  background: var(--bg2);
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 16px;
+  min-height: 60px;
+}
+.arme-card {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 8px;
+  background: var(--bg3);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 8px;
+  padding: 12px 8px 10px;
+  width: 116px;
+  transition: border-color 0.2s, transform 0.15s, box-shadow 0.2s;
+  cursor: default;
+}
+.arme-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(123,97,255,0.18);
+}
+.arme-pair {
+  display: flex; gap: 8px;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 10px;
+}
+.arme-pair-sep {
+  width: 1px;
+  background: rgba(255,255,255,0.1);
+  margin: 0 10px;
+  align-self: stretch;
+  flex-shrink: 0;
+}
+.arme-card img { width: 76px; height: 76px; object-fit: contain; }
+.arme-card-name {
+  font-size: 11.5px; color: var(--text);
+  text-align: center; line-height: 1.35;
+  word-break: break-word;
+}
+
+/* ═══════════════════════════════════════════════
+   SKILLS / BENE
+═══════════════════════════════════════════════ */
+.arme-nav { display: flex; gap: 10px; margin-bottom: 24px; }
+.arme-nav-btn {
+  padding: 8px 20px; border-radius: 8px; font-size: 13px; font-weight: 700;
+  cursor: pointer; border: 1px solid rgba(255,255,255,0.12);
+  background: var(--bg3); color: var(--gray); transition: all 0.2s;
+}
+.arme-nav-btn.active, .arme-nav-btn:hover {
+  background: var(--accent); color: #fff; border-color: var(--accent);
+}
+.sjw-panel { display: none; }
+.sjw-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+}
+.sjw-col-title {
+  font-size: 13px; font-weight: 800; letter-spacing: 1.2px;
+  text-transform: uppercase; color: var(--accent);
+  border-left: 3px solid var(--accent); padding-left: 10px;
+  margin-bottom: 14px;
+}
+.sjw-col-title.gold { color: var(--gold); border-color: var(--gold); }
+.sjw-slots { display: flex; flex-direction: column; gap: 10px; }
+.sjw-slot {
+  display: flex; align-items: center; gap: 14px;
+  background: var(--bg2); border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px; padding: 10px 14px;
+  transition: border-color 0.2s;
+}
+.sjw-slot:hover { border-color: var(--accent); }
+.sjw-slot-num {
+  width: 28px; height: 28px; border-radius: 6px; flex-shrink: 0;
+  background: var(--bg3); border: 1px solid rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 800; color: var(--gray);
+}
+.sjw-slot-img {
+  width: 52px; height: 52px; border-radius: 8px; flex-shrink: 0;
+  background: var(--bg3); border: 1px solid rgba(255,255,255,0.08);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.sjw-slot-img img { width: 100%; height: 100%; object-fit: contain; }
+.sjw-slot-info { flex: 1; }
+.sjw-slot-name { font-size: 14px; font-weight: 700; color: var(--white); }
+.sjw-slot-desc { font-size: 12px; color: var(--gray); margin-top: 2px; }
+.sjw-empty { color: rgba(255,255,255,0.2); font-style: italic; font-size: 13px; }
 
 /* ═══════════════════════════════════════════════
    COOP TRAINING
@@ -1039,7 +1150,7 @@ body {
   font-weight: 600;
   border-right: 1px solid rgba(255,255,255,0.05);
 }
-.rock-val { padding: 9px 14px; color: var(--text); }
+.rock-val { padding: 9px 14px; color: var(--text); font-size: 15px; }
 .rock-img {
   height: 340px;
   overflow: hidden;
@@ -1440,6 +1551,7 @@ footer span { color: var(--accent); opacity: 0.9; }
     <a class="sidebar-item" onclick="showSection('artefacts',this)"><span class="sidebar-icon">💎</span><span>Artefacts & Stuff</span></a>
     <a class="sidebar-item" onclick="showSection('noyaux',this)"><img class="sidebar-icon" src="images/Noyau/1.webp" alt="Noyaux" style="width:18px;height:18px;object-fit:contain;"><span>Noyaux</span></a>
     <a class="sidebar-item" onclick="showSection('gemmes',this)"><img class="sidebar-icon" src="images/Icones/icone gemmes.png" alt="Gemmes" style="width:18px;height:18px;object-fit:contain;"><span>Gemmes</span></a>
+    <a class="sidebar-item" onclick="showSection('armes',this)"><span class="sidebar-icon">⚔️</span><span>Armes</span></a>
     <a class="sidebar-item" onclick="showSection('coop-training',this)"><img class="sidebar-icon" src="images/Icones/coop training icone.png" alt="Coop-Training" style="width:18px;height:18px;object-fit:contain;"><span>Coop-Training</span></a>
     <div class="sidebar-sep"></div>
     <div class="sidebar-label">Team building</div>
@@ -1484,8 +1596,16 @@ footer span { color: var(--accent); opacity: 0.9; }
   <div class="accueil-welcome">
     <h2>Bienvenue, <span>Chasseur</span></h2>
     <div class="accueil-divider"></div>
-    <p>Ce guide communautaire a été conçu pour t'accompagner dans ta progression sur <strong style="color:var(--white)">Solo Leveling Arise</strong>. Que tu sois débutant ou chasseur expérimenté, tu trouveras ici tout ce qu'il te faut pour optimiser ton build, tes ombres, tes noyaux et ta composition d'équipe.</p>
-    <p>Utilise le menu à gauche pour naviguer entre les différentes sections du guide.</p>
+    <p>Guide communautaire dédié à l'optimisation de <strong style="color:var(--white)">Solo Leveling Arise</strong>. Tu y trouveras des recommandations sur les builds, les ombres, les noyaux, les armes et la composition d'équipe — conçues pour t'aider à progresser efficacement et à faire les bons choix au bon moment.</p>
+
+    <div style="background:rgba(220,50,50,0.1); border:1px solid rgba(220,50,50,0.45); border-left:4px solid var(--red); border-radius:8px; padding:12px 16px; margin-top:18px; display:flex; align-items:flex-start; gap:10px;">
+      <span style="font-size:18px; flex-shrink:0; margin-top:1px;">⚠️</span>
+      <div style="font-size:13.5px; color:var(--text); line-height:1.6;">
+        <strong style="color:var(--red);">Jouez de préférence en anglais.</strong> La version française du jeu contient des erreurs de traduction qui peuvent prêter à confusion, notamment sur les noms de compétences, bénédictions et statistiques. Les termes utilisés dans ce guide correspondent à la version anglaise.
+      </div>
+    </div>
+
+    <p style="font-size:13px; color:var(--gray); font-style:italic; margin-top:14px; line-height:1.65;">Ce guide s'adresse à des joueurs qui savent ce qu'ils cherchent. Certaines sections sont destinées à des profils plus avancés — parcours-les dans l'ordre qui correspond à ton niveau de progression.</p>
   </div>
   <div class="accueil-section-title">Accès rapide aux sections</div>
   <div class="accueil-cards">
@@ -1511,6 +1631,14 @@ footer span { color: var(--accent); opacity: 0.9; }
       <div class="card-bg-content">
         <div class="accueil-card-title">Gemmes</div>
         <div class="accueil-card-desc">Tout savoir sur les gemmes et leur optimisation</div>
+      </div>
+    </div>
+    <div class="accueil-card card-bg" onclick="showSection('armes','armes')">
+      <img class="card-bg-img" src="images/Arme/cle de transfigu.webp" alt="Armes" style="object-position:center center;">
+      <div class="card-bg-overlay"></div>
+      <div class="card-bg-content">
+        <div class="accueil-card-title">Armes</div>
+        <div class="accueil-card-desc">Meilleures combinaisons d'armes par élément pour Sung</div>
       </div>
     </div>
     <div class="accueil-card card-bg" onclick="showSection('coop-training','coop-training')">
@@ -1650,6 +1778,7 @@ footer span { color: var(--accent); opacity: 0.9; }
       <h2 class="section-title teal">Partie 2 — Stuff Parfait</h2>
       <span class="badge badge-teal">Équipement</span>
     </div>
+    <p style="font-size:13.5px; color:var(--gray); line-height:1.7; margin:0 0 20px;">Cherchez à obtenir <strong style="color:var(--white);">minimum 2 procs</strong> dans la stat sur laquelle votre hunter scale (<strong style="color:var(--teal);">ATK, DEF ou PV</strong>). <span style="color:var(--gray);">Exemple — Lennart (hunter défense) : DEF supp +2 ou DEF % +2.</span> Plus vous tendez vers un <strong style="color:var(--gold);">+4</strong>, plus vous gagnerez de stats sur votre hunter.</p>
     <div class="stuff-grid">
 
       <!-- ── ATK ── -->
@@ -2000,11 +2129,6 @@ footer span { color: var(--accent); opacity: 0.9; }
         </div>
       </div>
 
-    </div>
-    <div class="stuff-note">
-      Vous devez chercher à minima <strong>2 procs dans la stat</strong> sur laquelle votre hunter scale (ATK, DEF, PV).
-      Exemple <em>Lennart</em> (hunter défense) : DEF supp +2 ou DEF % +2 — au plus vous tendez vers un +4,
-      au plus vous gagnerez de stats sur votre hunter.
     </div>
   </div>
 </section>
@@ -2477,6 +2601,30 @@ footer span { color: var(--accent); opacity: 0.9; }
       <span class="badge badge-red">Ombres</span>
     </div>
 
+    <!-- Conseil amélioration ombres -->
+    <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:28px;">
+
+      <div style="background:rgba(220,50,50,0.1); border:1px solid rgba(220,50,50,0.4); border-left:4px solid var(--red); border-radius:8px; padding:12px 16px; display:flex; align-items:flex-start; gap:10px;">
+        <span style="font-size:18px; flex-shrink:0; margin-top:1px;">🚫</span>
+        <div style="font-size:13.5px; color:var(--text); line-height:1.7;">
+          <strong style="color:var(--red);">Ne dépensez aucune ressource dans vos ombres</strong> tant que les <strong style="color:var(--gold);">Jalons de Monarques</strong> ne sont pas terminés. Ces jalons vous offrent des récompenses essentielles qui doivent être prioritaires.
+        </div>
+      </div>
+
+      <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-left:4px solid var(--accent); border-radius:8px; padding:12px 16px; display:flex; align-items:flex-start; gap:10px;">
+        <span style="font-size:18px; flex-shrink:0; margin-top:1px;">📋</span>
+        <div style="font-size:13.5px; color:var(--text); line-height:1.7;">
+          <strong style="color:var(--accent);">Améliorez vos ombres de manière uniforme.</strong> Ne favorisez pas une ombre au détriment des autres — progressez toutes en parallèle :
+          <ul style="margin:8px 0 0 4px; padding-left:16px; color:var(--gray); font-size:13px; line-height:1.9;">
+            <li><strong style="color:var(--white);">Armes :</strong> débloquez-les et montez-les de C1 à C5 pour <em>toutes</em> les ombres avant de passer au C2, puis C3, etc.</li>
+            <li><strong style="color:var(--white);">Rangs :</strong> montez tous les rangs d'ombres au même niveau avant de progresser.</li>
+            <li><strong style="color:var(--white);">Skills :</strong> même logique — niveau uniforme sur l'ensemble de vos ombres.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
     <p class="ombres-cat-label ombres-cat-atk">⚔ ATK / Dégâts</p>
     <div class="ombres-grid">
       <div class="ombre-card">
@@ -2726,7 +2874,7 @@ footer span { color: var(--accent); opacity: 0.9; }
               <div class="coop-box-row t-a"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">Overload Damage +3%</span><span class="coop-box-gnum">#9</span></div>
               <div class="coop-box-row t-a"><span class="coop-box-rank">3ème</span><span class="coop-box-pallier">DCC</span><span class="coop-box-gnum">#10</span></div>
               <div class="coop-box-sep"><span class="coop-box-sep-label">ensuite</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts élémentaires +7,5%</span><span class="coop-box-gnum">#22</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts élémentaires +7,5%</span><span class="coop-box-gnum">#17</span></div>
             </div>
           </div>
           <div class="coop-box">
@@ -2742,20 +2890,20 @@ footer span { color: var(--accent); opacity: 0.9; }
           <div class="coop-box">
             <div class="coop-box-header" style="background:var(--teal);color:#0a1a1f;">Breaker</div>
             <div class="coop-box-body">
-              <div class="coop-box-row t-a"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Dégâts infligés si ennemi est Break</span><span class="coop-box-gnum">#16</span></div>
+              <div class="coop-box-row t-a"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Dégâts infligés si ennemi est Break</span><span class="coop-box-gnum">#12</span></div>
               <div class="coop-box-sep"><span class="coop-box-sep-label">ensuite</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts de compétence Break</span><span class="coop-box-gnum">#14</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts Ultime</span><span class="coop-box-gnum">#15</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts de Break</span><span class="coop-box-gnum">#13</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts de compétence Break</span><span class="coop-box-gnum">#22</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts Ultime</span><span class="coop-box-gnum">#23</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts de Break</span><span class="coop-box-gnum">#24</span></div>
             </div>
           </div>
           <div class="coop-box">
             <div class="coop-box-header" style="background:var(--red);">Striker</div>
             <div class="coop-box-body">
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Basic Skill Damage +6%</span><span class="coop-box-gnum">#12</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">DCC +4,5% sous Overload</span><span class="coop-box-gnum">#24</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts élémentaires</span><span class="coop-box-gnum">#17</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Récupération MP</span><span class="coop-box-gnum">#23</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Basic Skill Damage +6%</span><span class="coop-box-gnum">#13</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">DCC +6%</span><span class="coop-box-gnum">#14</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts élémentaires</span><span class="coop-box-gnum">#15</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Taux de Regen MP</span><span class="coop-box-gnum">#16</span></div>
             </div>
           </div>
         </div>
@@ -2767,8 +2915,8 @@ footer span { color: var(--accent); opacity: 0.9; }
           <div class="coop-box">
             <div class="coop-box-header" style="background:var(--gold);color:#1a1000;">Shared</div>
             <div class="coop-box-body">
-              <div class="coop-box-row t-s"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Défense</span><span class="coop-box-gnum">#1</span></div>
-              <div class="coop-box-row t-s"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">Attaque</span><span class="coop-box-gnum">#2</span></div>
+              <div class="coop-box-row t-s"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Attaque</span><span class="coop-box-gnum">#1</span></div>
+              <div class="coop-box-row t-s"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">Défense</span><span class="coop-box-gnum">#2</span></div>
               <div class="coop-box-row t-s"><span class="coop-box-rank">3ème</span><span class="coop-box-pallier">Précision</span><span class="coop-box-gnum">#3</span></div>
               <div class="coop-box-row t-s"><span class="coop-box-rank">4ème</span><span class="coop-box-pallier">PV</span><span class="coop-box-gnum">#4</span></div>
             </div>
@@ -2777,33 +2925,33 @@ footer span { color: var(--accent); opacity: 0.9; }
           <div class="coop-box">
             <div class="coop-box-header" style="background:var(--red);">Striker</div>
             <div class="coop-box-body">
-              <div class="coop-box-row t-s"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">DCC</span><span class="coop-box-gnum">#5</span></div>
-              <div class="coop-box-row t-s"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">Dégâts élémentaires +5,1%</span><span class="coop-box-gnum">#6</span></div>
-              <div class="coop-box-row t-s"><span class="coop-box-rank">3ème</span><span class="coop-box-pallier">Accumulation d'effet +3%</span><span class="coop-box-gnum">#7</span></div>
+              <div class="coop-box-row t-s"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Basic Skill Damage +6%</span><span class="coop-box-gnum">#5</span></div>
+              <div class="coop-box-row t-s"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">DCC +6%</span><span class="coop-box-gnum">#6</span></div>
+              <div class="coop-box-row t-s"><span class="coop-box-rank">3ème</span><span class="coop-box-pallier">Dégâts élémentaires</span><span class="coop-box-gnum">#7</span></div>
               <div class="coop-box-sep"><span class="coop-box-sep-label">ensuite</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Récupération MP</span><span class="coop-box-gnum">#18</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Taux de Regen MP</span><span class="coop-box-gnum">#18</span></div>
             </div>
           </div>
           <!-- ÉLÉMENTAL -->
           <div class="coop-box">
             <div class="coop-box-header" style="background:var(--water);color:#0a1a1f;">Élémental Stacker</div>
             <div class="coop-box-body">
-              <div class="coop-box-row t-a"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Basic Skill Damage +6%</span><span class="coop-box-gnum">#8</span></div>
-              <div class="coop-box-row t-a"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">Dégâts de Break</span><span class="coop-box-gnum">#9</span></div>
-              <div class="coop-box-row t-a"><span class="coop-box-rank">3ème</span><span class="coop-box-pallier">Dégâts de compétence Break</span><span class="coop-box-gnum">#10</span></div>
+              <div class="coop-box-row t-a"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Accumulation d'effet +3%</span><span class="coop-box-gnum">#8</span></div>
+              <div class="coop-box-row t-a"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">Overload Damage +3%</span><span class="coop-box-gnum">#9</span></div>
+              <div class="coop-box-row t-a"><span class="coop-box-rank">3ème</span><span class="coop-box-pallier">DCC</span><span class="coop-box-gnum">#10</span></div>
               <div class="coop-box-sep"><span class="coop-box-sep-label">ensuite</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Bouclier / PV +10,5%</span><span class="coop-box-gnum">#13</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts élémentaires +7,5%</span><span class="coop-box-gnum">#17</span></div>
             </div>
           </div>
           <!-- SUPPORTER -->
           <div class="coop-box">
             <div class="coop-box-header" style="background:var(--green);color:#0a1a14;">Supporter</div>
             <div class="coop-box-body">
-              <div class="coop-box-row t-a"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Dégâts Ultime</span><span class="coop-box-gnum">#11</span></div>
+              <div class="coop-box-row t-a"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">L'ultime augmente les dégâts élémentaires de la team</span><span class="coop-box-gnum">#11</span></div>
               <div class="coop-box-sep"><span class="coop-box-sep-label">ensuite</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">MP supplémentaire</span><span class="coop-box-gnum">#14</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts élémentaires +7,5%</span><span class="coop-box-gnum">#19</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Overload Damage +3%</span><span class="coop-box-gnum">#20</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">MP supplémentaire</span><span class="coop-box-gnum">#19</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts +15%</span><span class="coop-box-gnum">#20</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Bouclier / PV +10,5%</span><span class="coop-box-gnum">#21</span></div>
             </div>
           </div>
           <!-- BREAKER -->
@@ -2812,9 +2960,9 @@ footer span { color: var(--accent); opacity: 0.9; }
             <div class="coop-box-body">
               <div class="coop-box-row t-a"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Dégâts infligés si ennemi est Break</span><span class="coop-box-gnum">#12</span></div>
               <div class="coop-box-sep"><span class="coop-box-sep-label">ensuite</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts +15%</span><span class="coop-box-gnum">#15</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">L'ultime augmente les dégâts élémentaires de la team</span><span class="coop-box-gnum">#16</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">DCC +4,5% sous Overload</span><span class="coop-box-gnum">#17</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts de compétence Break</span><span class="coop-box-gnum">#22</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts Ultime</span><span class="coop-box-gnum">#23</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts de Break</span><span class="coop-box-gnum">#24</span></div>
             </div>
           </div>
           <div class="coop-box">
@@ -2831,8 +2979,8 @@ footer span { color: var(--accent); opacity: 0.9; }
           <div class="coop-box">
             <div class="coop-box-header" style="background:var(--gold);color:#1a1000;">Shared</div>
             <div class="coop-box-body">
-              <div class="coop-box-row t-s"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Défense</span><span class="coop-box-gnum">#1</span></div>
-              <div class="coop-box-row t-s"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">Attaque</span><span class="coop-box-gnum">#2</span></div>
+              <div class="coop-box-row t-s"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Attaque</span><span class="coop-box-gnum">#1</span></div>
+              <div class="coop-box-row t-s"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">Défense</span><span class="coop-box-gnum">#2</span></div>
               <div class="coop-box-row t-s"><span class="coop-box-rank">3ème</span><span class="coop-box-pallier">Précision</span><span class="coop-box-gnum">#3</span></div>
               <div class="coop-box-row t-s"><span class="coop-box-rank">4ème</span><span class="coop-box-pallier">PV</span><span class="coop-box-gnum">#4</span></div>
             </div>
@@ -2840,31 +2988,31 @@ footer span { color: var(--accent); opacity: 0.9; }
           <div class="coop-box">
             <div class="coop-box-header" style="background:var(--red);">Striker</div>
             <div class="coop-box-body">
-              <div class="coop-box-row t-s"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">DCC</span><span class="coop-box-gnum">#5</span></div>
-              <div class="coop-box-row t-s"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">Dégâts élémentaires +5,1%</span><span class="coop-box-gnum">#6</span></div>
-              <div class="coop-box-row t-s"><span class="coop-box-rank">3ème</span><span class="coop-box-pallier">Accumulation d'effet +3%</span><span class="coop-box-gnum">#7</span></div>
+              <div class="coop-box-row t-s"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Basic Skill Damage +6%</span><span class="coop-box-gnum">#5</span></div>
+              <div class="coop-box-row t-s"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">DCC +6%</span><span class="coop-box-gnum">#6</span></div>
+              <div class="coop-box-row t-s"><span class="coop-box-rank">3ème</span><span class="coop-box-pallier">Dégâts élémentaires</span><span class="coop-box-gnum">#7</span></div>
               <div class="coop-box-sep"><span class="coop-box-sep-label">ensuite</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Récupération MP</span><span class="coop-box-gnum">#18</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Taux de Regen MP</span><span class="coop-box-gnum">#18</span></div>
             </div>
           </div>
           <div class="coop-box">
             <div class="coop-box-header" style="background:var(--wind);color:#0a1a14;">Élémental Stacker</div>
             <div class="coop-box-body">
-              <div class="coop-box-row t-a"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Basic Skill Damage +6%</span><span class="coop-box-gnum">#8</span></div>
-              <div class="coop-box-row t-a"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">Dégâts de Break</span><span class="coop-box-gnum">#9</span></div>
-              <div class="coop-box-row t-a"><span class="coop-box-rank">3ème</span><span class="coop-box-pallier">Dégâts de compétence Break</span><span class="coop-box-gnum">#10</span></div>
+              <div class="coop-box-row t-a"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Accumulation d'effet +3%</span><span class="coop-box-gnum">#8</span></div>
+              <div class="coop-box-row t-a"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">Overload Damage +3%</span><span class="coop-box-gnum">#9</span></div>
+              <div class="coop-box-row t-a"><span class="coop-box-rank">3ème</span><span class="coop-box-pallier">DCC</span><span class="coop-box-gnum">#10</span></div>
               <div class="coop-box-sep"><span class="coop-box-sep-label">ensuite</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Bouclier / PV +10,5%</span><span class="coop-box-gnum">#13</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts élémentaires +7,5%</span><span class="coop-box-gnum">#17</span></div>
             </div>
           </div>
           <div class="coop-box">
             <div class="coop-box-header" style="background:var(--green);color:#0a1a14;">Supporter</div>
             <div class="coop-box-body">
-              <div class="coop-box-row t-a"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Dégâts Ultime</span><span class="coop-box-gnum">#11</span></div>
+              <div class="coop-box-row t-a"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">L'ultime augmente les dégâts élémentaires de la team</span><span class="coop-box-gnum">#11</span></div>
               <div class="coop-box-sep"><span class="coop-box-sep-label">ensuite</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">MP supplémentaire</span><span class="coop-box-gnum">#14</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts élémentaires +7,5%</span><span class="coop-box-gnum">#19</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Overload Damage +3%</span><span class="coop-box-gnum">#20</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">MP supplémentaire</span><span class="coop-box-gnum">#19</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts +15%</span><span class="coop-box-gnum">#20</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Bouclier / PV +10,5%</span><span class="coop-box-gnum">#21</span></div>
             </div>
           </div>
           <div class="coop-box">
@@ -2872,9 +3020,9 @@ footer span { color: var(--accent); opacity: 0.9; }
             <div class="coop-box-body">
               <div class="coop-box-row t-a"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Dégâts infligés si ennemi est Break</span><span class="coop-box-gnum">#12</span></div>
               <div class="coop-box-sep"><span class="coop-box-sep-label">ensuite</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts +15%</span><span class="coop-box-gnum">#15</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">L'ultime augmente les dégâts élémentaires de la team</span><span class="coop-box-gnum">#16</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">DCC +4,5% sous Overload</span><span class="coop-box-gnum">#17</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts de compétence Break</span><span class="coop-box-gnum">#22</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts Ultime</span><span class="coop-box-gnum">#23</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts de Break</span><span class="coop-box-gnum">#24</span></div>
             </div>
           </div>
           <div class="coop-box">
@@ -2891,8 +3039,8 @@ footer span { color: var(--accent); opacity: 0.9; }
           <div class="coop-box">
             <div class="coop-box-header" style="background:var(--gold);color:#1a1000;">Shared</div>
             <div class="coop-box-body">
-              <div class="coop-box-row t-s"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Défense</span><span class="coop-box-gnum">#1</span></div>
-              <div class="coop-box-row t-s"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">Attaque</span><span class="coop-box-gnum">#2</span></div>
+              <div class="coop-box-row t-s"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Attaque</span><span class="coop-box-gnum">#1</span></div>
+              <div class="coop-box-row t-s"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">Défense</span><span class="coop-box-gnum">#2</span></div>
               <div class="coop-box-row t-s"><span class="coop-box-rank">3ème</span><span class="coop-box-pallier">Précision</span><span class="coop-box-gnum">#3</span></div>
               <div class="coop-box-row t-s"><span class="coop-box-rank">4ème</span><span class="coop-box-pallier">PV</span><span class="coop-box-gnum">#4</span></div>
             </div>
@@ -2900,31 +3048,31 @@ footer span { color: var(--accent); opacity: 0.9; }
           <div class="coop-box">
             <div class="coop-box-header" style="background:var(--red);">Striker</div>
             <div class="coop-box-body">
-              <div class="coop-box-row t-s"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">DCC</span><span class="coop-box-gnum">#5</span></div>
-              <div class="coop-box-row t-s"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">Dégâts élémentaires +5,1%</span><span class="coop-box-gnum">#6</span></div>
-              <div class="coop-box-row t-s"><span class="coop-box-rank">3ème</span><span class="coop-box-pallier">Accumulation d'effet +3%</span><span class="coop-box-gnum">#7</span></div>
+              <div class="coop-box-row t-s"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Basic Skill Damage +6%</span><span class="coop-box-gnum">#5</span></div>
+              <div class="coop-box-row t-s"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">DCC +6%</span><span class="coop-box-gnum">#6</span></div>
+              <div class="coop-box-row t-s"><span class="coop-box-rank">3ème</span><span class="coop-box-pallier">Dégâts élémentaires</span><span class="coop-box-gnum">#7</span></div>
               <div class="coop-box-sep"><span class="coop-box-sep-label">ensuite</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Récupération MP</span><span class="coop-box-gnum">#18</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Taux de Regen MP</span><span class="coop-box-gnum">#18</span></div>
             </div>
           </div>
           <div class="coop-box">
             <div class="coop-box-header" style="background:var(--light-el);color:#1a1400;">Élémental Stacker</div>
             <div class="coop-box-body">
-              <div class="coop-box-row t-a"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Basic Skill Damage +6%</span><span class="coop-box-gnum">#8</span></div>
-              <div class="coop-box-row t-a"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">Dégâts de Break</span><span class="coop-box-gnum">#9</span></div>
-              <div class="coop-box-row t-a"><span class="coop-box-rank">3ème</span><span class="coop-box-pallier">Dégâts de compétence Break</span><span class="coop-box-gnum">#10</span></div>
+              <div class="coop-box-row t-a"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Accumulation d'effet +3%</span><span class="coop-box-gnum">#8</span></div>
+              <div class="coop-box-row t-a"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">Overload Damage +3%</span><span class="coop-box-gnum">#9</span></div>
+              <div class="coop-box-row t-a"><span class="coop-box-rank">3ème</span><span class="coop-box-pallier">DCC</span><span class="coop-box-gnum">#10</span></div>
               <div class="coop-box-sep"><span class="coop-box-sep-label">ensuite</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Bouclier / PV +10,5%</span><span class="coop-box-gnum">#13</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts élémentaires +7,5%</span><span class="coop-box-gnum">#17</span></div>
             </div>
           </div>
           <div class="coop-box">
             <div class="coop-box-header" style="background:var(--green);color:#0a1a14;">Supporter</div>
             <div class="coop-box-body">
-              <div class="coop-box-row t-a"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Dégâts Ultime</span><span class="coop-box-gnum">#11</span></div>
+              <div class="coop-box-row t-a"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">L'ultime augmente les dégâts élémentaires de la team</span><span class="coop-box-gnum">#11</span></div>
               <div class="coop-box-sep"><span class="coop-box-sep-label">ensuite</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">MP supplémentaire</span><span class="coop-box-gnum">#14</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts élémentaires +7,5%</span><span class="coop-box-gnum">#19</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Overload Damage +3%</span><span class="coop-box-gnum">#20</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">MP supplémentaire</span><span class="coop-box-gnum">#19</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts +15%</span><span class="coop-box-gnum">#20</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Bouclier / PV +10,5%</span><span class="coop-box-gnum">#21</span></div>
             </div>
           </div>
           <div class="coop-box">
@@ -2932,9 +3080,9 @@ footer span { color: var(--accent); opacity: 0.9; }
             <div class="coop-box-body">
               <div class="coop-box-row t-a"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Dégâts infligés si ennemi est Break</span><span class="coop-box-gnum">#12</span></div>
               <div class="coop-box-sep"><span class="coop-box-sep-label">ensuite</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts +15%</span><span class="coop-box-gnum">#15</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">L'ultime augmente les dégâts élémentaires de la team</span><span class="coop-box-gnum">#16</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">DCC +4,5% sous Overload</span><span class="coop-box-gnum">#17</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts de compétence Break</span><span class="coop-box-gnum">#22</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts Ultime</span><span class="coop-box-gnum">#23</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts de Break</span><span class="coop-box-gnum">#24</span></div>
             </div>
           </div>
           <div class="coop-box">
@@ -2951,8 +3099,8 @@ footer span { color: var(--accent); opacity: 0.9; }
           <div class="coop-box">
             <div class="coop-box-header" style="background:var(--gold);color:#1a1000;">Shared</div>
             <div class="coop-box-body">
-              <div class="coop-box-row t-s"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Défense</span><span class="coop-box-gnum">#1</span></div>
-              <div class="coop-box-row t-s"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">Attaque</span><span class="coop-box-gnum">#2</span></div>
+              <div class="coop-box-row t-s"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Attaque</span><span class="coop-box-gnum">#1</span></div>
+              <div class="coop-box-row t-s"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">Défense</span><span class="coop-box-gnum">#2</span></div>
               <div class="coop-box-row t-s"><span class="coop-box-rank">3ème</span><span class="coop-box-pallier">Précision</span><span class="coop-box-gnum">#3</span></div>
               <div class="coop-box-row t-s"><span class="coop-box-rank">4ème</span><span class="coop-box-pallier">PV</span><span class="coop-box-gnum">#4</span></div>
             </div>
@@ -2960,31 +3108,31 @@ footer span { color: var(--accent); opacity: 0.9; }
           <div class="coop-box">
             <div class="coop-box-header" style="background:var(--red);">Striker</div>
             <div class="coop-box-body">
-              <div class="coop-box-row t-s"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">DCC</span><span class="coop-box-gnum">#5</span></div>
-              <div class="coop-box-row t-s"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">Dégâts élémentaires +5,1%</span><span class="coop-box-gnum">#6</span></div>
-              <div class="coop-box-row t-s"><span class="coop-box-rank">3ème</span><span class="coop-box-pallier">Accumulation d'effet +3%</span><span class="coop-box-gnum">#7</span></div>
+              <div class="coop-box-row t-s"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Basic Skill Damage +6%</span><span class="coop-box-gnum">#5</span></div>
+              <div class="coop-box-row t-s"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">DCC +6%</span><span class="coop-box-gnum">#6</span></div>
+              <div class="coop-box-row t-s"><span class="coop-box-rank">3ème</span><span class="coop-box-pallier">Dégâts élémentaires</span><span class="coop-box-gnum">#7</span></div>
               <div class="coop-box-sep"><span class="coop-box-sep-label">ensuite</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Récupération MP</span><span class="coop-box-gnum">#18</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Taux de Regen MP</span><span class="coop-box-gnum">#18</span></div>
             </div>
           </div>
           <div class="coop-box">
             <div class="coop-box-header" style="background:var(--dark-el);">Élémental Stacker</div>
             <div class="coop-box-body">
-              <div class="coop-box-row t-a"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Basic Skill Damage +6%</span><span class="coop-box-gnum">#8</span></div>
-              <div class="coop-box-row t-a"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">Dégâts de Break</span><span class="coop-box-gnum">#9</span></div>
-              <div class="coop-box-row t-a"><span class="coop-box-rank">3ème</span><span class="coop-box-pallier">Dégâts de compétence Break</span><span class="coop-box-gnum">#10</span></div>
+              <div class="coop-box-row t-a"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Accumulation d'effet +3%</span><span class="coop-box-gnum">#8</span></div>
+              <div class="coop-box-row t-a"><span class="coop-box-rank">2ème</span><span class="coop-box-pallier">Overload Damage +3%</span><span class="coop-box-gnum">#9</span></div>
+              <div class="coop-box-row t-a"><span class="coop-box-rank">3ème</span><span class="coop-box-pallier">DCC</span><span class="coop-box-gnum">#10</span></div>
               <div class="coop-box-sep"><span class="coop-box-sep-label">ensuite</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Bouclier / PV +10,5%</span><span class="coop-box-gnum">#13</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts élémentaires +7,5%</span><span class="coop-box-gnum">#17</span></div>
             </div>
           </div>
           <div class="coop-box">
             <div class="coop-box-header" style="background:var(--green);color:#0a1a14;">Supporter</div>
             <div class="coop-box-body">
-              <div class="coop-box-row t-a"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Dégâts Ultime</span><span class="coop-box-gnum">#11</span></div>
+              <div class="coop-box-row t-a"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">L'ultime augmente les dégâts élémentaires de la team</span><span class="coop-box-gnum">#11</span></div>
               <div class="coop-box-sep"><span class="coop-box-sep-label">ensuite</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">MP supplémentaire</span><span class="coop-box-gnum">#14</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts élémentaires +7,5%</span><span class="coop-box-gnum">#19</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Overload Damage +3%</span><span class="coop-box-gnum">#20</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">MP supplémentaire</span><span class="coop-box-gnum">#19</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts +15%</span><span class="coop-box-gnum">#20</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Bouclier / PV +10,5%</span><span class="coop-box-gnum">#21</span></div>
             </div>
           </div>
           <div class="coop-box">
@@ -2992,9 +3140,9 @@ footer span { color: var(--accent); opacity: 0.9; }
             <div class="coop-box-body">
               <div class="coop-box-row t-a"><span class="coop-box-rank">1er</span><span class="coop-box-pallier">Dégâts infligés si ennemi est Break</span><span class="coop-box-gnum">#12</span></div>
               <div class="coop-box-sep"><span class="coop-box-sep-label">ensuite</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts +15%</span><span class="coop-box-gnum">#15</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">L'ultime augmente les dégâts élémentaires de la team</span><span class="coop-box-gnum">#16</span></div>
-              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">DCC +4,5% sous Overload</span><span class="coop-box-gnum">#17</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts de compétence Break</span><span class="coop-box-gnum">#22</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts Ultime</span><span class="coop-box-gnum">#23</span></div>
+              <div class="coop-box-row low"><span class="coop-box-rank">—</span><span class="coop-box-pallier">Dégâts de Break</span><span class="coop-box-gnum">#24</span></div>
             </div>
           </div>
           <div class="coop-box">
@@ -3027,8 +3175,8 @@ footer span { color: var(--accent); opacity: 0.9; }
         <h4>Build recommandé</h4>
         <div class="rock-row"><div class="rock-key">Contenu</div><div class="rock-val">Épreuve d'honneur &amp; Zénith guerrier DARK</div></div>
 
-        <div class="rock-row"><div class="rock-key">Ombres</div><div class="rock-val" style="font-size:12px; line-height:1.7;">Sung : Beru — Beste — Cerbie<br>Hunter : Beste — Uros — Cerbie</div></div>
-        <div class="rock-row"><div class="rock-key">Stat clé</div><div class="rock-val" style="font-size:12px; line-height:1.6;">95k ATK min · 9k TC min · 195% DCC min · 40k Pén. Déf · 30k HDD<br><span style="color:var(--gray); font-size:11px;">Stats recommandées, non obligatoires — à adapter selon votre gameplay</span></div></div>
+        <div class="rock-row"><div class="rock-key">Ombres</div><div class="rock-val" style="line-height:1.7;">Sung : Beru — Beste — Cerbie<br>Hunter : Beste — Uros — Cerbie</div></div>
+        <div class="rock-row"><div class="rock-key">Stat clé</div><div class="rock-val" style="line-height:1.6;">95k ATK min · 9k TC min · 195% DCC min · 40k Pén. Déf · 30k HDD<br><span style="color:var(--gray); font-size:13px;">Stats recommandées, non obligatoires — à adapter selon votre gameplay</span></div></div>
         <div class="rock-row"><div class="rock-key">Noyau</div><div class="rock-val" style="display:flex; gap:8px; align-items:center; padding:8px 14px;"><img src="images/Noyau/1.webp" style="height:36px; width:36px; object-fit:contain;" title="Noyau 1"><img src="images/Noyau/8.webp" style="height:36px; width:36px; object-fit:contain;" title="Noyau 8"><img src="images/Noyau/18.webp" style="height:36px; width:36px; object-fit:contain;" title="Noyau 18"></div></div>
         <div class="rock-row"><div class="rock-key">Boss concernés</div><div class="rock-val">Premier boss + Dernier boss</div></div>
       </div>
@@ -3093,6 +3241,290 @@ footer span { color: var(--accent); opacity: 0.9; }
     <div style="display:flex; align-items:center; justify-content:center; min-height:260px;">
       <p style="font-size:32px; font-weight:800; color:var(--gray); letter-spacing:2px; opacity:0.4;">Coming Soon</p>
     </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     ARMES
+══════════════════════════════════════════════ -->
+<section id="armes" class="page-section">
+  <div class="section">
+    <div class="section-header" style="border-bottom-color:var(--accent);">
+      <h2 class="section-title">Meilleures combinaisons d'armes par élément pour Sung</h2>
+      <span class="badge" style="background:rgba(123,97,255,0.15);color:var(--accent);border:1px solid rgba(123,97,255,0.3);">Équipement</span>
+    </div>
+
+    <!-- NAV -->
+    <div class="arme-nav">
+      <button class="arme-nav-btn active" onclick="armeTab('weapons',this)">⚔️ Armes</button>
+      <button class="arme-nav-btn" onclick="armeTab('sjw',this)">✦ Skills / Bénédictions</button>
+    </div>
+
+    <!-- PANEL ARMES -->
+    <div id="arme-weapons-panel">
+
+    <!-- SSS -->
+    <div class="arme-tier-block">
+      <div class="arme-tier-header"><div class="arme-tier-badge tier-dark">Dark</div></div>
+      <div class="arme-grid">
+        <div class="arme-pair">
+          <div class="arme-card"><img src="images/Arme/cle de transfigu.webp" alt="Clé de Transfiguration"><div class="arme-card-name">Clé de Transfiguration</div></div>
+          <div class="arme-card"><img src="images/Arme/pompe.webp" alt="Pompe"><div class="arme-card-name">Winchester Roke</div></div>
+        </div>
+        <div class="arme-pair-sep"></div>
+        <div class="arme-pair">
+          <div class="arme-card"><img src="images/Arme/katana.webp" alt="Katana"><div class="arme-card-name">Épée démoniaque : Fleur de prunier</div></div>
+          <div class="arme-card"><img src="images/Arme/plume.webp" alt="Plume"><div class="arme-card-name">Ombre sélène</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Light -->
+    <div class="arme-tier-block">
+      <div class="arme-tier-header"><div class="arme-tier-badge tier-light">Light</div></div>
+      <div class="arme-grid">
+        <div class="arme-pair">
+          <div class="arme-card"><img src="images/Arme/light 1.webp" alt=""><div class="arme-card-name">Épée du Héros</div></div>
+          <div class="arme-card"><img src="images/Arme/light 4.webp" alt=""><div class="arme-card-name">Bâton de combat divin</div></div>
+        </div>
+        <div class="arme-pair-sep"></div>
+        <div class="arme-pair">
+          <div class="arme-card"><img src="images/Arme/Light 3.webp" alt=""><div class="arme-card-name">Phantomblade</div></div>
+          <div class="arme-card"><img src="images/Arme/light 4.webp" alt=""><div class="arme-card-name">Bâton de combat divin</div></div>
+        </div>
+        <div class="arme-pair-sep"></div>
+        <div class="arme-pair">
+          <div class="arme-card"><img src="images/Arme/light 5.webp" alt=""><div class="arme-card-name">Gold-tailed Fox</div></div>
+          <div class="arme-card"><img src="images/Arme/light 6.webp" alt=""><div class="arme-card-name">Bâton de combat divin</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fire -->
+    <div class="arme-tier-block">
+      <div class="arme-tier-header"><div class="arme-tier-badge tier-fire">Fire</div></div>
+      <div class="arme-grid">
+        <div class="arme-pair">
+          <div class="arme-card"><img src="images/Arme/fire 1.webp" alt=""><div class="arme-card-name">Rugissement d'Ennio</div></div>
+          <div class="arme-card"><img src="images/Arme/fire 2.webp" alt=""><div class="arme-card-name">Lance à double lame du clan Radir</div></div>
+        </div>
+        <div class="arme-pair-sep"></div>
+        <div class="arme-pair">
+          <div class="arme-card"><img src="images/Arme/fire 3.webp" alt=""><div class="arme-card-name">Lance à double lame du clan Radir</div></div>
+          <div class="arme-card"><img src="images/Arme/fire 4.webp" alt=""><div class="arme-card-name">Éventail du Démon de feu</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wind -->
+    <div class="arme-tier-block">
+      <div class="arme-tier-header"><div class="arme-tier-badge tier-wind">Wind</div></div>
+      <div class="arme-grid">
+        <div class="arme-pair">
+          <div class="arme-card"><img src="images/Arme/wind 1.webp" alt=""><div class="arme-card-name">Moonlit Gale</div></div>
+          <div class="arme-card"><img src="images/Arme/wind 2.webp" alt=""><div class="arme-card-name">Soma and Asura</div></div>
+        </div>
+        <div class="arme-pair-sep"></div>
+        <div class="arme-pair">
+          <div class="arme-card"><img src="images/Arme/wind 3.webp" alt=""><div class="arme-card-name">Stormbringer</div></div>
+          <div class="arme-card"><img src="images/Arme/wind 4.webp" alt=""><div class="arme-card-name">Demon King's Daggers</div></div>
+        </div>
+        <div class="arme-pair-sep"></div>
+        <div class="arme-pair" style="flex-direction:column; gap:6px;">
+          <div style="display:flex; gap:8px;">
+            <div class="arme-card"><img src="images/Arme/wind 3.webp" alt=""><div class="arme-card-name">Stormbringer</div></div>
+            <div class="arme-card"><img src="images/Arme/plume.webp" alt=""><div class="arme-card-name">Moonshadow</div></div>
+          </div>
+          <div style="font-size:11px; color:var(--wind); font-style:italic; padding:2px 4px;">⚡ Fusion Wind &amp; Dark en fonction des contenus</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Water -->
+    <div class="arme-tier-block">
+      <div class="arme-tier-header"><div class="arme-tier-badge tier-water">Water</div></div>
+      <div class="arme-grid">
+        <div class="arme-pair">
+          <div class="arme-card"><img src="images/Arme/water 1.webp" alt=""><div class="arme-card-name">Allon's Orb</div></div>
+          <div class="arme-card"><img src="images/Arme/water 2.webp" alt=""><div class="arme-card-name">Winter Fang</div></div>
+        </div>
+        <div class="arme-pair-sep"></div>
+        <div class="arme-pair" style="flex-direction:column; gap:6px;">
+          <div style="display:flex; gap:8px;">
+            <div class="arme-card"><img src="images/Arme/water 3.webp" alt=""><div class="arme-card-name">Thetis' Grimoire</div></div>
+            <div class="arme-card"><img src="images/Arme/water 4.webp" alt=""><div class="arme-card-name">Moonshadow</div></div>
+          </div>
+          <div style="font-size:11px; color:var(--water); font-style:italic; padding:2px 4px;">⚡ Fusion Wind &amp; Water en fonction des contenus - Ex : POD</div>
+        </div>
+      </div>
+    </div>
+
+    </div><!-- /#arme-weapons-panel -->
+
+    <!-- PANEL SKILLS / BENE -->
+    <div id="arme-sjw-panel" class="sjw-panel">
+
+      <!-- Note introductive -->
+      <div style="background:rgba(123,97,255,0.08); border:1px solid rgba(123,97,255,0.2); border-radius:10px; padding:12px 16px; margin-bottom:24px; font-size:13px; color:var(--gray); line-height:1.6;">
+        ℹ️ <strong style="color:var(--text);">Présentation non exhaustive.</strong> Ces recommandations ont pour but de vous indiquer quelles bénédictions prioriser en <strong style="color:var(--red);">Mythique</strong> en premier, afin d'optimiser la progression de Sung Jin-woo.
+      </div>
+
+      <div class="sjw-grid">
+
+        <!-- BÉNÉDICTIONS -->
+        <div>
+          <div class="sjw-col-title gold">★ Bénédictions</div>
+
+          <!-- Offensives -->
+          <div style="font-size:11px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:var(--red); margin:0 0 8px 2px;">⚔ Offensives</div>
+          <div class="sjw-slots" style="margin-bottom:20px;">
+            <div class="sjw-slot">
+              <div class="sjw-slot-num">1</div>
+              <div class="sjw-slot-img"><img src="images/benediction/1 eveil.webp" alt="Éveil"></div>
+              <div class="sjw-slot-info"><div class="sjw-slot-name">Reawakening</div></div>
+            </div>
+            <div class="sjw-slot">
+              <div class="sjw-slot-num">2</div>
+              <div class="sjw-slot-img"><img src="images/benediction/2 -Sharp perception.webp" alt="Sharp Perception"></div>
+              <div class="sjw-slot-info"><div class="sjw-slot-name">Sharp Perception</div></div>
+            </div>
+            <div class="sjw-slot">
+              <div class="sjw-slot-num">3</div>
+              <div class="sjw-slot-img"><img src="images/benediction/3 Bloodlust.webp" alt="Bloodlust"></div>
+              <div class="sjw-slot-info"><div class="sjw-slot-name">Bloodlust</div></div>
+            </div>
+            <div class="sjw-slot">
+              <div class="sjw-slot-num">4</div>
+              <div class="sjw-slot-img"><img src="images/benediction/4 We Are one.webp" alt="We Are One"></div>
+              <div class="sjw-slot-info"><div class="sjw-slot-name">We Are One</div></div>
+            </div>
+            <div class="sjw-slot">
+              <div class="sjw-slot-num">5</div>
+              <div class="sjw-slot-img"><img src="images/benediction/5 Boss_Slayer.webp" alt="Boss Slayer"></div>
+              <div class="sjw-slot-info"><div class="sjw-slot-name">Boss Slayer</div></div>
+            </div>
+            <div class="sjw-slot">
+              <div class="sjw-slot-num">6</div>
+              <div class="sjw-slot-img"><img src="images/benediction/6 Weakness_Detection.webp" alt="Weakness Detection"></div>
+              <div class="sjw-slot-info"><div class="sjw-slot-name">Weakness Detection</div></div>
+            </div>
+            <div class="sjw-slot">
+              <div class="sjw-slot-num">7</div>
+              <div class="sjw-slot-img"><img src="images/benediction/7 Intuit.webp" alt="Intuit"></div>
+              <div class="sjw-slot-info"><div class="sjw-slot-name">Intuit</div></div>
+            </div>
+            <div class="sjw-slot">
+              <div class="sjw-slot-num">8</div>
+              <div class="sjw-slot-img"><img src="images/benediction/11 Pulverize.webp" alt="Pulverize"></div>
+              <div class="sjw-slot-info"><div class="sjw-slot-name">Pulverize</div></div>
+            </div>
+          </div>
+
+          <!-- Défensives -->
+          <div style="font-size:11px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:var(--teal); margin:0 0 8px 2px;">🛡 Défensives</div>
+          <div class="sjw-slots">
+            <div class="sjw-slot">
+              <div class="sjw-slot-num">10</div>
+              <div class="sjw-slot-img"><img src="images/benediction/8 - Agressive Defense.webp" alt="Aggressive Defense"></div>
+              <div class="sjw-slot-info"><div class="sjw-slot-name">Aggressive Defense</div></div>
+            </div>
+            <div class="sjw-slot">
+              <div class="sjw-slot-num">11</div>
+              <div class="sjw-slot-img"><img src="images/benediction/9 Natural disaster.webp" alt="Natural Disaster"></div>
+              <div class="sjw-slot-info"><div class="sjw-slot-name">Natural Disaster</div></div>
+            </div>
+            <div class="sjw-slot">
+              <div class="sjw-slot-num">12</div>
+              <div class="sjw-slot-img"><img src="images/benediction/10 Life.webp" alt="Life"></div>
+              <div class="sjw-slot-info"><div class="sjw-slot-name">Life</div></div>
+            </div>
+            <div class="sjw-slot">
+              <div class="sjw-slot-num">13</div>
+              <div class="sjw-slot-img"><img src="images/benediction/13 Dual Guard.png" alt="Dual Guard"></div>
+              <div class="sjw-slot-info"><div class="sjw-slot-name">Dual Guard</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SKILLS -->
+        <div>
+          <div class="sjw-col-title">⚡ Top 8 Skills</div>
+          <div class="sjw-slots">
+            <div class="sjw-slot">
+              <div class="sjw-slot-num">1</div>
+              <div class="sjw-slot-img"><img src="images/skills/skill 1.png" alt="Dagger Toss"></div>
+              <div class="sjw-slot-info">
+                <div class="sjw-slot-name">Dagger Toss — Detonation</div>
+                <div class="sjw-slot-desc"><img src="images/Icones/FIRE.webp" style="width:16px;height:16px;object-fit:contain;vertical-align:middle;margin-right:4px;">Fire</div>
+              </div>
+            </div>
+            <div class="sjw-slot">
+              <div class="sjw-slot-num">2</div>
+              <div class="sjw-slot-img"><img src="images/skills/skill 2.png" alt="Piercing Thrust"></div>
+              <div class="sjw-slot-info">
+                <div class="sjw-slot-name">Piercing Thrust — Firestorm Kick</div>
+                <div class="sjw-slot-desc"><img src="images/Icones/FIRE.webp" style="width:16px;height:16px;object-fit:contain;vertical-align:middle;margin-right:4px;">Fire</div>
+              </div>
+            </div>
+            <div class="sjw-slot">
+              <div class="sjw-slot-num">3</div>
+              <div class="sjw-slot-img"><img src="images/skills/skill 3.png" alt="Armor Break"></div>
+              <div class="sjw-slot-info">
+                <div class="sjw-slot-name">Armor Break — Vacuum Wave</div>
+                <div class="sjw-slot-desc"><img src="images/Icones/WIND.webp" style="width:16px;height:16px;object-fit:contain;vertical-align:middle;margin-right:4px;">Wind</div>
+              </div>
+            </div>
+            <div class="sjw-slot">
+              <div class="sjw-slot-num">4</div>
+              <div class="sjw-slot-img"><img src="images/skills/skill 4.png" alt="Dagger Rush"></div>
+              <div class="sjw-slot-info">
+                <div class="sjw-slot-name">Dagger Rush — Cold Ice</div>
+                <div class="sjw-slot-desc"><img src="images/Icones/WATER.webp" style="width:16px;height:16px;object-fit:contain;vertical-align:middle;margin-right:4px;">Water</div>
+              </div>
+            </div>
+            <div class="sjw-slot">
+              <div class="sjw-slot-num">5</div>
+              <div class="sjw-slot-img"><img src="images/skills/skill 5.png" alt="Collapse"></div>
+              <div class="sjw-slot-info">
+                <div class="sjw-slot-name">Collapse — Thunderstorm</div>
+                <div class="sjw-slot-desc"><img src="images/Icones/WIND.webp" style="width:16px;height:16px;object-fit:contain;vertical-align:middle;margin-right:4px;">Wind</div>
+              </div>
+            </div>
+            <div class="sjw-slot">
+              <div class="sjw-slot-num">6</div>
+              <div class="sjw-slot-img"><img src="images/skills/skill 6.png" alt="Death's Dance"></div>
+              <div class="sjw-slot-info">
+                <div class="sjw-slot-name">Death's Dance — Eruption</div>
+                <div class="sjw-slot-desc"><img src="images/Icones/DARK.webp" style="width:16px;height:16px;object-fit:contain;vertical-align:middle;margin-right:4px;">Dark</div>
+              </div>
+            </div>
+            <div class="sjw-slot">
+              <div class="sjw-slot-num">7</div>
+              <div class="sjw-slot-img"><img src="images/skills/skill 7.png" alt="Phantom Strike"></div>
+              <div class="sjw-slot-info">
+                <div class="sjw-slot-name">Phantom Strike</div>
+                <div class="sjw-slot-desc" style="display:flex;align-items:center;gap:4px;">
+                  <img src="images/Icones/DARK.webp"  style="width:16px;height:16px;object-fit:contain;">
+                  <img src="images/Icones/LIGHT.webp" style="width:16px;height:16px;object-fit:contain;">
+                  <img src="images/Icones/FIRE.webp"  style="width:16px;height:16px;object-fit:contain;">
+                  <img src="images/Icones/WIND.webp"  style="width:16px;height:16px;object-fit:contain;">
+                  <img src="images/Icones/WATER.webp" style="width:16px;height:16px;object-fit:contain;">
+                </div>
+              </div>
+            </div>
+            <div class="sjw-slot">
+              <div class="sjw-slot-num">8</div>
+              <div class="sjw-slot-img"><img src="images/skills/skill 8.png" alt="Death"></div>
+              <div class="sjw-slot-info">
+                <div class="sjw-slot-name">Death — Overshadow</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /#arme-sjw-panel -->
 
   </div>
 </section>
@@ -3166,8 +3598,10 @@ footer span { color: var(--accent); opacity: 0.9; }
     </div>
 
     <div id="bot-video-section" style="display:none; margin-top:24px;">
-      <div style="position:relative; width:100%; aspect-ratio:16/9; border-radius:8px; overflow:hidden; background:#000;">
-        <iframe id="bot-video-iframe" style="position:absolute; inset:0; width:100%; height:100%;" src="" title="Vidéo Dernier BOT" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div style="position:relative; width:100%; aspect-ratio:16/9; border-radius:8px; overflow:hidden; background:#0d0d0d; border:1px solid rgba(220,50,50,0.25); display:flex; align-items:center; justify-content:center; flex-direction:column; gap:16px;">
+        <div style="font-size:48px; opacity:0.15;">⏳</div>
+        <div style="font-size:20px; font-weight:800; color:var(--red); letter-spacing:0.5px;">Pas de BOT en ce moment</div>
+        <div style="font-size:13px; color:var(--gray); font-style:italic;">La vidéo sera disponible lors du prochain Battlefield of Time</div>
       </div>
       <div style="display:flex; justify-content:center; margin-top:16px;">
         <button onclick="toggleBotVideo()" style="padding:10px 28px; background:var(--bg2); color:var(--gray); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-size:13px; font-weight:700; cursor:pointer;">← Retour aux conseils</button>
@@ -3184,7 +3618,7 @@ footer span { color: var(--accent); opacity: 0.9; }
 </div><!-- /.main-content -->
 
 <script>
-const ALL_SECTIONS = ['accueil', 'artefacts', 'noyaux', 'team', 'gemmes', 'ombres', 'coop-training', 'rockpassa', 'legia', 'battlefield'];
+const ALL_SECTIONS = ['accueil', 'artefacts', 'noyaux', 'team', 'gemmes', 'armes', 'ombres', 'coop-training', 'rockpassa', 'legia', 'battlefield'];
 
 function toggleBotVideo(btn) {
   const conseils = document.getElementById('bot-conseils');
@@ -3192,6 +3626,13 @@ function toggleBotVideo(btn) {
   const showing = videoSection.style.display !== 'none';
   conseils.style.display = showing ? '' : 'none';
   videoSection.style.display = showing ? 'none' : '';
+}
+
+function armeTab(tab, btn) {
+  document.getElementById('arme-weapons-panel').style.display = tab === 'weapons' ? 'block' : 'none';
+  document.getElementById('arme-sjw-panel').style.display   = tab === 'sjw'     ? 'block' : 'none';
+  document.querySelectorAll('.arme-nav-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
 }
 
 function showSection(id, btnOrId) {
@@ -3234,7 +3675,7 @@ function closeSidebar() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  ['artefacts', 'noyaux', 'team', 'gemmes', 'ombres', 'coop-training', 'rockpassa', 'legia', 'battlefield'].forEach(sid => {
+  ['artefacts', 'noyaux', 'team', 'gemmes', 'armes', 'ombres', 'coop-training', 'rockpassa', 'legia', 'battlefield'].forEach(sid => {
     const el = document.getElementById(sid);
     if (el) el.style.display = 'none';
   });
