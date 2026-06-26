@@ -938,7 +938,15 @@ body {
   background: rgba(255,255,255,0.025);
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 10px;
-  padding: 10px;
+  padding: 28px 10px 10px;
+  position: relative;
+}
+.arme-pair-num {
+  position: absolute;
+  top: 7px; left: 10px;
+  font-size: 10px; font-weight: 800; letter-spacing: 0.5px;
+  color: var(--accent); opacity: 0.85;
+  text-transform: uppercase;
 }
 .arme-pair-sep {
   width: 1px;
@@ -3234,7 +3242,7 @@ footer span { color: var(--accent); opacity: 0.9; }
     <div style="background:rgba(123,97,255,0.08); border:1px solid rgba(123,97,255,0.22); border-left:4px solid var(--accent); border-radius:8px; padding:12px 16px; margin-bottom:20px; display:flex; align-items:flex-start; gap:10px;">
       <span style="font-size:17px; flex-shrink:0; margin-top:1px;">⚔️</span>
       <div style="font-size:13.5px; color:var(--text); line-height:1.7;">
-        Dans chaque combinaison, <strong style="color:var(--white);">les armes de gauche constituent le duo optimal.</strong> Les armes de droite sont des <strong style="color:var(--accent);">alternatives viables</strong> si vous ne possédez pas encore les armes de gauche ou si vous manquez de doublons pour les monter.
+        Dans chaque combinaison, <strong style="color:var(--white);">les duos dans l'ordre numérique constituent les meilleures options.</strong> Les duos prioritaires sont donc les premiers — les suivants sont des <strong style="color:var(--accent);">alternatives viables</strong> si vous ne possédez pas encore ces armes ou si vous manquez de doublons pour les monter.
       </div>
     </div>
 
@@ -3243,11 +3251,13 @@ footer span { color: var(--accent); opacity: 0.9; }
       <div class="arme-tier-header"><div class="arme-tier-badge tier-dark">Dark</div></div>
       <div class="arme-grid">
         <div class="arme-pair">
+          <span class="arme-pair-num">Duo #1</span>
           <div class="arme-card"><img src="images/Arme/cle de transfigu.webp" alt="Clé de Transfiguration"><div class="arme-card-name">Clé de Transfiguration</div></div>
           <div class="arme-card"><img src="images/Arme/pompe.webp" alt="Pompe"><div class="arme-card-name">Winchester Roke</div></div>
         </div>
         <div class="arme-pair-sep"></div>
         <div class="arme-pair">
+          <span class="arme-pair-num">Duo #2</span>
           <div class="arme-card"><img src="images/Arme/katana.webp" alt="Katana"><div class="arme-card-name">Épée démoniaque : Fleur de prunier</div></div>
           <div class="arme-card"><img src="images/Arme/plume.webp" alt="Plume"><div class="arme-card-name">Ombre sélène</div></div>
         </div>
@@ -3259,16 +3269,19 @@ footer span { color: var(--accent); opacity: 0.9; }
       <div class="arme-tier-header"><div class="arme-tier-badge tier-light">Light</div></div>
       <div class="arme-grid">
         <div class="arme-pair">
+          <span class="arme-pair-num">Duo #1</span>
           <div class="arme-card"><img src="images/Arme/light 1.webp" alt=""><div class="arme-card-name">Épée du Héros</div></div>
           <div class="arme-card"><img src="images/Arme/light 4.webp" alt=""><div class="arme-card-name">Bâton de combat divin</div></div>
         </div>
         <div class="arme-pair-sep"></div>
         <div class="arme-pair">
+          <span class="arme-pair-num">Duo #2</span>
           <div class="arme-card"><img src="images/Arme/Light 3.webp" alt=""><div class="arme-card-name">Phantomblade</div></div>
           <div class="arme-card"><img src="images/Arme/light 4.webp" alt=""><div class="arme-card-name">Bâton de combat divin</div></div>
         </div>
         <div class="arme-pair-sep"></div>
         <div class="arme-pair">
+          <span class="arme-pair-num">Duo #3</span>
           <div class="arme-card"><img src="images/Arme/light 5.webp" alt=""><div class="arme-card-name">Gold-tailed Fox</div></div>
           <div class="arme-card"><img src="images/Arme/light 6.webp" alt=""><div class="arme-card-name">Bâton de combat divin</div></div>
         </div>
@@ -3280,11 +3293,13 @@ footer span { color: var(--accent); opacity: 0.9; }
       <div class="arme-tier-header"><div class="arme-tier-badge tier-fire">Fire</div></div>
       <div class="arme-grid">
         <div class="arme-pair">
+          <span class="arme-pair-num">Duo #1</span>
           <div class="arme-card"><img src="images/Arme/fire 1.webp" alt=""><div class="arme-card-name">Rugissement d'Ennio</div></div>
           <div class="arme-card"><img src="images/Arme/fire 2.webp" alt=""><div class="arme-card-name">Lance à double lame du clan Radir</div></div>
         </div>
         <div class="arme-pair-sep"></div>
         <div class="arme-pair">
+          <span class="arme-pair-num">Duo #2</span>
           <div class="arme-card"><img src="images/Arme/fire 3.webp" alt=""><div class="arme-card-name">Lance à double lame du clan Radir</div></div>
           <div class="arme-card"><img src="images/Arme/fire 4.webp" alt=""><div class="arme-card-name">Éventail du Démon de feu</div></div>
         </div>
@@ -3296,16 +3311,19 @@ footer span { color: var(--accent); opacity: 0.9; }
       <div class="arme-tier-header"><div class="arme-tier-badge tier-wind">Wind</div></div>
       <div class="arme-grid">
         <div class="arme-pair">
+          <span class="arme-pair-num">Duo #1</span>
           <div class="arme-card"><img src="images/Arme/wind 1.webp" alt=""><div class="arme-card-name">Moonlit Gale</div></div>
           <div class="arme-card"><img src="images/Arme/wind 2.webp" alt=""><div class="arme-card-name">Soma and Asura</div></div>
         </div>
         <div class="arme-pair-sep"></div>
         <div class="arme-pair">
+          <span class="arme-pair-num">Duo #2</span>
           <div class="arme-card"><img src="images/Arme/wind 3.webp" alt=""><div class="arme-card-name">Stormbringer</div></div>
           <div class="arme-card"><img src="images/Arme/wind 4.webp" alt=""><div class="arme-card-name">Demon King's Daggers</div></div>
         </div>
         <div class="arme-pair-sep"></div>
         <div class="arme-pair" style="flex-direction:column; gap:6px;">
+          <span class="arme-pair-num">Duo #3</span>
           <div style="display:flex; gap:8px;">
             <div class="arme-card"><img src="images/Arme/wind 3.webp" alt=""><div class="arme-card-name">Stormbringer</div></div>
             <div class="arme-card"><img src="images/Arme/plume.webp" alt=""><div class="arme-card-name">Moonshadow</div></div>
@@ -3320,11 +3338,13 @@ footer span { color: var(--accent); opacity: 0.9; }
       <div class="arme-tier-header"><div class="arme-tier-badge tier-water">Water</div></div>
       <div class="arme-grid">
         <div class="arme-pair">
+          <span class="arme-pair-num">Duo #1</span>
           <div class="arme-card"><img src="images/Arme/water 1.webp" alt=""><div class="arme-card-name">Allon's Orb</div></div>
           <div class="arme-card"><img src="images/Arme/water 2.webp" alt=""><div class="arme-card-name">Winter Fang</div></div>
         </div>
         <div class="arme-pair-sep"></div>
         <div class="arme-pair" style="flex-direction:column; gap:6px;">
+          <span class="arme-pair-num">Duo #2</span>
           <div style="display:flex; gap:8px;">
             <div class="arme-card"><img src="images/Arme/water 3.webp" alt=""><div class="arme-card-name">Thetis' Grimoire</div></div>
             <div class="arme-card"><img src="images/Arme/water 4.webp" alt=""><div class="arme-card-name">Moonshadow</div></div>
